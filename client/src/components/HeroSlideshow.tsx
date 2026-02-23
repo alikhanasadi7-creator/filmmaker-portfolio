@@ -58,7 +58,7 @@ export default function HeroSlideshow({ slides, autoPlayInterval = 6000 }: HeroS
 
   return (
     <Link href="/work">
-      <div className="w-full overflow-hidden group cursor-pointer" style={{ height: "clamp(50vh, 70vw, 90vh)" }}>
+      <div className="mx-auto overflow-hidden group cursor-pointer" style={{ height: "clamp(50vh, 70vw, 90vh)", maxWidth: "85%", width: "100%" }}>
         {/* Slideshow Container */}
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
@@ -81,7 +81,7 @@ export default function HeroSlideshow({ slides, autoPlayInterval = 6000 }: HeroS
 
           {/* Overlay gradient for text readability */}
           <div
-            className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             style={{ zIndex: 5 }}
           />
 
@@ -91,7 +91,7 @@ export default function HeroSlideshow({ slides, autoPlayInterval = 6000 }: HeroS
               e.preventDefault();
               prevSlide();
             }}
-            className="absolute left-6 md:left-12 lg:left-24 top-1/2 -translate-y-1/2 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             style={{ zIndex: 10 }}
             aria-label="Previous slide"
           >
@@ -103,7 +103,7 @@ export default function HeroSlideshow({ slides, autoPlayInterval = 6000 }: HeroS
               e.preventDefault();
               nextSlide();
             }}
-            className="absolute right-6 md:right-12 lg:right-24 top-1/2 -translate-y-1/2 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             style={{ zIndex: 10 }}
             aria-label="Next slide"
           >
@@ -137,7 +137,7 @@ export default function HeroSlideshow({ slides, autoPlayInterval = 6000 }: HeroS
 
           {/* Click to View Work Indicator */}
           <div
-            className="absolute bottom-6 md:bottom-8 right-6 md:right-12 lg:right-24 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute bottom-6 md:bottom-8 right-3 md:right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             style={{ zIndex: 10 }}
           >
             <p
