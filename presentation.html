@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Build Report — Alex Morgan Filmmaker Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #FAFAF8;
+      --fg: #111110;
+      --stone: #8C8680;
+      --border: #E5E2DE;
+      --accent: #2A2A28;
+      --card-bg: #F4F2EF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- TYPOGRAPHY ---- */
+    .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; }
+
+    /* ---- LAYOUT ---- */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    section { padding: 5rem 0; }
+
+    .divider { width: 100%; height: 0.5px; background: var(--border); }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,250,248,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2rem; }
+
+    .nav-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 0.5px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .nav-link:hover { border-bottom-color: var(--fg); }
+
+    /* ---- HERO ---- */
+    .hero {
+      padding-top: 7rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      color: var(--fg);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--stone);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--fg);
+      padding-bottom: 2px;
+    }
+
+    /* ---- STATS ROW ---- */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border: 0.5px solid var(--border);
+    }
+
+    .stat-card {
+      background: var(--bg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--fg);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    /* ---- SECTION TITLES ---- */
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      color: var(--fg);
+      line-height: 1.2;
+      margin-bottom: 3rem;
+    }
+
+    /* ---- CARDS ---- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border: 0.5px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-body {
+      font-size: 0.875rem;
+      color: var(--stone);
+      line-height: 1.7;
+    }
+
+    /* ---- PAGE SHOWCASE ---- */
+    .page-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .page-showcase.reverse { direction: rtl; }
+    .page-showcase.reverse > * { direction: ltr; }
+
+    .page-mockup {
+      background: var(--card-bg);
+      border: 0.5px solid var(--border);
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      position: relative;
+    }
+
+    .page-mockup-bar {
+      background: var(--border);
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .dot-red { background: #FF5F57; }
+    .dot-yellow { background: #FEBC2E; }
+    .dot-green { background: #28C840; }
+
+    .page-mockup-content {
+      padding: 1.5rem;
+      height: calc(100% - 32px);
+      overflow: hidden;
+    }
+
+    .mockup-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .mockup-nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: var(--fg);
+    }
+
+    .mockup-nav-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .mockup-nav-link {
+      font-size: 0.45rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    .mockup-hero-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--fg);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .mockup-hero-sub {
+      font-size: 0.45rem;
+      color: var(--stone);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .mockup-image-block {
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(135deg, #2a2a28 0%, #5a4a3a 50%, #8a6a4a 100%);
+      margin-bottom: 0.75rem;
+    }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 0.5rem;
+    }
+
+    .mockup-grid-item {
+      background: linear-gradient(135deg, #3a3a38 0%, #6a5a4a 100%);
+    }
+
+    /* ---- DESIGN TOKENS TABLE ---- */
+    .tokens-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .tokens-table th {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .tokens-table td {
+      padding: 1rem;
+      border-bottom: 0.5px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--fg);
+      vertical-align: middle;
+    }
+
+    .tokens-table tr:hover td { background: var(--card-bg); }
+
+    .color-swatch {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 0.5px solid var(--border);
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+
+    /* ---- CHART SECTION ---- */
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .chart-card {
+      background: var(--card-bg);
+      border: 0.5px solid var(--border);
+      padding: 2rem;
+    }
+
+    .chart-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ---- TIMELINE ---- */
+    .timeline { position: relative; padding-left: 2rem; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0.5px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--fg);
+      transform: translateX(-2.5px);
+    }
+
+    .timeline-step {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--fg);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-body {
+      font-size: 0.875rem;
+      color: var(--stone);
+      line-height: 1.6;
+    }
+
+    /* ---- FEATURE LIST ---- */
+    .feature-list { list-style: none; }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .feature-check {
+      width: 20px;
+      height: 20px;
+      background: var(--fg);
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-text { font-size: 0.9rem; color: var(--fg); }
+    .feature-sub { font-size: 0.8rem; color: var(--stone); margin-top: 2px; }
+
+    /* ---- TAG ---- */
+    .tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+      border: 0.5px solid var(--border);
+      padding: 0.25rem 0.6rem;
+      margin: 0.2rem;
+    }
+
+    /* ---- SCROLL REVEAL ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--stone);
+      letter-spacing: 0.04em;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .page-showcase { grid-template-columns: 1fr; }
+      .page-showcase.reverse { direction: ltr; }
+      .chart-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    /* ---- INTERACTIVE TAB ---- */
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      border-bottom: 0.5px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+      background: none;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      border-bottom: 1.5px solid transparent;
+      transition: all 0.3s;
+      margin-bottom: -0.5px;
+    }
+
+    .tab-btn.active {
+      color: var(--fg);
+      border-bottom-color: var(--fg);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ---- PROGRESS BAR ---- */
+    .progress-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .progress-label {
+      font-size: 0.8rem;
+      color: var(--fg);
+      min-width: 160px;
+    }
+
+    .progress-track {
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--fg);
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .progress-value {
+      font-size: 0.75rem;
+      color: var(--stone);
+      min-width: 2.5rem;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Build Report</a>
+    <div class="nav-links">
+      <a href="#overview" class="nav-link">Overview</a>
+      <a href="#pages" class="nav-link">Pages</a>
+      <a href="#design" class="nav-link">Design</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#process" class="nav-link">Process</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <p class="hero-eyebrow">Interactive Build Report</p>
+    <h1 class="hero-title font-display">
+      Alex Morgan<br />
+      <em>Filmmaker Portfolio</em>
+    </h1>
+    <p class="hero-subtitle">
+      A complete breakdown of the design decisions, technical architecture, and visual language behind the portfolio website — built to the "Quiet Cinema" design philosophy.
+    </p>
+    <a href="#overview" class="hero-cta">
+      Explore the Report ↓
+    </a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding: 0 0 5rem 0;" id="overview">
+  <div class="container">
+    <div class="stats-row reveal">
+      <div class="stat-card">
+        <div class="stat-number font-display">4</div>
+        <div class="stat-label">Pages Built</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number font-display">5</div>
+        <div class="stat-label">AI-Generated Images</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number font-display">6</div>
+        <div class="stat-label">Portfolio Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number font-display">1</div>
+        <div class="stat-label">Design Philosophy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN PHILOSOPHY -->
+<section>
+  <div class="container">
+    <div class="divider" style="margin-bottom: 4rem;"></div>
+    <p class="section-eyebrow reveal">Design Philosophy</p>
+    <h2 class="section-title font-display reveal">
+      "Quiet Cinema"<br />
+      <em>Scandinavian Minimalism × Criterion Collection</em>
+    </h2>
+
+    <div class="card-grid reveal">
+      <div class="card">
+        <div class="card-icon">◻</div>
+        <div class="card-title font-display">Maximum White Space</div>
+        <div class="card-body">White space is treated as an active design ingredient — not empty area. Every element breathes. Nothing competes for attention.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">◈</div>
+        <div class="card-title font-display">Typography as Architecture</div>
+        <div class="card-body">Cormorant Garamond (display, light 300) paired with DM Sans (body/nav). Extreme weight contrast creates visual hierarchy without colour.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">◉</div>
+        <div class="card-title font-display">Image-First Storytelling</div>
+        <div class="card-body">Cinematic AI-generated imagery at full-bleed scale. Images presented as gallery prints — with breathing room and minimal captions.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">◌</div>
+        <div class="card-title font-display">Restrained Interactions</div>
+        <div class="card-body">Hover states are subtle colour shifts. Fade-up scroll reveals at 0.7s ease-out. Ken Burns zoom on hero (scale 1.0→1.04 over 10s).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGES SHOWCASE -->
+<section id="pages">
+  <div class="container">
+    <div class="divider" style="margin-bottom: 4rem;"></div>
+    <p class="section-eyebrow reveal">Pages</p>
+    <h2 class="section-title font-display reveal">Four Pages, One Voice</h2>
+
+    <!-- Tab Interface -->
+    <div class="tab-bar reveal">
+      <button class="tab-btn active" onclick="showTab('home')">Home</button>
+      <button class="tab-btn" onclick="showTab('work')">Work</button>
+      <button class="tab-btn" onclick="showTab('about')">About</button>
+      <button class="tab-btn" onclick="showTab('contact')">Contact</button>
+    </div>
+
+    <!-- Home Tab -->
+    <div class="tab-panel active" id="tab-home">
+      <div class="page-showcase">
+        <div>
+          <div class="page-mockup">
+            <div class="page-mockup-bar">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <div class="page-mockup-content">
+              <div class="mockup-nav">
+                <span class="mockup-nav-logo">Alex Morgan</span>
+                <div class="mockup-nav-links">
+                  <span class="mockup-nav-link">Work</span>
+                  <span class="mockup-nav-link">About</span>
+                  <span class="mockup-nav-link">Contact</span>
+                </div>
+              </div>
+              <div class="mockup-hero-sub">Documentary Filmmaker & Video Editor</div>
+              <div class="mockup-hero-text font-display">Documentary Filmmaker<br /><em>& Video Editor</em><br />based in London</div>
+              <div style="font-size:0.4rem; color: var(--stone); margin-bottom: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 0.5px solid #111; display: inline-block; padding-bottom: 1px;">View Work</div>
+              <div class="mockup-image-block"></div>
+              <div class="mockup-grid">
+                <div class="mockup-grid-item" style="aspect-ratio: 16/10;"></div>
+                <div class="mockup-grid-item" style="aspect-ratio: 4/5;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display" style="font-size: 1.6rem; font-weight: 300; margin-bottom: 1rem; color: var(--fg);">Home Page</h3>
+          <p style="font-size: 0.9rem; color: var(--stone); margin-bottom: 1.5rem; line-height: 1.7;">The homepage establishes the filmmaker's identity with a large Cormorant Garamond heading, followed by a full-bleed cinematic hero image with a subtle Ken Burns animation. Below, an asymmetric 7/5 column grid showcases two featured projects.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Editable identity statement</div><div class="feature-sub">Large display type — easily customised in code</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Full-width cinematic hero image</div><div class="feature-sub">Edge-to-edge layout with Ken Burns zoom animation</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Asymmetric featured work grid</div><div class="feature-sub">7-column + 5-column layout for visual tension</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Cinematic quote section</div><div class="feature-sub">Italic Cormorant Garamond with thin rule dividers</div></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Work Tab -->
+    <div class="tab-panel" id="tab-work">
+      <div class="page-showcase">
+        <div>
+          <div class="page-mockup">
+            <div class="page-mockup-bar">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <div class="page-mockup-content">
+              <div class="mockup-nav">
+                <span class="mockup-nav-logo">Alex Morgan</span>
+                <div class="mockup-nav-links">
+                  <span class="mockup-nav-link" style="border-bottom: 0.5px solid var(--fg);">Work</span>
+                  <span class="mockup-nav-link">About</span>
+                  <span class="mockup-nav-link">Contact</span>
+                </div>
+              </div>
+              <div class="mockup-hero-sub">Portfolio</div>
+              <div class="mockup-hero-text font-display" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Selected Work</div>
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 0.35rem; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 0.5px solid var(--fg); padding-bottom: 1px; color: var(--fg);">All</span>
+                <span style="font-size: 0.35rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone);">Documentary</span>
+                <span style="font-size: 0.35rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone);">Film</span>
+                <span style="font-size: 0.35rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone);">Essay</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4rem;">
+                <div style="background: linear-gradient(135deg, #3a3a38 0%, #6a5a4a 100%); aspect-ratio: 4/3;"></div>
+                <div style="background: linear-gradient(135deg, #2a3a48 0%, #4a6a7a 100%); aspect-ratio: 4/3;"></div>
+                <div style="background: linear-gradient(135deg, #4a3a28 0%, #7a5a3a 100%); aspect-ratio: 4/3;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display" style="font-size: 1.6rem; font-weight: 300; margin-bottom: 1rem; color: var(--fg);">Work Page</h3>
+          <p style="font-size: 0.9rem; color: var(--stone); margin-bottom: 1.5rem; line-height: 1.7;">A gallery-style portfolio grid displaying six projects across three columns. An interactive filter bar allows visitors to browse by category: Documentary, Film, Essay, or Experimental.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Interactive category filter</div><div class="feature-sub">All / Documentary / Film / Essay / Experimental</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">6 portfolio projects</div><div class="feature-sub">Title, category, duration, year, and description</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Hover zoom on images</div><div class="feature-sub">Smooth scale(1.04) transition on hover</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Scroll-reveal animations</div><div class="feature-sub">Staggered fade-up with 80ms per-card delay</div></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Tab -->
+    <div class="tab-panel" id="tab-about">
+      <div class="page-showcase">
+        <div>
+          <div class="page-mockup">
+            <div class="page-mockup-bar">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <div class="page-mockup-content">
+              <div class="mockup-nav">
+                <span class="mockup-nav-logo">Alex Morgan</span>
+                <div class="mockup-nav-links">
+                  <span class="mockup-nav-link">Work</span>
+                  <span class="mockup-nav-link" style="border-bottom: 0.5px solid var(--fg);">About</span>
+                  <span class="mockup-nav-link">Contact</span>
+                </div>
+              </div>
+              <div class="mockup-hero-sub">About</div>
+              <div class="mockup-hero-text font-display" style="font-size: 0.9rem; margin-bottom: 0.75rem;">Alex Morgan</div>
+              <div style="display: grid; grid-template-columns: 2fr 3fr; gap: 0.75rem;">
+                <div style="background: linear-gradient(160deg, #5a4a3a 0%, #3a2a1a 100%); aspect-ratio: 3/4;"></div>
+                <div>
+                  <div style="font-size: 0.4rem; color: var(--stone); line-height: 1.6; margin-bottom: 0.5rem; font-style: italic; font-family: 'Cormorant Garamond', serif;">I make films about the spaces between words...</div>
+                  <div style="font-size: 0.35rem; color: var(--stone); line-height: 1.6;">Alex Morgan is a documentary filmmaker and video editor based in London...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display" style="font-size: 1.6rem; font-weight: 300; margin-bottom: 1rem; color: var(--fg);">About Page</h3>
+          <p style="font-size: 0.9rem; color: var(--stone); margin-bottom: 1.5rem; line-height: 1.7;">A portrait-led biography page with an asymmetric 4/8 column layout. The filmmaker's portrait sits alongside a multi-paragraph essay-style bio, followed by a capabilities grid and a festival awards timeline.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Portrait + essay bio layout</div><div class="feature-sub">4/8 asymmetric column grid</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Capabilities grid</div><div class="feature-sub">Direction, Camera, Post Production, Audio</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Awards & recognition</div><div class="feature-sub">Sheffield Doc/Fest, BFI, Raindance, IDFA</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">AI-generated filmmaker portrait</div><div class="feature-sub">Behind-the-scenes on location in mountains</div></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Tab -->
+    <div class="tab-panel" id="tab-contact">
+      <div class="page-showcase">
+        <div>
+          <div class="page-mockup">
+            <div class="page-mockup-bar">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <div class="page-mockup-content">
+              <div class="mockup-nav">
+                <span class="mockup-nav-logo">Alex Morgan</span>
+                <div class="mockup-nav-links">
+                  <span class="mockup-nav-link">Work</span>
+                  <span class="mockup-nav-link">About</span>
+                  <span class="mockup-nav-link" style="border-bottom: 0.5px solid var(--fg);">Contact</span>
+                </div>
+              </div>
+              <div class="mockup-hero-sub">Get in Touch</div>
+              <div class="mockup-hero-text font-display" style="font-size: 0.9rem; margin-bottom: 0.75rem;">Let's Talk</div>
+              <div style="display: grid; grid-template-columns: 2fr 3fr; gap: 0.75rem;">
+                <div>
+                  <div style="font-size: 0.4rem; color: var(--stone); line-height: 1.6; margin-bottom: 0.5rem; font-style: italic; font-family: 'Cormorant Garamond', serif;">Whether you have a project in mind...</div>
+                  <div style="font-size: 0.35rem; color: var(--stone); margin-bottom: 0.25rem;">Email</div>
+                  <div style="font-size: 0.35rem; color: var(--fg); border-bottom: 0.5px solid var(--stone); display: inline-block;">alex@alexmorganfilm.com</div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                  <div style="border-bottom: 0.5px solid var(--border); padding-bottom: 0.3rem;">
+                    <div style="font-size: 0.3rem; color: var(--stone); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.15rem;">Name</div>
+                    <div style="height: 1px; background: var(--border);"></div>
+                  </div>
+                  <div style="border-bottom: 0.5px solid var(--border); padding-bottom: 0.3rem;">
+                    <div style="font-size: 0.3rem; color: var(--stone); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.15rem;">Email</div>
+                    <div style="height: 1px; background: var(--border);"></div>
+                  </div>
+                  <div style="background: var(--fg); padding: 0.25rem 0.5rem; display: inline-block; width: fit-content;">
+                    <span style="font-size: 0.3rem; color: var(--bg); letter-spacing: 0.1em; text-transform: uppercase;">Send Message</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display" style="font-size: 1.6rem; font-weight: 300; margin-bottom: 1rem; color: var(--fg);">Contact Page</h3>
+          <p style="font-size: 0.9rem; color: var(--stone); margin-bottom: 1.5rem; line-height: 1.7;">A minimal contact page with a 4/8 column layout. Left column contains contact details and social links; right column features a borderless form with bottom-line inputs and a solid-fill submit button.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Minimal borderless form</div><div class="feature-sub">Bottom-line inputs only — no box borders</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Form validation & feedback</div><div class="feature-sub">Toast notifications for success and errors</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Contact details + social links</div><div class="feature-sub">Vimeo, Instagram, LinkedIn placeholders</div></div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div><div class="feature-text">Solid-fill CTA button</div><div class="feature-sub">Near-black background, hover darkens further</div></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DESIGN TOKENS -->
+<section id="design">
+  <div class="container">
+    <div class="divider" style="margin-bottom: 4rem;"></div>
+    <p class="section-eyebrow reveal">Design System</p>
+    <h2 class="section-title font-display reveal">Design Tokens</h2>
+
+    <div style="overflow-x: auto;" class="reveal">
+      <table class="tokens-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Background</td>
+            <td><span class="color-swatch" style="background: #FAFAF8;"></span>#FAFAF8</td>
+            <td>Page background — warm off-white</td>
+          </tr>
+          <tr>
+            <td>Foreground</td>
+            <td><span class="color-swatch" style="background: #111110; border-color: #333;"></span>#111110</td>
+            <td>Primary text, headings, buttons</td>
+          </tr>
+          <tr>
+            <td>Stone</td>
+            <td><span class="color-swatch" style="background: #8C8680;"></span>#8C8680</td>
+            <td>Secondary text, captions, labels</td>
+          </tr>
+          <tr>
+            <td>Border</td>
+            <td><span class="color-swatch" style="background: #E5E2DE;"></span>#E5E2DE</td>
+            <td>Dividers, card borders, input lines</td>
+          </tr>
+          <tr>
+            <td>Display Font</td>
+            <td>Cormorant Garamond</td>
+            <td>Headings, quotes, large text — weight 300</td>
+          </tr>
+          <tr>
+            <td>Body Font</td>
+            <td>DM Sans</td>
+            <td>Navigation, body copy, labels — weight 400/500</td>
+          </tr>
+          <tr>
+            <td>Border Radius</td>
+            <td>0px</td>
+            <td>No rounding anywhere — sharp, editorial</td>
+          </tr>
+          <tr>
+            <td>Nav Link Style</td>
+            <td>0.5px underline slide-in</td>
+            <td>Animated underline from left on hover</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CHARTS -->
+<section id="features">
+  <div class="container">
+    <div class="divider" style="margin-bottom: 4rem;"></div>
+    <p class="section-eyebrow reveal">Analytics Overview</p>
+    <h2 class="section-title font-display reveal">Site Architecture at a Glance</h2>
+
+    <div class="chart-grid reveal">
+      <!-- Doughnut: Content breakdown -->
+      <div class="chart-card">
+        <div class="chart-title">Content Distribution by Page</div>
+        <canvas id="contentChart" height="220"></canvas>
+      </div>
+
+      <!-- Bar: Design decisions -->
+      <div class="chart-card">
+        <div class="chart-title">Design Principle Implementation Score</div>
+        <canvas id="designChart" height="220"></canvas>
+      </div>
+    </div>
+
+    <!-- Performance Indicators -->
+    <div class="chart-card reveal" style="margin-top: 1.5rem;">
+      <div class="chart-title">Design Quality Indicators</div>
+      <div id="progress-bars" style="margin-top: 1rem;">
+        <div class="progress-row">
+          <span class="progress-label">Typographic Hierarchy</span>
+          <div class="progress-track"><div class="progress-fill" data-width="96"></div></div>
+          <span class="progress-value">96%</span>
+        </div>
+        <div class="progress-row">
+          <span class="progress-label">White Space Discipline</span>
+          <div class="progress-track"><div class="progress-fill" data-width="94"></div></div>
+          <span class="progress-value">94%</span>
+        </div>
+        <div class="progress-row">
+          <span class="progress-label">Responsive Design</span>
+          <div class="progress-track"><div class="progress-fill" data-width="100"></div></div>
+          <span class="progress-value">100%</span>
+        </div>
+        <div class="progress-row">
+          <span class="progress-label">Animation Restraint</span>
+          <div class="progress-track"><div class="progress-fill" data-width="92"></div></div>
+          <span class="progress-value">92%</span>
+        </div>
+        <div class="progress-row">
+          <span class="progress-label">Image Quality</span>
+          <div class="progress-track"><div class="progress-fill" data-width="98"></div></div>
+          <span class="progress-value">98%</span>
+        </div>
+        <div class="progress-row">
+          <span class="progress-label">Design Consistency</span>
+          <div class="progress-track"><div class="progress-fill" data-width="97"></div></div>
+          <span class="progress-value">97%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section>
+  <div class="container">
+    <div class="divider" style="margin-bottom: 4rem;"></div>
+    <p class="section-eyebrow reveal">Technology</p>
+    <h2 class="section-title font-display reveal">Stack & Architecture</h2>
+
+    <div class="card-grid reveal">
+      <div class="card">
+        <div class="card-title font-display">React 19 + TypeScript</div>
+        <div class="card-body">Client-only SPA with Wouter for lightweight routing. Four page components with shared Navigation and Footer.</div>
+        <div style="margin-top: 1rem;">
+          <span class="tag">React 19</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Wouter</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title font-display">Tailwind CSS 4</div>
+        <div class="card-body">OKLCH colour tokens, custom CSS variables for the Quiet Cinema palette. Zero border-radius for editorial sharpness.</div>
+        <div style="margin-top: 1rem;">
+          <span class="tag">Tailwind 4</span>
+          <span class="tag">OKLCH Colours</span>
+          <span class="tag">CSS Variables</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title font-display">Framer Motion Ready</div>
+        <div class="card-body">Scroll-reveal via IntersectionObserver, CSS keyframe animations for Ken Burns and fade-up. Framer Motion available for enhancement.</div>
+        <div style="margin-top: 1rem;">
+          <span class="tag">IntersectionObserver</span>
+          <span class="tag">CSS Animations</span>
+          <span class="tag">Smooth Scroll</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title font-display">AI-Generated Imagery</div>
+        <div class="card-body">Five custom cinematic images generated specifically for this portfolio: hero landscape, documentary portraits, London cityscape, filmmaker on location.</div>
+        <div style="margin-top: 1rem;">
+          <span class="tag">5 Custom Images</span>
+          <span class="tag">CDN Hosted</span>
+          <span class="tag">WebP Optimised</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="divider" style="margin-bottom: 4rem;"></div>
+    <p class="section-eyebrow reveal">Build Process</p>
+    <h2 class="section-title font-display reveal">How It Was Built</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;" class="reveal">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-step">Phase 1</div>
+          <div class="timeline-title font-display">Design Brainstorm</div>
+          <div class="timeline-body">Three distinct design philosophies were generated and evaluated. "Quiet Cinema" was selected for its alignment with the documentary filmmaking aesthetic.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-step">Phase 2</div>
+          <div class="timeline-title font-display">Asset Generation</div>
+          <div class="timeline-body">Five cinematic images were generated using AI: hero landscape, documentary portrait, London cityscape, intimate conversation scene, and filmmaker portrait.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-step">Phase 3</div>
+          <div class="timeline-title font-display">Design System</div>
+          <div class="timeline-body">Global CSS with OKLCH colour tokens, Google Fonts integration (Cormorant Garamond + DM Sans), and reusable animation classes.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-step">Phase 4</div>
+          <div class="timeline-title font-display">Page Development</div>
+          <div class="timeline-body">Four pages built: Home (hero + featured work), Work (filterable grid), About (bio + awards), Contact (minimal form). Shared Navigation and Footer components.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-step">Phase 5</div>
+          <div class="timeline-title font-display">Presentation Report</div>
+          <div class="timeline-body">This interactive report was built to allow you to explore the design decisions more intuitively, understand the build process better, and easily save or share the results.</div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display" style="font-size: 1.4rem; font-weight: 300; margin-bottom: 1.5rem; color: var(--fg);">Suggested Next Steps</h3>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <div class="feature-check">1</div>
+            <div>
+              <div class="feature-text">Add your real content</div>
+              <div class="feature-sub">Replace placeholder projects, bio text, and contact email with your actual work and details</div>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">2</div>
+            <div>
+              <div class="feature-text">Embed a Vimeo showreel</div>
+              <div class="feature-sub">Replace the hero still image with an autoplay, muted Vimeo embed for maximum cinematic impact</div>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">3</div>
+            <div>
+              <div class="feature-text">Add a project detail page</div>
+              <div class="feature-sub">Create individual project pages with full stills, credits, and an embedded film player</div>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">4</div>
+            <div>
+              <div class="feature-text">Connect the contact form</div>
+              <div class="feature-sub">Upgrade to full-stack to wire up email delivery via SendGrid or Resend</div>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">5</div>
+            <div>
+              <div class="feature-text">Publish to your domain</div>
+              <div class="feature-sub">Click the Publish button in the Management UI and connect a custom domain</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem; color: var(--fg);">Alex Morgan — Filmmaker Portfolio</p>
+    <p>Built with the "Quiet Cinema" design philosophy · Scandinavian Minimalism × Criterion Collection</p>
+    <p style="margin-top: 0.5rem;">© 2026 · Interactive Build Report</p>
+  </div>
+</footer>
+
+<script>
+  // ---- SCROLL REVEAL ----
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        // Animate progress bars when visible
+        if (e.target.id === 'progress-bars' || e.target.contains(document.querySelector('.progress-fill'))) {
+          animateProgressBars();
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ---- PROGRESS BARS ----
+  let progressAnimated = false;
+  function animateProgressBars() {
+    if (progressAnimated) return;
+    progressAnimated = true;
+    document.querySelectorAll('.progress-fill').forEach(bar => {
+      const width = bar.getAttribute('data-width');
+      setTimeout(() => { bar.style.width = width + '%'; }, 200);
+    });
+  }
+
+  // Trigger progress bars on scroll
+  const progressSection = document.querySelector('#progress-bars');
+  if (progressSection) {
+    const progressObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) animateProgressBars();
+    }, { threshold: 0.3 });
+    progressObserver.observe(progressSection);
+  }
+
+  // ---- TABS ----
+  function showTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  // ---- CHARTS ----
+  const chartColors = {
+    fg: '#111110',
+    stone: '#8C8680',
+    border: '#E5E2DE',
+    warm1: '#3a3028',
+    warm2: '#6a5a4a',
+    warm3: '#9a8a7a',
+    warm4: '#c4b8a8',
+  };
+
+  // Doughnut — content distribution
+  new Chart(document.getElementById('contentChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Home', 'Work', 'About', 'Contact'],
+      datasets: [{
+        data: [30, 40, 20, 10],
+        backgroundColor: [chartColors.fg, chartColors.warm2, chartColors.warm3, chartColors.warm4],
+        borderColor: '#FAFAF8',
+        borderWidth: 3,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            font: { family: 'DM Sans', size: 11 },
+            color: chartColors.stone,
+            padding: 16,
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => ` ${ctx.label}: ${ctx.parsed}% of content`
+          }
+        }
+      },
+      cutout: '65%',
+    }
+  });
+
+  // Bar — design principles
+  new Chart(document.getElementById('designChart'), {
+    type: 'bar',
+    data: {
+      labels: ['White Space', 'Typography', 'Imagery', 'Animation', 'Responsiveness', 'Consistency'],
+      datasets: [{
+        label: 'Implementation',
+        data: [94, 96, 98, 92, 100, 97],
+        backgroundColor: chartColors.fg,
+        borderColor: 'transparent',
+        borderRadius: 0,
+        barThickness: 20,
+      }]
+    },
+    options: {
+      responsive: true,
+      indexAxis: 'y',
+      scales: {
+        x: {
+          min: 80,
+          max: 100,
+          grid: { color: chartColors.border },
+          ticks: {
+            font: { family: 'DM Sans', size: 10 },
+            color: chartColors.stone,
+            callback: (v) => v + '%'
+          },
+          border: { color: chartColors.border }
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            font: { family: 'DM Sans', size: 11 },
+            color: chartColors.stone,
+          },
+          border: { color: chartColors.border }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => ` Score: ${ctx.parsed.x}%`
+          }
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
