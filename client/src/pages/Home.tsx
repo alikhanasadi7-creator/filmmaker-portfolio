@@ -6,7 +6,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+
 import HeroSlideshow from "@/components/HeroSlideshow";
 
 const HERO_IMAGE = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-1_1771863592000_na1fn_aGVyby1tYWlu.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTFfMTc3MTg2MzU5MjAwMF9uYTFmbl9hR1Z5YnkxdFlXbHUuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=KiUxiwL19Rhuovah8NguKijF6UEh17QJsOrKAV49TpoV2SKOpgdy7K-wxGufvKoqPs1cIZx0FiBpilomM1Id5KDMKpP7RovMr4Vx48FLMdE8RN7VlVYIYeo9at0OOHxnrKh6KwRPa-~yF5A8ZRjJ3VO~e6B3903DtXTdD-idoTkl0w5GJiC~T~QMVcMAlVLs4J8UPqJmuOwRYb0l5wDYCa9XUBvZHM4okI14WmmEHc0~IB~kv8u5m2b4bMaQHkI4eU8FN0YOffHatibhlPO91dzWRHCEO-jzNc5WS9lMd~2vvz8WiWbskYFO0A0WfeAbJNH37pDjGEf7KQiK~qw~aw__";
@@ -108,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* Hero Slideshow - Links to Work Page */}
-      <section className="w-full">
+      <section className="w-full pb-32 md:pb-40 lg:pb-48">
         <HeroSlideshow slides={heroSlides} autoPlayInterval={6000} />
       </section>
 
@@ -133,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   );
 }

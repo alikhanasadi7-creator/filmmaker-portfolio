@@ -4,7 +4,7 @@
    ============================================================= */
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+
 import { toast } from "sonner";
 
 export default function Contact() {
@@ -268,7 +268,7 @@ export default function Contact() {
         <div className="divider mt-20" />
       </section>
 
-      <Footer />
+
     </div>
   );
 }
