@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ProjectCarousel from "@/components/ProjectCarousel";
 
 const HERO_IMAGE = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-1_1771863592000_na1fn_aGVyby1tYWlu.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTFfMTc3MTg2MzU5MjAwMF9uYTFmbl9hR1Z5YnkxdFlXbHUuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=KiUxiwL19Rhuovah8NguKijF6UEh17QJsOrKAV49TpoV2SKOpgdy7K-wxGufvKoqPs1cIZx0FiBpilomM1Id5KDMKpP7RovMr4Vx48FLMdE8RN7VlVYIYeo9at0OOHxnrKh6KwRPa-~yF5A8ZRjJ3VO~e6B3903DtXTdD-idoTkl0w5GJiC~T~QMVcMAlVLs4J8UPqJmuOwRYb0l5wDYCa9XUBvZHM4okI14WmmEHc0~IB~kv8u5m2b4bMaQHkI4eU8FN0YOffHatibhlPO91dzWRHCEO-jzNc5WS9lMd~2vvz8WiWbskYFO0A0WfeAbJNH37pDjGEf7KQiK~qw~aw__";
 
@@ -19,6 +20,7 @@ const featuredProjects = [
     title: "Echoes of Dust",
     category: "Documentary Feature",
     year: "2024",
+    description: "A sweeping portrait of rural England, following three generations of a farming family through seasons of change. Premiered at Sheffield Doc/Fest.",
     image: PROJECT_1,
   },
   {
@@ -26,6 +28,39 @@ const featuredProjects = [
     title: "The River Speaks",
     category: "Short Documentary",
     year: "2024",
+    description: "An intimate exploration of water, memory, and loss. Shot over two years in the Scottish Highlands, this film examines our relationship with natural systems.",
+    image: PROJECT_2,
+  },
+  {
+    id: 3,
+    title: "Neon Nights",
+    category: "Commercial Film",
+    year: "2023",
+    description: "A cinematic brand film for a London-based luxury fashion house. Blending documentary techniques with narrative storytelling.",
+    image: PROJECT_1,
+  },
+  {
+    id: 4,
+    title: "Fragments",
+    category: "Essay Film",
+    year: "2023",
+    description: "A poetic meditation on urban decay and renewal. Winner of Best Short Film at Raindance International Film Festival.",
+    image: PROJECT_2,
+  },
+  {
+    id: 5,
+    title: "The Archive",
+    category: "Documentary",
+    year: "2022",
+    description: "Restoring forgotten footage from the British Film Institute's archives. A study in preservation and historical memory.",
+    image: PROJECT_1,
+  },
+  {
+    id: 6,
+    title: "Convergence",
+    category: "Experimental",
+    year: "2022",
+    description: "A visual essay exploring the intersection of technology and human connection. Selected for IDFA Documentary Forum.",
     image: PROJECT_2,
   },
 ];
@@ -128,15 +163,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Work Section */}
-      <section className="mt-28 px-6 md:px-12 lg:px-24" ref={featuredRef}>
-        <div className="flex items-end justify-between mb-12">
+      {/* Featured Work Carousel Section */}
+      <section className="mt-28" ref={featuredRef}>
+        <div className="px-6 md:px-12 lg:px-24 mb-6">
           <div className="reveal">
             <p
               className="font-body text-xs tracking-widest uppercase mb-3"
               style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
             >
-              Selected Work
+              Featured Work
             </p>
             <h2
               className="font-display"
@@ -147,81 +182,15 @@ export default function Home() {
                 color: "oklch(0.12 0.005 60)",
               }}
             >
-              Recent Projects
+              Cinematic Projects
             </h2>
           </div>
-          <Link href="/work">
-            <span
-              className="hidden md:block font-body text-xs tracking-widest uppercase reveal"
-              style={{
-                color: "oklch(0.55 0.012 60)",
-                letterSpacing: "0.1em",
-                borderBottom: "0.5px solid oklch(0.75 0.006 60)",
-                paddingBottom: "2px",
-              }}
-            >
-              All Projects →
-            </span>
-          </Link>
         </div>
 
-        {/* Asymmetric 2-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-          {featuredProjects.map((project, i) => (
-            <div
-              key={project.id}
-              className={`reveal project-card ${i === 0 ? "md:col-span-7" : "md:col-span-5"}`}
-              style={{ animationDelay: `${i * 0.15}s` }}
-            >
-              <Link href="/work">
-                <div>
-                  <div
-                    className="overflow-hidden"
-                    style={{ aspectRatio: i === 0 ? "16/10" : "4/5" }}
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                      style={{ transition: "transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94)" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.04)")}
-                      onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                    />
-                  </div>
-                  <div className="mt-4 flex items-start justify-between">
-                    <div>
-                      <h3
-                        className="font-display"
-                        style={{
-                          fontSize: "1.25rem",
-                          fontWeight: 300,
-                          letterSpacing: "0.02em",
-                          color: "oklch(0.12 0.005 60)",
-                        }}
-                      >
-                        {project.title}
-                      </h3>
-                      <p
-                        className="font-body text-xs mt-1 tracking-wider uppercase"
-                        style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.08em" }}
-                      >
-                        {project.category}
-                      </p>
-                    </div>
-                    <span
-                      className="font-body text-xs"
-                      style={{ color: "oklch(0.65 0.008 60)", marginTop: "2px" }}
-                    >
-                      {project.year}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          ))}
-        </div>
+        {/* Full-width Carousel */}
+        <ProjectCarousel projects={featuredProjects} />
 
-        <div className="mt-10 md:hidden">
+        <div className="px-6 md:px-12 lg:px-24 mt-8">
           <Link href="/work">
             <span
               className="font-body text-xs tracking-widest uppercase"
@@ -232,7 +201,7 @@ export default function Home() {
                 paddingBottom: "2px",
               }}
             >
-              All Projects →
+              View All Projects →
             </span>
           </Link>
         </div>
