@@ -58,7 +58,7 @@ export default function About() {
             lineHeight: 1.1,
           }}
         >
-          Alex Morgan
+          Alikhan Asadi
         </h1>
       </section>
 
@@ -74,7 +74,7 @@ export default function About() {
             >
               <img
                 src={ABOUT_IMAGE}
-                alt="Alex Morgan — Documentary Filmmaker operating a cinema camera in the mountains"
+                alt="Alikhan Asadi — Documentary Filmmaker operating a cinema camera in the mountains"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -107,16 +107,16 @@ export default function About() {
               style={{ fontSize: "0.9375rem", color: "oklch(0.35 0.008 60)", lineHeight: 1.8 }}
             >
               <p>
-                Alex Morgan is a documentary filmmaker and video editor based in London. Over the past decade, she has directed and edited films that have screened at BAFTA-qualifying festivals across Europe and North America, including Sheffield Doc/Fest, BFI London Film Festival, and IDFA Amsterdam.
+                Alikhan Asadi is a documentary filmmaker and video editor based in London. Over the past decade, he has directed and edited films that have screened at BAFTA-qualifying festivals across Europe and North America, including Sheffield Doc/Fest, BFI London Film Festival, and IDFA Amsterdam.
               </p>
               <p>
-                Her work is rooted in the observational tradition — long periods of access, a minimal crew, and a deep commitment to the integrity of her subjects. She is drawn to stories that exist at the margins: communities under pressure, individuals navigating systems that were never designed for them, and the quiet resilience of ordinary lives.
+                His work is rooted in the observational tradition — long periods of access, a minimal crew, and a deep commitment to the integrity of his subjects. He is drawn to stories that exist at the margins: communities under pressure, individuals navigating systems that were never designed for them, and the quiet resilience of ordinary lives.
               </p>
               <p>
-                Before moving into documentary, Alex trained as a photojournalist and spent three years working in conflict zones for international news organisations. That experience — learning to be present without imposing, to witness without exploiting — remains the foundation of her filmmaking practice.
+                Before moving into documentary, Alikhan trained as a photojournalist and spent three years working in conflict zones for international news organisations. That experience — learning to be present without imposing, to witness without exploiting — remains the foundation of his filmmaking practice.
               </p>
               <p>
-                She is currently in post-production on <em>The Weight of Water</em>, a feature documentary about the communities living along the Thames estuary as sea levels rise.
+                He is currently in post-production on <em>The Weight of Water</em>, a feature documentary about the communities living along the Thames estuary as sea levels rise.
               </p>
             </div>
 
@@ -151,7 +151,7 @@ export default function About() {
                   Contact
                 </p>
                 <a
-                  href="mailto:alex@alexmorganfilm.com"
+                  href="mailto:alikhan@alikhanasadi.com"
                   className="font-body text-sm"
                   style={{
                     color: "oklch(0.12 0.005 60)",
@@ -159,7 +159,7 @@ export default function About() {
                     paddingBottom: "1px",
                   }}
                 >
-                  alex@alexmorganfilm.com
+                  alikhan@alikhanasadi.com
                 </a>
               </div>
             </div>

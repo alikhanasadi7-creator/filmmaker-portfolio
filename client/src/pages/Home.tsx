@@ -58,7 +58,7 @@ export default function Home() {
       <Navigation />
 
       {/* Identity Statement */}
-      <section className="pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-20 px-6 md:px-12 lg:px-24">
+      <section className="pt-32 md:pt-40 lg:pt-48 pb-40 md:pb-48 lg:pb-56 px-6 md:px-12 lg:px-24">
         <div className="max-w-4xl">
           <p
             className="font-body text-xs tracking-widest uppercase mb-8 animate-fade-up"
@@ -108,12 +108,12 @@ export default function Home() {
       </section>
 
       {/* Hero Slideshow - Links to Work Page */}
-      <section className="w-full pb-32 md:pb-40 lg:pb-48">
+      <section className="w-full pb-8 md:pb-12 lg:pb-16">
         <HeroSlideshow slides={heroSlides} autoPlayInterval={6000} />
       </section>
 
       {/* Quote / Statement */}
-      <section className="mt-32 px-6 md:px-12 lg:px-24 pb-8">
+      <section className="mt-8 md:mt-12 lg:mt-16 px-6 md:px-12 lg:px-24 pb-8">
         <div className="max-w-3xl reveal">
           <div className="divider mb-12" />
           <blockquote

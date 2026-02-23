@@ -46,7 +46,7 @@ export default function Navigation() {
                 className="font-display text-lg tracking-wide"
                 style={{ fontWeight: 300, letterSpacing: "0.06em", color: "oklch(0.12 0.005 60)" }}
               >
-                Alex Morgan
+                Alikhan Asadi
               </span>
             </Link>
 
