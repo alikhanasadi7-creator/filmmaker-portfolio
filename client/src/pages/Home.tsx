@@ -58,7 +58,7 @@ export default function Home() {
       <Navigation />
 
       {/* Identity Statement */}
-      <section className="pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-12 px-6 md:px-12 lg:px-24">
+      <section className="pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-4xl">
           <p
             className="font-body text-xs tracking-widest uppercase mb-8 animate-fade-up"
