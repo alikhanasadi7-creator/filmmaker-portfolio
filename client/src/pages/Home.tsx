@@ -117,7 +117,7 @@ export default function Home() {
 
       {/* Hero Slideshow - Prominent Cinematic Element */}
       <section className="w-full py-12 md:py-16 lg:py-20 px-6 md:px-12 lg:px-24">
-        <div className="max-w-5xl">
+        <div className="w-full">
           <HeroSlideshow slides={heroSlides} autoPlayInterval={5000} />
         </div>
       </section>
