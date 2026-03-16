@@ -4,6 +4,7 @@
    ============================================================= */
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 
 const PROJECT_1 = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-2_1771863596000_na1fn_cHJvamVjdC0x.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTJfMTc3MTg2MzU5NjAwMF9uYTFmbl9jSEp2YW1WamRDMHguanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=Qscn~~2wqMBlxX3mDr~MfFpvf68hs-SCkXcB-7iXKB-WJi8Zty-x0nH~Lb1JGWMif5olAeE4HJrS6Sl9zubd07aWiuPxFMOEm85ovocccouFDK6I0R4-Xgcy4hSljuPl2qzxiDU1cRheefFCT3IaIpcJqm650Cz6Drppoo~zkWoMsGDPVOvLcQNMoQun7IJiZ-Hvdc7xjLla~tr2hhwJl6aG~97CblCXelWM-Y4nd8zv5-7d7tbmtEqnnRs~D94wgehGsQAyZxPlbV4Nx8N9Vo2Y5N23u4DkMlnPMYk48QbIKgu-I3L1n7O1tB4r7kviKwxqzsPXuw~AftYsc4ohHw__";
@@ -15,73 +16,55 @@ const UNSPLASH_4 = "https://images.unsplash.com/photo-1536440136628-849c177e76a1
 const UNSPLASH_5 = "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80";
 const UNSPLASH_6 = "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1200&q=80";
 
+// YouTube video thumbnails (extracted from video IDs)
+const YOUTUBE_THUMBNAIL_1 = "https://img.youtube.com/vi/lm95sT7fyhQ/maxresdefault.jpg";
+const YOUTUBE_THUMBNAIL_2 = "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg";
+const YOUTUBE_THUMBNAIL_3 = "https://img.youtube.com/vi/Up9qPBxeyHk/maxresdefault.jpg";
+
 const projects = [
   {
     id: 1,
-    title: "Echoes of Dust",
-    category: "Documentary Feature",
+    title: "Uncertain Futures",
+    category: "Documentary | Social Impact & Research",
     year: "2024",
-    duration: "82 min",
-    description: "A portrait of three generations of coal miners in the Welsh valleys.",
-    image: PROJECT_1,
-    tag: "documentary",
+    duration: "Full Length",
+    description: "A collaborative art and research project amplifying women's lived experiences and collective dialogue. I worked as cinematographer and editor, creating a film that communicates the project's social impact and research engagement.",
+    image: YOUTUBE_THUMBNAIL_1,
+    tag: "film",
+    videoId: "lm95sT7fyhQ",
+    isEmbedded: true,
   },
   {
     id: 2,
-    title: "The River Speaks",
-    category: "Short Documentary",
+    title: "TREES",
+    category: "Impact Film | Immersive Installation",
     year: "2024",
-    duration: "24 min",
-    description: "Following the Thames from source to sea — a meditation on time and change.",
-    image: PROJECT_2,
-    tag: "documentary",
+    duration: "Full Length",
+    description: "An engaging documentation of an immersive environmental installation exploring the hidden communication systems of trees. The film captures the intersection of art, science, and technology to communicate themes of connection, sustainability, and collective responsibility.",
+    image: YOUTUBE_THUMBNAIL_2,
+    tag: "film",
+    videoId: "JTl4IpGNyCw",
+    isEmbedded: true,
   },
   {
     id: 3,
-    title: "Between Frames",
-    category: "Video Essay",
-    year: "2023",
-    duration: "18 min",
-    description: "An intimate conversation about memory, loss, and the stories we carry.",
-    image: PROJECT_3,
-    tag: "essay",
-  },
-  {
-    id: 4,
-    title: "Neon Requiem",
-    category: "Short Film",
-    year: "2023",
-    duration: "12 min",
-    description: "A nocturnal journey through London's forgotten corners.",
-    image: UNSPLASH_4,
+    title: "GRF – Back to School Campaign",
+    category: "Impact Animation | Global Education",
+    year: "2025",
+    duration: "Full Length",
+    description: "An animated campaign film promoting access to education for displaced and vulnerable children. Through cinematic storytelling and carefully crafted sound design, the film communicates hope, resilience, and the transformative power of learning.",
+    image: YOUTUBE_THUMBNAIL_3,
     tag: "film",
-  },
-  {
-    id: 5,
-    title: "The Quiet Hours",
-    category: "Documentary Feature",
-    year: "2022",
-    duration: "74 min",
-    description: "Inside a 24-hour emergency ward — the human cost of a broken system.",
-    image: UNSPLASH_5,
-    tag: "documentary",
-  },
-  {
-    id: 6,
-    title: "Aperture",
-    category: "Experimental",
-    year: "2022",
-    duration: "9 min",
-    description: "A visual poem exploring the relationship between light and memory.",
-    image: UNSPLASH_6,
-    tag: "experimental",
+    videoId: "Up9qPBxeyHk",
+    isEmbedded: true,
   },
 ];
 
-const filters = ["All", "Documentary", "Film", "Essay", "Experimental"];
+const filters = ["All", "Film", "Documentary", "Animation"];
 
 export default function Work() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -126,28 +109,7 @@ export default function Work() {
         </h1>
       </section>
 
-      {/* Filter Bar */}
-      <section className="px-6 md:px-12 lg:px-24 mb-14">
-        <div className="divider mb-8" />
-        <div className="flex items-center gap-8 flex-wrap">
-          {filters.map((f) => (
-            <button
-              key={f}
-              onClick={() => setActiveFilter(f)}
-              className="font-body text-xs tracking-widest uppercase transition-all duration-300"
-              style={{
-                letterSpacing: "0.1em",
-                color: activeFilter === f ? "oklch(0.12 0.005 60)" : "oklch(0.65 0.008 60)",
-                borderBottom: activeFilter === f ? "0.5px solid oklch(0.12 0.005 60)" : "0.5px solid transparent",
-                paddingBottom: "2px",
-              }}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-        <div className="divider mt-8" />
-      </section>
+
 
       {/* Portfolio Grid */}
       <section className="px-6 md:px-12 lg:px-24 pb-8">
@@ -158,7 +120,7 @@ export default function Work() {
               className="reveal project-card"
               style={{ transitionDelay: `${i * 0.08}s` }}
             >
-              <div className="overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <div className="overflow-hidden relative" style={{ aspectRatio: "4/3" }}>
                 <img
                   src={project.image}
                   alt={project.title}
@@ -167,6 +129,19 @@ export default function Work() {
                   onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.04)")}
                   onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                 />
+                {project.videoId && (
+                  <button
+                    onClick={() => setSelectedVideo(project.videoId)}
+                    className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 transition-colors"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors" style={{boxShadow: "0 4px 16px rgba(0,0,0,0.3)"}}>
+                      <svg className="w-6 h-6 text-red-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </button>
+                )}
               </div>
 
               <div className="mt-5">
@@ -207,7 +182,40 @@ export default function Work() {
         </div>
       </section>
 
-
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+              style={{ fontSize: "2rem", lineHeight: 1 }}
+            >
+              ×
+            </button>
+            <div style={{ aspectRatio: "16/9" }}>
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${selectedVideo}?si=ps3oxTRHKrwla9Zx&autoplay=1`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                style={{ borderRadius: "4px" }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+      <Footer />
     </div>
   );
 }

@@ -4,7 +4,7 @@
    ============================================================= */
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
-
+import Footer from "@/components/Footer";
 import { toast } from "sonner";
 
 export default function Contact() {
@@ -48,8 +48,8 @@ export default function Contact() {
   };
 
   const contactDetails = [
-    { label: "Email", value: "alex@alexmorganfilm.com", href: "mailto:alex@alexmorganfilm.com" },
-    { label: "Based in", value: "London, United Kingdom", href: null },
+    { label: "Email", value: "alikhanasadi7@gmail.com", href: "mailto:alikhanasadi7@gmail.com" },
+    { label: "Based in", value: "UK", href: null },
     { label: "Representation", value: "Available for commissions", href: null },
   ];
 
@@ -265,10 +265,11 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="divider mt-20" />
+          <div className="divider mt-20" />
       </section>
 
-
+      {/* Footer with Contact Form */}
+      <Footer />
     </div>
   );
 }

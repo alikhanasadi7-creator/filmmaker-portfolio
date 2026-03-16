@@ -1,5 +1,3 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -13,7 +11,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/work" component={Work} />
+      <Route path="/projects" component={Work} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
@@ -26,10 +24,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+        <Router />
       </ThemeProvider>
     </ErrorBoundary>
   );

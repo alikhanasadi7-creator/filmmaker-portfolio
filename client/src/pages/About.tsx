@@ -4,6 +4,7 @@
    ============================================================= */
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 
 const ABOUT_IMAGE = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-5_1771863596000_na1fn_YWJvdXQtcGhvdG8.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTVfMTc3MTg2MzU5NjAwMF9uYTFmbl9ZV0p2ZFhRdGNHaHZkRzguanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=RA~tul-HJbcSbYDx4Jwz6Mp2kESAEOCJWXBS8ZHXXWrPtvfE8czWBIK7OBjT2FXQFl2bCIXO2pM-HY2o4iZmccKAoChoBUqBkZHFjYmQxl79qLwZKFwVBoGVP7V4ZQEhPgpYLcq5LAdUGCqcik-F-rfjHRDA7nfWc44f9kCNMpB9ZMWKmrTLGeH1KEp-tTXzjW9IU80o4fRhaEJBqjQewE5EomvOyw2Gs7k2i~6DJ-GY6nYmQpS1aHoAXx5j-J2yTZAtb4s2lX0DysL6PfB9tmbsSPRuS3rNMKulCzHxdhoFPwUc2DlG0umBqPkfNjbnjJcRvAcEsSxaYdqDuyt-wg__";
@@ -58,7 +59,7 @@ export default function About() {
             lineHeight: 1.1,
           }}
         >
-          Alikhan Asadi
+          Ali Khan Asadi
         </h1>
       </section>
 
@@ -66,28 +67,8 @@ export default function About() {
       <section className="px-6 md:px-12 lg:px-24 mt-8">
         <div className="divider mb-12" />
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
-          {/* Portrait */}
-          <div className="md:col-span-4 reveal">
-            <div
-              className="overflow-hidden"
-              style={{ aspectRatio: "3/4" }}
-            >
-              <img
-                src={ABOUT_IMAGE}
-                alt="Alikhan Asadi — Documentary Filmmaker operating a cinema camera in the mountains"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <p
-              className="font-body text-xs mt-3 tracking-wider uppercase"
-              style={{ color: "oklch(0.65 0.008 60)", letterSpacing: "0.08em" }}
-            >
-              On location — Scottish Highlands, 2024
-            </p>
-          </div>
-
           {/* Bio Text */}
-          <div className="md:col-span-8 reveal" style={{ transitionDelay: "0.15s" }}>
+          <div className="md:col-span-12 reveal" style={{ transitionDelay: "0.15s" }}>
             <div
               className="font-display mb-8"
               style={{
@@ -99,7 +80,7 @@ export default function About() {
                 color: "oklch(0.12 0.005 60)",
               }}
             >
-              I make films about the spaces between words — the pauses, the silences, the things people mean but don't say.
+              I make films about the spaces between words — the pauses, the silences, and the things people mean but don't say.
             </div>
 
             <div
@@ -107,16 +88,19 @@ export default function About() {
               style={{ fontSize: "0.9375rem", color: "oklch(0.35 0.008 60)", lineHeight: 1.8 }}
             >
               <p>
-                Alikhan Asadi is a documentary filmmaker and video editor based in London. Over the past decade, he has directed and edited films that have screened at BAFTA-qualifying festivals across Europe and North America, including Sheffield Doc/Fest, BFI London Film Festival, and IDFA Amsterdam.
+                Ali Khan Asadi is a UK-based documentary filmmaker and editor working across independent films, cultural projects, and commissioned work for charities, organisations, and creative collaborators.
               </p>
               <p>
-                His work is rooted in the observational tradition — long periods of access, a minimal crew, and a deep commitment to the integrity of his subjects. He is drawn to stories that exist at the margins: communities under pressure, individuals navigating systems that were never designed for them, and the quiet resilience of ordinary lives.
+                His practice moves between directing and editing, shaping stories with cinematic sensitivity and strong narrative structure. Ali works closely with charities, cultural institutions, artists, and organisations to create films that communicate meaningful stories and real-world impact.
               </p>
               <p>
-                Before moving into documentary, Alikhan trained as a photojournalist and spent three years working in conflict zones for international news organisations. That experience — learning to be present without imposing, to witness without exploiting — remains the foundation of his filmmaking practice.
+                Alongside his own documentary work, he has collaborated on socially engaged productions such as Trees Project and Uncertain Futures, supported by Arts Council England and The National Lottery Fund, in partnership with cultural organisations in Manchester.
               </p>
               <p>
-                He is currently in post-production on <em>The Weight of Water</em>, a feature documentary about the communities living along the Thames estuary as sea levels rise.
+                His work has been recognised and presented internationally through documentary and cultural film platforms.
+              </p>
+              <p>
+                Whether directing or editing, Ali focuses on crafting films that are thoughtful, visually compelling, and emotionally resonant, helping organisations and audiences connect through authentic storytelling.
               </p>
             </div>
 
@@ -129,7 +113,7 @@ export default function About() {
                   Based in
                 </p>
                 <p className="font-body text-sm" style={{ color: "oklch(0.12 0.005 60)" }}>
-                  London, United Kingdom
+                  UK
                 </p>
               </div>
               <div>
@@ -151,7 +135,7 @@ export default function About() {
                   Contact
                 </p>
                 <a
-                  href="mailto:alikhan@alikhanasadi.com"
+                  href="mailto:alikhanasadi7@gmail.com"
                   className="font-body text-sm"
                   style={{
                     color: "oklch(0.12 0.005 60)",
@@ -159,7 +143,7 @@ export default function About() {
                     paddingBottom: "1px",
                   }}
                 >
-                  alikhan@alikhanasadi.com
+                  alikhanasadi7@gmail.com
                 </a>
               </div>
             </div>
@@ -249,7 +233,8 @@ export default function About() {
         </div>
       </section>
 
-
+      {/* Footer with Contact Form */}
+      <Footer />
     </div>
   );
 }

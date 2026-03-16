@@ -57,8 +57,8 @@ export default function HeroSlideshow({ slides, autoPlayInterval = 6000 }: HeroS
   }, [autoPlayInterval, slides.length]);
 
   return (
-    <Link href="/work">
-      <div className="mx-auto overflow-hidden group cursor-pointer" style={{ height: "clamp(30vh, 40vw, 50vh)", maxWidth: "85%", width: "100%" }}>
+    <Link href="/projects">
+      <div className="w-full overflow-hidden group cursor-pointer" style={{ aspectRatio: "16 / 9" }}>
         {/* Slideshow Container */}
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
@@ -144,7 +144,7 @@ export default function HeroSlideshow({ slides, autoPlayInterval = 6000 }: HeroS
               className="font-body text-xs tracking-widest uppercase"
               style={{ color: "white", letterSpacing: "0.1em" }}
             >
-              View Work →
+              View Projects →
             </p>
           </div>
         </div>

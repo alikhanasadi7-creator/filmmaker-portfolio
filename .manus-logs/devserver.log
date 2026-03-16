@@ -1,0 +1,230 @@
+[2026-03-15T21:19:09.432Z] Starting dev server with command: pnpm run dev
+[2026-03-15T21:19:10.337Z] 
+[2026-03-15T21:19:10.338Z] > filmmaker-portfolio@1.0.0 dev /home/ubuntu/filmmaker-portfolio
+[2026-03-15T21:19:10.338Z] > vite --host
+[2026-03-15T21:19:10.338Z] 
+[2026-03-15T21:19:11.014Z] 
+[2026-03-15T21:19:11.014Z] VITE v7.1.9  ready in 639 ms
+[2026-03-15T21:19:11.015Z] 
+[2026-03-15T21:19:11.015Z] ➜  Local:   http://localhost:3000/
+[2026-03-15T21:19:11.016Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-15T21:19:14.037Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-03-15T21:19:38.166Z] 5:19:38 PM [vite] (client) page reload index.html
+[2026-03-15T21:19:38.167Z] 5:19:38 PM [vite] (client) hmr update /src/App.tsx, /src/index.css
+[2026-03-15T21:19:38.168Z] 5:19:38 PM [vite] (client) hmr update /src/components/ErrorBoundary.tsx, /src/index.css
+[2026-03-15T21:19:38.168Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.168Z] 5:19:38 PM [vite] (client) hmr update /src/index.css, /src/components/HeroSlideshow.tsx
+[2026-03-15T21:19:38.169Z] 5:19:38 PM [vite] (client) hmr update /src/index.css, /src/components/Navigation.tsx
+[2026-03-15T21:19:38.170Z] 5:19:38 PM [vite] (client) hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+[2026-03-15T21:19:38.171Z] 5:19:38 PM [vite] (client) page reload src/main.tsx
+[2026-03-15T21:19:38.172Z] 5:19:38 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
+[2026-03-15T21:19:38.172Z] 5:19:38 PM [vite] (client) hmr update /src/pages/Contact.tsx, /src/index.css
+[2026-03-15T21:19:38.173Z] 5:19:38 PM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-03-15T21:19:38.173Z] 5:19:38 PM [vite] (client) hmr update /src/pages/NotFound.tsx, /src/index.css
+[2026-03-15T21:19:38.174Z] 5:19:38 PM [vite] (client) hmr update /src/pages/Work.tsx, /src/index.css
+[2026-03-15T21:19:38.253Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.254Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.254Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.254Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.255Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.255Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.255Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.255Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.256Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.256Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.256Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.256Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.257Z] 5:19:38 PM [vite] (client) hmr update /src/index.css, /src/components/ui/button.tsx
+[2026-03-15T21:19:38.257Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.257Z] 5:19:38 PM [vite] (client) hmr update /src/index.css, /src/components/ui/card.tsx
+[2026-03-15T21:19:38.257Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.258Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.258Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.258Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.258Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.259Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.259Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.259Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.259Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.260Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.260Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.261Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.261Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.261Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.262Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.262Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.263Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.263Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.264Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.264Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.265Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.265Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.265Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.266Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.266Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.267Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.267Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.267Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.268Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.268Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.269Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.269Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.269Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.270Z] 5:19:38 PM [vite] (client) hmr update /src/components/ui/sonner.tsx, /src/index.css
+[2026-03-15T21:19:38.270Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.271Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.271Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.272Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.272Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.272Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.273Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.273Z] 5:19:38 PM [vite] (client) hmr update /src/components/ui/tooltip.tsx, /src/index.css
+[2026-03-15T21:19:38.274Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.274Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.274Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.275Z] 5:19:38 PM [vite] (client) hmr update /src/index.css
+[2026-03-15T21:19:38.275Z] 5:19:38 PM [vite] (client) hmr update /src/index.css, /src/components/ErrorBoundary.tsx
+[2026-03-15T21:19:42.383Z] 5:19:42 PM [vite] changed tsconfig file detected: /home/ubuntu/filmmaker-portfolio/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2026-03-15T21:19:42.384Z] 5:19:42 PM [vite] vite.config.ts changed, restarting server...
+[2026-03-15T21:19:42.673Z] 5:19:42 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+[2026-03-15T21:19:42.688Z] 5:19:42 PM [vite] server restarted.
+[2026-03-15T21:19:42.689Z] 
+[2026-03-15T21:19:42.689Z] ➜  Local:   http://localhost:5173/
+[2026-03-15T21:19:42.689Z] ➜  Network: http://169.254.0.21:5173/
+[2026-03-15T21:19:42.908Z] 5:19:42 PM [vite] (client) page reload index.html
+[2026-03-15T21:19:42.913Z] 5:19:42 PM [vite] vite.config.ts changed, restarting server...
+[2026-03-15T21:19:43.001Z] ✘ [ERROR] Expected string in JSON but found "<<"
+[2026-03-15T21:19:43.001Z] 
+[2026-03-15T21:19:43.002Z] package.json:93:0:
+[2026-03-15T21:19:43.002Z] 93 │ <<<<<<< HEAD
+[2026-03-15T21:19:43.002Z] ╵ ~~
+[2026-03-15T21:19:43.002Z] 
+[2026-03-15T21:19:43.003Z] ✘ [ERROR] Expected string in JSON but found "<<"
+[2026-03-15T21:19:43.003Z] 
+[2026-03-15T21:19:43.003Z] tsconfig.json:2:0:
+[2026-03-15T21:19:43.004Z] 2 │ <<<<<<< HEAD
+[2026-03-15T21:19:43.004Z] ╵ ~~
+[2026-03-15T21:19:43.004Z] 
+[2026-03-15T21:19:43.005Z] ✘ [ERROR] Unexpected "<<"
+[2026-03-15T21:19:43.005Z] 
+[2026-03-15T21:19:43.005Z] vite.config.ts:1:274:
+[2026-03-15T21:19:43.005Z] 1 │ ...ile:///home/ubuntu/filmmaker-portfolio/vite.config.ts";<<<<<<< HEAD
+[2026-03-15T21:19:43.006Z] ╵                                                           ~~
+[2026-03-15T21:19:43.006Z] 
+[2026-03-15T21:19:43.007Z] failed to load config from /home/ubuntu/filmmaker-portfolio/vite.config.ts
+[2026-03-15T21:19:43.008Z] 5:19:43 PM [vite] Build failed with 3 errors:
+[2026-03-15T21:19:43.008Z] package.json:93:0: ERROR: Expected string in JSON but found "<<"
+[2026-03-15T21:19:43.009Z] tsconfig.json:2:0: ERROR: Expected string in JSON but found "<<"
+[2026-03-15T21:19:43.009Z] vite.config.ts:1:274: ERROR: Unexpected "<<"
+[2026-03-15T21:19:43.010Z] 5:19:43 PM [vite] server restart failed
+[2026-03-15T21:19:44.083Z] 5:19:44 PM [vite] (client) page reload index.html
+[2026-03-15T21:19:55.047Z] 5:19:55 PM [vite] (client) page reload index.html
+[2026-03-15T22:57:09.289Z] 6:57:09 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
+[2026-03-15T23:28:35.900Z] 7:28:35 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
+[2026-03-16T13:42:18.781Z] 9:42:18 AM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
+[2026-03-16T13:42:29.148Z] 9:42:29 AM [vite] (client) hmr update /src/index.css, /src/components/Footer.tsx
+[2026-03-16T13:42:38.523Z] 9:42:38 AM [vite] (client) hmr update /src/pages/Contact.tsx, /src/index.css
+[2026-03-16T13:44:03.850Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/Resolver.js:739:5
+[2026-03-16T13:44:03.949Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-03-16T13:44:03.949Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-03-16T13:44:03.949Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-03-16T13:44:03.950Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-03-16T13:44:03.950Z] at _next0 (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-03-16T13:44:03.950Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-03-16T13:44:03.951Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/Resolver.js:739:5
+[2026-03-16T13:44:03.951Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-03-16T13:44:03.951Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-03-16T13:44:03.951Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/Resolver.js:739:5
+[2026-03-16T13:44:03.952Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-03-16T13:44:03.952Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/Resolver.js:739:5
+[2026-03-16T13:44:03.952Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T13:44:03.952Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/Resolver.js:739:5
+[2026-03-16T13:44:03.953Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T13:44:03.953Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-03-16T13:44:03.953Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-03-16T13:44:03.955Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-03-16T13:44:03.956Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-03-16T13:44:03.957Z] at Resolver.doResolve (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/Resolver.js:736:16)
+[2026-03-16T13:44:03.958Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-03-16T13:44:03.958Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-03-16T13:44:03.959Z] at Resolver.doResolve (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/Resolver.js:736:16)
+[2026-03-16T13:44:03.959Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-03-16T13:44:03.960Z] at _next1 (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-03-16T13:44:03.960Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-03-16T13:44:03.961Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/Resolver.js:739:5
+[2026-03-16T13:44:03.972Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T13:44:03.974Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/Resolver.js:739:5
+[2026-03-16T13:44:03.975Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T13:44:03.982Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.19.0/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-03-16T13:44:03.984Z] 9:44:03 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:03.986Z] 9:44:03 AM [vite] Internal server error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-CCSnTAeo.js' imported from /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-Chhhsdoe.js
+[2026-03-16T13:44:03.987Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-16T13:44:03.988Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-16T13:44:04.002Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-16T13:44:04.003Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T13:44:04.004Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.1.14/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T13:44:04.004Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T13:44:04.004Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.2.1/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T13:44:04.005Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T13:44:04.006Z] at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+[2026-03-16T13:44:04.006Z] at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+[2026-03-16T13:44:04.132Z] 9:44:04 AM [vite] (client) page reload index.html
+[2026-03-16T13:44:04.133Z] 9:44:04 AM [vite] (client) hmr update /src/App.tsx, /src/index.css
+[2026-03-16T13:44:04.133Z] 9:44:04 AM [vite] (client) hmr update /src/components/ErrorBoundary.tsx, /src/index.css
+[2026-03-16T13:44:04.134Z] 9:44:04 AM [vite] (client) hmr update /src/index.css, /src/components/Footer.tsx
+[2026-03-16T13:44:04.134Z] 9:44:04 AM [vite] (client) hmr update /src/index.css, /src/components/HeroSlideshow.tsx
+[2026-03-16T13:44:04.134Z] 9:44:04 AM [vite] (client) hmr update /src/index.css, /src/components/Navigation.tsx
+[2026-03-16T13:44:04.135Z] 9:44:04 AM [vite] (client) hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+[2026-03-16T13:44:04.135Z] 9:44:04 AM [vite] (client) page reload src/main.tsx
+[2026-03-16T13:44:04.135Z] 9:44:04 AM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
+[2026-03-16T13:44:04.136Z] 9:44:04 AM [vite] (client) hmr update /src/pages/Contact.tsx, /src/index.css
+[2026-03-16T13:44:04.136Z] 9:44:04 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-03-16T13:44:04.137Z] 9:44:04 AM [vite] (client) hmr update /src/pages/NotFound.tsx, /src/index.css
+[2026-03-16T13:44:04.137Z] 9:44:04 AM [vite] (client) hmr update /src/pages/Work.tsx, /src/index.css
+[2026-03-16T13:44:04.144Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.145Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.145Z] 9:44:04 AM [vite] (client) Pre-transform error: Failed to resolve import "@/lib/utils" from "client/src/components/ErrorBoundary.tsx". Does the file exist?
+[2026-03-16T13:44:04.146Z] Plugin: vite:import-analysis
+[2026-03-16T13:44:04.146Z] File: /home/ubuntu/filmmaker-portfolio/client/src/components/ErrorBoundary.tsx:1:19
+[2026-03-16T13:44:04.183Z] 1  |  import { jsxDEV } from "react/jsx-dev-runtime";
+[2026-03-16T13:44:04.184Z] 2  |  import { cn } from "@/lib/utils";
+[2026-03-16T13:44:04.184Z] |                      ^
+[2026-03-16T13:44:04.185Z] 3  |  import { AlertTriangle, RotateCcw } from "lucide-react";
+[2026-03-16T13:44:04.186Z] 4  |  import { Component } from "react";
+[2026-03-16T13:44:04.187Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.187Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.188Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.189Z] 9:44:04 AM [vite] (client) Pre-transform error: Failed to resolve import "@/components/ui/button" from "client/src/pages/NotFound.tsx". Does the file exist?
+[2026-03-16T13:44:04.190Z] Plugin: vite:import-analysis
+[2026-03-16T13:44:04.191Z] File: /home/ubuntu/filmmaker-portfolio/client/src/pages/NotFound.tsx:1:23
+[2026-03-16T13:44:04.203Z] 1  |  import { jsxDEV } from "react/jsx-dev-runtime";
+[2026-03-16T13:44:04.242Z] 2  |  var _s = $RefreshSig$();
+[2026-03-16T13:44:04.259Z] 3  |  import { Button } from "@/components/ui/button";
+[2026-03-16T13:44:04.261Z] |                          ^
+[2026-03-16T13:44:04.265Z] 4  |  import { Card, CardContent } from "@/components/ui/card";
+[2026-03-16T13:44:04.266Z] 5  |  import { AlertCircle, Home } from "lucide-react";
+[2026-03-16T13:44:04.266Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.266Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.267Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.267Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.267Z] 9:44:04 AM [vite] (client) Pre-transform error: Failed to resolve import "next-themes" from "client/src/components/ui/sonner.tsx". Does the file exist?
+[2026-03-16T13:44:04.268Z] Plugin: vite:import-analysis
+[2026-03-16T13:44:04.268Z] File: /home/ubuntu/filmmaker-portfolio/client/src/components/ui/sonner.tsx:1:25
+[2026-03-16T13:44:04.268Z] 1  |  import { jsxDEV } from "react/jsx-dev-runtime";
+[2026-03-16T13:44:04.269Z] 2  |  var _s = $RefreshSig$();
+[2026-03-16T13:44:04.269Z] 3  |  import { useTheme } from "next-themes";
+[2026-03-16T13:44:04.269Z] |                            ^
+[2026-03-16T13:44:04.270Z] 4  |  import { Toaster as Sonner } from "sonner";
+[2026-03-16T13:44:04.270Z] 5  |  const Toaster = ({ ...props }) => {
+[2026-03-16T13:44:04.271Z] 9:44:04 AM [vite] (client) Pre-transform error: Failed to resolve import "@radix-ui/react-tooltip" from "client/src/components/ui/tooltip.tsx". Does the file exist?
+[2026-03-16T13:44:04.271Z] Plugin: vite:import-analysis
+[2026-03-16T13:44:04.271Z] File: /home/ubuntu/filmmaker-portfolio/client/src/components/ui/tooltip.tsx:2:34
+[2026-03-16T13:44:04.272Z] 1  |  import { jsxDEV } from "react/jsx-dev-runtime";
+[2026-03-16T13:44:04.273Z] 2  |  import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+[2026-03-16T13:44:04.273Z] |                                     ^
+[2026-03-16T13:44:04.274Z] 3  |  import { cn } from "@/lib/utils";
+[2026-03-16T13:44:04.274Z] 4  |  function TooltipProvider({
+[2026-03-16T13:44:04.274Z] 9:44:04 AM [vite] (client) hmr update /src/App.tsx
+[2026-03-16T13:44:04.275Z] 9:44:04 AM [vite] (client) hmr update /src/App.tsx
+[2026-03-16T13:44:04.276Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:44:04.276Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
