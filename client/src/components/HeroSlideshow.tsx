@@ -58,7 +58,7 @@ export default function HeroSlideshow({ slides, autoPlayInterval = 6000 }: HeroS
 
   return (
     <Link href="/projects">
-      <div className="w-full overflow-hidden group cursor-pointer" style={{ aspectRatio: "16 / 9" }}>
+      <div className="w-full overflow-hidden group cursor-pointer" style={{ aspectRatio: "16 / 8.55" }}>
         {/* Slideshow Container */}
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (

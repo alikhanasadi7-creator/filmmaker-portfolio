@@ -43,9 +43,9 @@ export default function Showreel() {
         </div>
       </section>
 
-      {/* YouTube Video Embed - Full Width */}
+      {/* YouTube Video Embed - Constrained Width */}
       <section className="w-full px-6 md:px-12 lg:px-24 pb-20 md:pb-32 lg:pb-40">
-        <div className="w-full">
+        <div className="max-w-4xl">
           <div
             style={{
               position: "relative",
