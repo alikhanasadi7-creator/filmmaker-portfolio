@@ -228,3 +228,209 @@
 [2026-03-16T13:44:04.275Z] 9:44:04 AM [vite] (client) hmr update /src/App.tsx
 [2026-03-16T13:44:04.276Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
 [2026-03-16T13:44:04.276Z] 9:44:04 AM [vite] (client) Pre-transform error: ENOENT: no such file or directory, open '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@vitejs+plugin-react@5.1.4_vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@vitejs/plugin-react/dist/refresh-runtime.js'
+[2026-03-16T13:48:09.953Z] Dev server process group stopped
+[2026-03-16T13:48:09.957Z] ELIFECYCLE  Command failed.
+[2026-03-16T13:48:09.998Z] Dev server exited with code -15
+[2026-03-16T13:48:12.961Z] Starting dev server with command: pnpm run dev
+[2026-03-16T13:48:13.030Z] node:internal/modules/cjs/loader:1247
+[2026-03-16T13:48:13.030Z] throw err;
+[2026-03-16T13:48:13.031Z] ^
+[2026-03-16T13:48:13.031Z] 
+[2026-03-16T13:48:13.031Z] Error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/pnpm/bin/pnpm.cjs'
+[2026-03-16T13:48:13.032Z] at Function._resolveFilename (node:internal/modules/cjs/loader:1244:15)
+[2026-03-16T13:48:13.032Z] at Function._load (node:internal/modules/cjs/loader:1070:27)
+[2026-03-16T13:48:13.032Z] at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+[2026-03-16T13:48:13.033Z] at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+[2026-03-16T13:48:13.033Z] at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+[2026-03-16T13:48:13.033Z] at node:internal/main/run_main_module:36:49 {
+[2026-03-16T13:48:13.033Z] code: 'MODULE_NOT_FOUND',
+[2026-03-16T13:48:13.034Z] requireStack: []
+[2026-03-16T13:48:13.034Z] }
+[2026-03-16T13:48:13.034Z] 
+[2026-03-16T13:48:13.035Z] Node.js v22.13.0
+[2026-03-16T13:48:13.035Z] Dev server exited with code 1
+[2026-03-16T13:48:31.653Z] Starting dev server with command: pnpm run dev
+[2026-03-16T13:48:32.571Z] 
+[2026-03-16T13:48:32.572Z] > filmmaker-portfolio@1.0.0 dev /home/ubuntu/filmmaker-portfolio
+[2026-03-16T13:48:32.573Z] > vite --host
+[2026-03-16T13:48:32.574Z] 
+[2026-03-16T13:48:33.073Z] 
+[2026-03-16T13:48:33.074Z] VITE v7.1.9  ready in 441 ms
+[2026-03-16T13:48:33.074Z] 
+[2026-03-16T13:48:33.075Z] ➜  Local:   http://localhost:3000/
+[2026-03-16T13:48:33.076Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-16T13:48:34.045Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-03-16T14:06:23.034Z] 10:06:23 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-03-16T14:06:23.311Z] 10:06:23 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/filmmaker-portfolio/client/src'
+[2026-03-16T14:06:23.312Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-03-16T14:06:23.314Z] File: /home/ubuntu/filmmaker-portfolio/client/src/index.css
+[2026-03-16T14:06:23.314Z] at finishWithoutResolve (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-03-16T14:06:23.315Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-03-16T14:06:23.316Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.316Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T14:06:23.317Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.318Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-03-16T14:06:23.318Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-03-16T14:06:23.319Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.319Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T14:06:23.320Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.321Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T14:06:23.321Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.333Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-03-16T14:06:23.335Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-03-16T14:06:23.336Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.337Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-03-16T14:06:23.337Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.338Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T14:06:23.338Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.339Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-03-16T14:06:23.339Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-03-16T14:06:23.340Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-03-16T14:06:23.340Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-03-16T14:06:23.340Z] at _next0 (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-03-16T14:06:23.341Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-03-16T14:06:23.341Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.341Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-03-16T14:06:23.342Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-03-16T14:06:23.342Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.343Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-03-16T14:06:23.343Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.344Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T14:06:23.344Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.345Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T14:06:23.345Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-03-16T14:06:23.346Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-03-16T14:06:23.346Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-03-16T14:06:23.347Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-03-16T14:06:23.348Z] at Resolver.doResolve (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-03-16T14:06:23.348Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-03-16T14:06:23.349Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-03-16T14:06:23.349Z] at Resolver.doResolve (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-03-16T14:06:23.350Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-03-16T14:06:23.351Z] at _next1 (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-03-16T14:06:23.351Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-03-16T14:06:23.352Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.352Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T14:06:23.353Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-03-16T14:06:23.353Z] at eval (eval at create (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-03-16T14:06:23.353Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/enhanced-resolve@5.18.3/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-03-16T14:06:24.350Z] 10:06:24 AM [vite] Internal server error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-CCSnTAeo.js' imported from /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-Chhhsdoe.js
+[2026-03-16T14:06:24.351Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-16T14:06:24.351Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-16T14:06:24.352Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-16T14:06:24.352Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:24.352Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.1.14/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T14:06:24.353Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:24.353Z] at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+[2026-03-16T14:06:24.353Z] at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+[2026-03-16T14:06:24.354Z] at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+[2026-03-16T14:06:24.354Z] at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+[2026-03-16T14:06:24.564Z] 10:06:24 AM [vite] Internal server error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-CCSnTAeo.js' imported from /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-Chhhsdoe.js
+[2026-03-16T14:06:24.566Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-16T14:06:24.567Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-16T14:06:24.567Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-16T14:06:24.568Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:24.568Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.1.14/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T14:06:24.570Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:24.571Z] at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+[2026-03-16T14:06:24.571Z] at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+[2026-03-16T14:06:24.572Z] at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+[2026-03-16T14:06:24.572Z] at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+[2026-03-16T14:06:25.484Z] 10:06:25 AM [vite] Internal server error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-CCSnTAeo.js' imported from /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-Chhhsdoe.js
+[2026-03-16T14:06:25.486Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-16T14:06:25.486Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-16T14:06:25.487Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-16T14:06:25.487Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:25.488Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.1.14/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T14:06:25.488Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:25.489Z] at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+[2026-03-16T14:06:25.490Z] at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+[2026-03-16T14:06:25.491Z] at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+[2026-03-16T14:06:25.491Z] at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+[2026-03-16T14:06:26.480Z] 10:06:26 AM [vite] Internal server error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-CCSnTAeo.js' imported from /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-Chhhsdoe.js
+[2026-03-16T14:06:26.480Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-16T14:06:26.481Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-16T14:06:26.481Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-16T14:06:26.481Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:26.482Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.1.14/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T14:06:26.482Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:26.482Z] at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+[2026-03-16T14:06:26.483Z] at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+[2026-03-16T14:06:26.483Z] at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+[2026-03-16T14:06:26.483Z] at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+[2026-03-16T14:06:27.485Z] 10:06:27 AM [vite] Internal server error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-CCSnTAeo.js' imported from /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-Chhhsdoe.js
+[2026-03-16T14:06:27.486Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-16T14:06:27.486Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-16T14:06:27.486Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-16T14:06:27.487Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:27.487Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.1.14/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T14:06:27.487Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:27.487Z] at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+[2026-03-16T14:06:27.488Z] at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+[2026-03-16T14:06:27.488Z] at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+[2026-03-16T14:06:27.488Z] at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+[2026-03-16T14:06:27.675Z] 10:06:27 AM [vite] Internal server error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-CCSnTAeo.js' imported from /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-Chhhsdoe.js
+[2026-03-16T14:06:27.676Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-16T14:06:27.677Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-16T14:06:27.677Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-16T14:06:27.677Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:27.678Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.1.14/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T14:06:27.678Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:27.679Z] at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+[2026-03-16T14:06:27.679Z] at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+[2026-03-16T14:06:27.679Z] at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+[2026-03-16T14:06:27.680Z] at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+[2026-03-16T14:06:27.845Z] 10:06:27 AM [vite] Internal server error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-CCSnTAeo.js' imported from /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-Chhhsdoe.js
+[2026-03-16T14:06:27.846Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-16T14:06:27.846Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-16T14:06:27.846Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-16T14:06:27.847Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:27.847Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.1.14/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T14:06:27.848Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:27.848Z] at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+[2026-03-16T14:06:27.848Z] at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+[2026-03-16T14:06:27.849Z] at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+[2026-03-16T14:06:27.849Z] at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+[2026-03-16T14:06:28.810Z] 10:06:28 AM [vite] Internal server error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-CCSnTAeo.js' imported from /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/vite@7.1.9_@types+node@24.7.0_jiti@2.6.1_lightningcss@1.30.1_tsx@4.20.6/node_modules/vite/dist/node/chunks/dep-Chhhsdoe.js
+[2026-03-16T14:06:28.811Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-16T14:06:28.812Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-16T14:06:28.812Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-16T14:06:28.812Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:28.813Z] at o (file:///home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/@tailwindcss+node@4.1.14/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-03-16T14:06:28.813Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-16T14:06:28.813Z] at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+[2026-03-16T14:06:28.814Z] at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+[2026-03-16T14:06:28.815Z] at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+[2026-03-16T14:06:28.815Z] at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+[2026-03-16T14:06:28.944Z] Dev server process group stopped
+[2026-03-16T14:06:28.947Z] ELIFECYCLE  Command failed.
+[2026-03-16T14:06:28.970Z] Dev server exited with code -15
+[2026-03-16T14:06:31.986Z] Starting dev server with command: pnpm run dev
+[2026-03-16T14:06:32.079Z] node:internal/modules/cjs/loader:1247
+[2026-03-16T14:06:32.080Z] throw err;
+[2026-03-16T14:06:32.080Z] ^
+[2026-03-16T14:06:32.081Z] 
+[2026-03-16T14:06:32.081Z] Error: Cannot find module '/home/ubuntu/filmmaker-portfolio/node_modules/pnpm/bin/pnpm.cjs'
+[2026-03-16T14:06:32.082Z] at Function._resolveFilename (node:internal/modules/cjs/loader:1244:15)
+[2026-03-16T14:06:32.082Z] at Function._load (node:internal/modules/cjs/loader:1070:27)
+[2026-03-16T14:06:32.082Z] at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+[2026-03-16T14:06:32.083Z] at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+[2026-03-16T14:06:32.083Z] at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+[2026-03-16T14:06:32.085Z] at node:internal/main/run_main_module:36:49 {
+[2026-03-16T14:06:32.086Z] code: 'MODULE_NOT_FOUND',
+[2026-03-16T14:06:32.086Z] requireStack: []
+[2026-03-16T14:06:32.086Z] }
+[2026-03-16T14:06:32.087Z] 
+[2026-03-16T14:06:32.087Z] Node.js v22.13.0
+[2026-03-16T14:06:32.088Z] Dev server exited with code 1
+[2026-03-16T14:07:37.933Z] Starting dev server with command: pnpm run dev
+[2026-03-16T14:07:38.855Z] 
+[2026-03-16T14:07:38.856Z] > filmmaker-portfolio@1.0.0 dev /home/ubuntu/filmmaker-portfolio
+[2026-03-16T14:07:38.856Z] > vite --host
+[2026-03-16T14:07:38.857Z] 
+[2026-03-16T14:07:39.269Z] 
+[2026-03-16T14:07:39.270Z] VITE v7.1.9  ready in 362 ms
+[2026-03-16T14:07:39.270Z] 
+[2026-03-16T14:07:39.270Z] ➜  Local:   http://localhost:3000/
+[2026-03-16T14:07:39.271Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-16T14:07:40.347Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`

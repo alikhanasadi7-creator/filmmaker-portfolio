@@ -54,76 +54,77 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section - Headline + Description + Slideshow */}
+      {/* Hero Section - Minimal, Elegant, Editorial Layout */}
       <section className="pt-24 md:pt-32 lg:pt-40 pb-0 px-6 md:px-12 lg:px-24">
-        <div className="max-w-5xl mx-auto">
-          {/* Main Headline - Large, Cinematic, Expressive */}
+        <div className="max-w-2xl">
+          {/* Main Headline - Refined, Cinematic, Minimal */}
           <h1
             className="font-display animate-fade-up"
             style={{
-              fontSize: "clamp(2.24rem, 4.4vw, 3.84rem)",
+              fontSize: "clamp(2.5rem, 3.5vw, 3.5rem)",
               fontWeight: 300,
-              lineHeight: 1.15,
+              lineHeight: 1.2,
               letterSpacing: "-0.01em",
               color: "oklch(0.12 0.005 60)",
-              marginBottom: "1.5rem",
+              marginBottom: "1rem",
+              maxWidth: "600px",
             }}
           >
             Cinematic Stories That Communicate Change
           </h1>
 
-          {/* Supporting Description - Refined, Elegant, Readable */}
+          {/* Supporting Description - Elegant, Readable, Narrower */}
           <p
             className="font-body animate-fade-up delay-100"
             style={{
-              fontSize: "clamp(1rem, 1.8vw, 1.25rem)",
+              fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)",
               fontWeight: 400,
               lineHeight: 1.7,
               letterSpacing: "0.01em",
               color: "oklch(0.35 0.008 60)",
-              maxWidth: "48rem",
-              marginBottom: "2.5rem",
+              maxWidth: "520px",
+              marginBottom: "1.5rem",
             }}
           >
-            I create compelling visual narratives for brands, organisations, and artists. Through documentary filmmaking, impact campaigns, and immersive installations, I help communicate stories that matter.
+            I create compelling visual narratives for brands, organisations, and cultural collaborators. Through documentary filmmaking and impact campaigns, I help tell stories that matter.
           </p>
 
-          {/* CTA */}
+          {/* CTA - Minimal Text Link */}
           <div
             className="animate-fade-up delay-200"
-            style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: "4rem" }}
+            style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "3rem" }}
           >
             <Link href="/projects">
               <span
-                className="font-body text-sm tracking-widest uppercase"
+                className="font-body text-xs tracking-widest uppercase"
                 style={{
                   color: "oklch(0.12 0.005 60)",
                   letterSpacing: "0.1em",
                   borderBottom: "0.5px solid oklch(0.12 0.005 60)",
                   paddingBottom: "2px",
                   transition: "opacity 0.3s",
+                  fontSize: "0.875rem",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.5")}
                 onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
               >
-                View Projects
+                View Projects →
               </span>
             </Link>
-            <span style={{ color: "oklch(0.75 0.006 60)", fontSize: "0.75rem" }}>↓</span>
           </div>
         </div>
       </section>
 
-      {/* Hero Slideshow - 16:9 Aspect Ratio, 80% Width (20% narrower) */}
+      {/* Hero Slideshow - Balanced Visual Anchor */}
       <section className="w-full py-8 md:py-12 lg:py-16 px-6 md:px-12 lg:px-24">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-2xl">
           <HeroSlideshow slides={heroSlides} autoPlayInterval={5000} />
         </div>
       </section>
 
       {/* Quote / Statement Section */}
-      <section className="mt-20 md:mt-28 lg:mt-36 px-6 md:px-12 lg:px-24 pb-20 md:pb-32 lg:pb-40">
-        <div className="max-w-3xl mx-auto reveal">
+      <section className="mt-24 md:mt-32 lg:mt-40 px-6 md:px-12 lg:px-24 pb-20 md:pb-32 lg:pb-40">
+        <div className="max-w-2xl mx-auto reveal">
           <div className="divider mb-12" />
           <blockquote
             className="font-display"
