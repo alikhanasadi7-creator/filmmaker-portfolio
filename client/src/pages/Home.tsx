@@ -61,32 +61,32 @@ export default function Home() {
           <h1
             className="font-display animate-fade-up"
             style={{
-              fontSize: "clamp(2.5rem, 3.5vw, 3.5rem)",
+              fontSize: "clamp(2.25rem, 3.2vw, 3.25rem)",
               fontWeight: 300,
-              lineHeight: 1.2,
+              lineHeight: 1.15,
               letterSpacing: "-0.01em",
               color: "oklch(0.12 0.005 60)",
-              marginBottom: "1rem",
-              maxWidth: "600px",
+              marginBottom: "1.25rem",
+              maxWidth: "680px",
             }}
           >
-            Cinematic Stories That Communicate Change
+            Cinematic Films for Brands, Culture and Social Impact
           </h1>
 
           {/* Supporting Description - Elegant, Readable, Narrower */}
           <p
             className="font-body animate-fade-up delay-100"
             style={{
-              fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)",
+              fontSize: "clamp(0.9375rem, 1.3vw, 1.125rem)",
               fontWeight: 400,
-              lineHeight: 1.7,
-              letterSpacing: "0.01em",
+              lineHeight: 1.75,
+              letterSpacing: "0.005em",
               color: "oklch(0.35 0.008 60)",
-              maxWidth: "520px",
-              marginBottom: "1.5rem",
+              maxWidth: "600px",
+              marginBottom: "2rem",
             }}
           >
-            I create compelling visual narratives for brands, organisations, and cultural collaborators. Through documentary filmmaking and impact campaigns, I help tell stories that matter.
+            I create cinematic films for brands, charities, and cultural organisations, crafting visual stories that connect audiences with meaningful ideas and real-world impact.
           </p>
 
           {/* CTA - Minimal Text Link */}
@@ -115,9 +115,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hero Slideshow - Balanced Visual Anchor */}
-      <section className="w-full py-8 md:py-12 lg:py-16 px-6 md:px-12 lg:px-24">
-        <div className="max-w-2xl">
+      {/* Hero Slideshow - Prominent Cinematic Element */}
+      <section className="w-full py-12 md:py-16 lg:py-20 px-6 md:px-12 lg:px-24">
+        <div className="max-w-5xl">
           <HeroSlideshow slides={heroSlides} autoPlayInterval={5000} />
         </div>
       </section>
