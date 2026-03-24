@@ -122,6 +122,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Logos / Supporters Section */}
+      <section className="mt-20 md:mt-28 lg:mt-36 px-6 md:px-12 lg:px-24 pb-16 md:pb-24 lg:pb-32">
+        <div className="max-w-5xl mx-auto">
+          <p
+            className="font-body text-xs tracking-widest uppercase mb-12 text-center"
+            style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
+          >
+            Supported by
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
+            {/* British Muslim Heritage Centre */}
+            <div className="h-16 md:h-20 flex items-center">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/download_858174bc.jpeg"
+                alt="British Muslim Heritage Centre"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            {/* Arts Council England */}
+            <div className="h-16 md:h-20 flex items-center">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/grant_png_black_cb4d5bfe.png"
+                alt="Arts Council England"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            {/* UK Government */}
+            <div className="h-16 md:h-20 flex items-center">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/FundedbyUKGov-stacked_0_8195ea34.png"
+                alt="Funded by UK Government"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            {/* Factory International */}
+            <div className="h-16 md:h-20 flex items-center">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/factory-international_third_party_use_black_CMYK_765282e4.webp"
+                alt="Factory International"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quote / Statement Section */}
       <section className="mt-24 md:mt-32 lg:mt-40 px-6 md:px-12 lg:px-24 pb-20 md:pb-32 lg:pb-40">
         <div className="max-w-2xl mx-auto reveal">
