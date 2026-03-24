@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* Hero Slideshow - Prominent Cinematic Element */}
-      <section className="w-full py-32 md:py-48 lg:py-64 px-6 md:px-12 lg:px-24">
+      <section className="w-full py-40 md:py-64 lg:py-80 px-6 md:px-12 lg:px-24">
         <div className="w-full">
           <HeroSlideshow slides={heroSlides} autoPlayInterval={5000} />
         </div>
@@ -129,7 +129,7 @@ export default function Home() {
             className="font-body text-xs tracking-widest uppercase mb-12 text-center"
             style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
           >
-            Supported by
+            Selected collaborations include
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
             {/* British Muslim Heritage Centre */}
@@ -161,6 +161,14 @@ export default function Home() {
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/factory-international_third_party_use_black_CMYK_765282e4.webp"
                 alt="Factory International"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            {/* Raffle Aid */}
+            <div className="h-16 md:h-20 flex items-center">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/images_9fd6a056.png"
+                alt="Raffle Aid"
                 className="h-full w-auto object-contain"
               />
             </div>
