@@ -123,7 +123,7 @@ export default function Home() {
       </section>
 
       {/* Logos / Supporters Section */}
-      <section className="mt-8 md:mt-12 lg:mt-16 px-6 md:px-12 lg:px-24 pb-16 md:pb-24 lg:pb-32">
+      <section className="mt-16 md:mt-24 lg:mt-32 px-6 md:px-12 lg:px-24 pb-16 md:pb-24 lg:pb-32">
         <div className="max-w-5xl mx-auto">
           <p
             className="font-body text-xs tracking-widest uppercase mb-12 text-center"
@@ -131,9 +131,10 @@ export default function Home() {
           >
             Selected Work
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
+            {/* Row 1: 4 logos */}
             {/* British Muslim Heritage Centre */}
-            <div className="h-16 md:h-20 flex items-center">
+            <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/download_858174bc.jpeg"
                 alt="British Muslim Heritage Centre"
@@ -141,7 +142,7 @@ export default function Home() {
               />
             </div>
             {/* Arts Council England */}
-            <div className="h-16 md:h-20 flex items-center">
+            <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/grant_png_black_cb4d5bfe.png"
                 alt="Arts Council England"
@@ -149,7 +150,7 @@ export default function Home() {
               />
             </div>
             {/* UK Government */}
-            <div className="h-16 md:h-20 flex items-center">
+            <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/FundedbyUKGov-stacked_0_8195ea34.png"
                 alt="Funded by UK Government"
@@ -157,15 +158,16 @@ export default function Home() {
               />
             </div>
             {/* Factory International */}
-            <div className="h-16 md:h-20 flex items-center">
+            <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/factory-international_third_party_use_black_CMYK_765282e4.webp"
                 alt="Factory International"
                 className="h-full w-auto object-contain"
               />
             </div>
+            {/* Row 2: 3 logos */}
             {/* Raffle Aid */}
-            <div className="h-16 md:h-20 flex items-center">
+            <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/images_9fd6a056.png"
                 alt="Raffle Aid"
@@ -173,7 +175,7 @@ export default function Home() {
               />
             </div>
             {/* Premier Boxing Club Bolton */}
-            <div className="h-16 md:h-20 flex items-center">
+            <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/premier-logo-4_fa3c6889.jpg"
                 alt="Premier Boxing Club Bolton"
@@ -181,7 +183,7 @@ export default function Home() {
               />
             </div>
             {/* Things That Go On Things */}
-            <div className="h-16 md:h-20 flex items-center">
+            <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/R_78a035d2.png"
                 alt="Things That Go On Things"
@@ -193,7 +195,7 @@ export default function Home() {
       </section>
 
       {/* Quote / Statement Section */}
-      <section className="mt-24 md:mt-32 lg:mt-40 px-6 md:px-12 lg:px-24 pb-20 md:pb-32 lg:pb-40">
+      <section className="mt-16 md:mt-24 lg:mt-32 px-6 md:px-12 lg:px-24 pb-20 md:pb-32 lg:pb-40">
         <div className="max-w-2xl mx-auto reveal">
           <div className="divider mb-12" />
           <blockquote
