@@ -475,3 +475,6 @@
 [2026-03-24T13:05:41.047Z] 9:05:41 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
 [2026-03-24T13:17:06.477Z] 9:17:06 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
 [2026-03-24T13:17:23.967Z] 9:17:23 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-03-24T15:44:25.529Z] 11:44:25 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-03-24T15:44:39.922Z] 11:44:39 AM [vite] (client) hmr update /src/index.css, /src/components/HeroSlideshow.tsx
+[2026-03-24T15:44:52.906Z] 11:44:52 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css

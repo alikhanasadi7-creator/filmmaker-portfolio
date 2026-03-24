@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* Hero Slideshow - Prominent Cinematic Element */}
-      <section className="w-full py-48 md:py-80 lg:py-96 px-6 md:px-12 lg:px-24">
+      <section className="w-full pt-48 md:pt-80 lg:pt-96 pb-0 px-6 md:px-12 lg:px-24">
         <div className="w-full">
           <HeroSlideshow slides={heroSlides} autoPlayInterval={5000} />
         </div>
@@ -169,6 +169,22 @@ export default function Home() {
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/images_9fd6a056.png"
                 alt="Raffle Aid"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            {/* Premier Boxing Club Bolton */}
+            <div className="h-16 md:h-20 flex items-center">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/premier-logo-4_fa3c6889.jpg"
+                alt="Premier Boxing Club Bolton"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            {/* Things That Go On Things */}
+            <div className="h-16 md:h-20 flex items-center">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/R_78a035d2.png"
+                alt="Things That Go On Things"
                 className="h-full w-auto object-contain"
               />
             </div>
