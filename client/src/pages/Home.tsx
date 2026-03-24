@@ -116,20 +116,20 @@ export default function Home() {
       </section>
 
       {/* Hero Slideshow - Prominent Cinematic Element */}
-      <section className="w-full py-40 md:py-64 lg:py-80 px-6 md:px-12 lg:px-24">
+      <section className="w-full py-48 md:py-80 lg:py-96 px-6 md:px-12 lg:px-24">
         <div className="w-full">
           <HeroSlideshow slides={heroSlides} autoPlayInterval={5000} />
         </div>
       </section>
 
       {/* Logos / Supporters Section */}
-      <section className="mt-20 md:mt-28 lg:mt-36 px-6 md:px-12 lg:px-24 pb-16 md:pb-24 lg:pb-32">
+      <section className="mt-8 md:mt-12 lg:mt-16 px-6 md:px-12 lg:px-24 pb-16 md:pb-24 lg:pb-32">
         <div className="max-w-5xl mx-auto">
           <p
             className="font-body text-xs tracking-widest uppercase mb-12 text-center"
             style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
           >
-            Selected collaborations include
+            Selected Work
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
             {/* British Muslim Heritage Centre */}
