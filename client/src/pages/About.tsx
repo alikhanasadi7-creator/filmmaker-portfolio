@@ -4,7 +4,6 @@
    ============================================================= */
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
 
 const ABOUT_IMAGE = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-5_1771863596000_na1fn_YWJvdXQtcGhvdG8.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTVfMTc3MTg2MzU5NjAwMF9uYTFmbl9ZV0p2ZFhRdGNHaHZkRzguanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=RA~tul-HJbcSbYDx4Jwz6Mp2kESAEOCJWXBS8ZHXXWrPtvfE8czWBIK7OBjT2FXQFl2bCIXO2pM-HY2o4iZmccKAoChoBUqBkZHFjYmQxl79qLwZKFwVBoGVP7V4ZQEhPgpYLcq5LAdUGCqcik-F-rfjHRDA7nfWc44f9kCNMpB9ZMWKmrTLGeH1KEp-tTXzjW9IU80o4fRhaEJBqjQewE5EomvOyw2Gs7k2i~6DJ-GY6nYmQpS1aHoAXx5j-J2yTZAtb4s2lX0DysL6PfB9tmbsSPRuS3rNMKulCzHxdhoFPwUc2DlG0umBqPkfNjbnjJcRvAcEsSxaYdqDuyt-wg__";
@@ -16,12 +15,7 @@ const skills = [
   { category: "Audio", items: ["Location Sound", "Dialogue Editing", "Sound Design", "Music Supervision"] },
 ];
 
-const awards = [
-  { year: "2024", title: "Best Documentary Short", festival: "Sheffield Doc/Fest" },
-  { year: "2023", title: "Jury Prize — Documentary", festival: "BFI London Film Festival" },
-  { year: "2023", title: "Best Cinematography", festival: "Raindance Film Festival" },
-  { year: "2022", title: "Official Selection", festival: "IDFA Amsterdam" },
-];
+
 
 export default function About() {
   useEffect(() => {
@@ -186,55 +180,7 @@ export default function About() {
         <div className="divider mt-16" />
       </section>
 
-      {/* Awards */}
-      <section className="px-6 md:px-12 lg:px-24 mt-16">
-        <p
-          className="font-body text-xs tracking-widest uppercase mb-10 reveal"
-          style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
-        >
-          Recognition
-        </p>
-        <div className="space-y-0">
-          {awards.map((award, i) => (
-            <div
-              key={i}
-              className="reveal flex items-start justify-between py-5 border-b border-border"
-              style={{ transitionDelay: `${i * 0.08}s` }}
-            >
-              <div className="flex items-start gap-8">
-                <span
-                  className="font-body text-xs"
-                  style={{ color: "oklch(0.65 0.008 60)", minWidth: "3rem" }}
-                >
-                  {award.year}
-                </span>
-                <div>
-                  <p
-                    className="font-display"
-                    style={{
-                      fontSize: "1.05rem",
-                      fontWeight: 300,
-                      letterSpacing: "0.02em",
-                      color: "oklch(0.12 0.005 60)",
-                    }}
-                  >
-                    {award.title}
-                  </p>
-                  <p
-                    className="font-body text-xs mt-0.5 tracking-wider"
-                    style={{ color: "oklch(0.55 0.012 60)" }}
-                  >
-                    {award.festival}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
-      {/* Footer with Contact Form */}
-      <Footer />
     </div>
   );
 }

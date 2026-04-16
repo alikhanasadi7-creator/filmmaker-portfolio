@@ -480,3 +480,16 @@
 [2026-03-24T15:44:52.906Z] 11:44:52 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
 [2026-03-24T15:51:51.567Z] 11:51:51 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
 [2026-03-24T15:52:08.946Z] 11:52:08 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-04-16T22:17:04.847Z] Starting dev server with command: pnpm run dev
+[2026-04-16T22:17:05.532Z] 
+[2026-04-16T22:17:05.533Z] > filmmaker-portfolio@1.0.0 dev /home/ubuntu/filmmaker-portfolio
+[2026-04-16T22:17:05.533Z] > vite --host
+[2026-04-16T22:17:05.533Z] 
+[2026-04-16T22:17:05.927Z] 
+[2026-04-16T22:17:05.927Z] VITE v7.1.9  ready in 357 ms
+[2026-04-16T22:17:05.928Z] 
+[2026-04-16T22:17:05.928Z] ➜  Local:   http://localhost:3000/
+[2026-04-16T22:17:05.929Z] ➜  Network: http://169.254.0.21:3000/
+[2026-04-16T22:17:25.921Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-04-16T22:18:21.714Z] 6:18:21 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
+[2026-04-16T22:18:29.487Z] 6:18:29 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
