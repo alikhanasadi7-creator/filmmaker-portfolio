@@ -109,7 +109,7 @@ function Home() {
         ref={section2Ref}
         className="relative h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-24 bg-background"
       >
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-6xl">
           {/* YouTube Video Embed */}
           <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
             <iframe
