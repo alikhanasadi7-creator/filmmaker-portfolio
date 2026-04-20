@@ -7,7 +7,6 @@ import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Showreel from "./pages/Showreel";
-import ShowreelOverlay from "./components/ShowreelOverlay";
 
 function Router() {
   return (
@@ -28,7 +27,6 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <Router />
-        <ShowreelOverlay />
       </ThemeProvider>
     </ErrorBoundary>
   );
