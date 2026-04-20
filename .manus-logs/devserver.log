@@ -608,3 +608,34 @@
 [2026-04-20T12:04:59.831Z] ➜  Local:   http://localhost:3000/
 [2026-04-20T12:04:59.832Z] ➜  Network: http://169.254.0.21:3000/
 [2026-04-20T12:05:00.222Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-04-20T13:36:14.529Z] 9:36:14 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-04-20T13:36:44.563Z] 9:36:44 AM [vite] (client) hmr update /src/pages/Showreel.tsx, /src/index.css
+[2026-04-20T13:37:04.997Z] Dev server process group stopped
+[2026-04-20T13:37:04.999Z] ELIFECYCLE  Command failed.
+[2026-04-20T13:37:05.011Z] Dev server exited with code -15
+[2026-04-20T13:37:08.021Z] Starting dev server with command: pnpm run dev
+[2026-04-20T13:37:08.663Z] 
+[2026-04-20T13:37:08.664Z] > filmmaker-portfolio@1.0.0 dev /home/ubuntu/filmmaker-portfolio
+[2026-04-20T13:37:08.664Z] > vite --host
+[2026-04-20T13:37:08.664Z] 
+[2026-04-20T13:37:09.016Z] 
+[2026-04-20T13:37:09.017Z] VITE v7.1.9  ready in 313 ms
+[2026-04-20T13:37:09.017Z] 
+[2026-04-20T13:37:09.017Z] ➜  Local:   http://localhost:3000/
+[2026-04-20T13:37:09.018Z] ➜  Network: http://169.254.0.21:3000/
+[2026-04-20T13:37:09.422Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-04-20T13:38:07.938Z] 9:38:07 AM [vite] (client) hmr update /src/App.tsx, /src/index.css
+[2026-04-20T13:38:36.017Z] Dev server process group stopped
+[2026-04-20T13:38:36.019Z] ELIFECYCLE  Command failed.
+[2026-04-20T13:38:36.031Z] Dev server exited with code -15
+[2026-04-20T13:38:39.052Z] Starting dev server with command: pnpm run dev
+[2026-04-20T13:38:39.706Z] 
+[2026-04-20T13:38:39.708Z] > filmmaker-portfolio@1.0.0 dev /home/ubuntu/filmmaker-portfolio
+[2026-04-20T13:38:39.708Z] > vite --host
+[2026-04-20T13:38:39.709Z] 
+[2026-04-20T13:38:40.060Z] 
+[2026-04-20T13:38:40.060Z] VITE v7.1.9  ready in 313 ms
+[2026-04-20T13:38:40.061Z] 
+[2026-04-20T13:38:40.061Z] ➜  Local:   http://localhost:3000/
+[2026-04-20T13:38:40.062Z] ➜  Network: http://169.254.0.21:3000/
+[2026-04-20T13:38:40.452Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`

@@ -3,7 +3,7 @@
    Professional Artist Website with Refined Typography
    Layout: Nav → Headline + Description → Hero Slideshow → Quote → Footer
    ============================================================= */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import Navigation from "@/components/Navigation";
 import HeroSlideshow from "@/components/HeroSlideshow";
@@ -52,20 +52,29 @@ function Home() {
     return () => observer.disconnect();
   }, []);
 
-  // Track scroll progress for smooth transition
+  // Track scroll progress and broadcast to Showreel component
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      if (!endSectionRef.current) return;
-      
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrolled = window.scrollY;
-      const scrollProgress = scrollHeight > 0 ? scrolled / scrollHeight : 0;
-      
-      // Store scroll progress in sessionStorage for other components
-      sessionStorage.setItem('homeScrollProgress', scrollProgress.toString());
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrolled = window.scrollY;
+          const scrollProgress = scrollHeight > 0 ? scrolled / scrollHeight : 0;
+          
+          // Dispatch custom event with scroll progress for Showreel to listen
+          window.dispatchEvent(
+            new CustomEvent('homeScrollProgress', { detail: { progress: scrollProgress } })
+          );
+          
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -234,10 +243,10 @@ function Home() {
         </div>
       </section>
 
-      {/* Scroll Trigger Section - Hidden marker for scroll detection */}
+      {/* Scroll Trigger Section - Marks end of homepage content */}
       <div
         ref={endSectionRef}
-        className="h-screen bg-transparent"
+        className="h-0 bg-transparent"
         style={{
           visibility: "hidden",
           pointerEvents: "none",
