@@ -494,3 +494,101 @@
 [2026-04-16T22:18:21.714Z] 6:18:21 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
 [2026-04-16T22:18:29.487Z] 6:18:29 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
 [2026-04-16T22:19:22.583Z] 6:19:22 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
+[2026-04-20T11:57:40.865Z] Dev server process group stopped
+[2026-04-20T11:57:43.897Z] Starting dev server with command: pnpm run dev
+[2026-04-20T11:57:44.503Z] 
+[2026-04-20T11:57:44.503Z] > filmmaker-portfolio@1.0.0 dev /home/ubuntu/filmmaker-portfolio
+[2026-04-20T11:57:44.503Z] > vite --host
+[2026-04-20T11:57:44.504Z] 
+[2026-04-20T11:57:44.863Z] 
+[2026-04-20T11:57:44.864Z] VITE v7.1.9  ready in 327 ms
+[2026-04-20T11:57:44.864Z] 
+[2026-04-20T11:57:44.864Z] ➜  Local:   http://localhost:3000/
+[2026-04-20T11:57:44.864Z] ➜  Network: http://169.254.0.21:3000/
+[2026-04-20T11:57:45.334Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-04-20T11:58:45.369Z] 7:58:45 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-04-20T11:58:45.470Z] 7:58:45 AM [vite] Internal server error: Transform failed with 1 error:
+[2026-04-20T11:58:45.470Z] /home/ubuntu/filmmaker-portfolio/client/src/pages/Home.tsx:261:7: ERROR: Multiple exports with the same name "default"
+[2026-04-20T11:58:45.471Z] Plugin: vite:esbuild
+[2026-04-20T11:58:45.471Z] File: /home/ubuntu/filmmaker-portfolio/client/src/pages/Home.tsx:261:0
+[2026-04-20T11:58:45.471Z] 
+[2026-04-20T11:58:45.472Z] Multiple exports with the same name "default"
+[2026-04-20T11:58:45.472Z] 259 |  };_s2(HomeWithScrollTrigger, "LQepehoojyzs/FEJ0cw+LUwNIUM=", false, function () {return [useLocation];});_c2 = HomeWi...
+[2026-04-20T11:58:45.472Z] 260 |
+[2026-04-20T11:58:45.472Z] 261 |  export default HomeWithScrollTrigger;var _c, _c2;$RefreshReg$(_c, "Home");$RefreshReg$(_c2, "HomeWithScrollTrigger");
+[2026-04-20T11:58:45.472Z] |         ^
+[2026-04-20T11:58:45.473Z] 262 |
+[2026-04-20T11:58:45.473Z] 263 |  import * as RefreshRuntime from "/@react-refresh";
+[2026-04-20T11:58:45.473Z] 
+[2026-04-20T11:58:45.473Z] at failureErrorWithLog (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:1467:15)
+[2026-04-20T11:58:45.473Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:736:50
+[2026-04-20T11:58:45.474Z] at responseCallbacks.<computed> (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:603:9)
+[2026-04-20T11:58:45.474Z] at handleIncomingPacket (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:658:12)
+[2026-04-20T11:58:45.474Z] at Socket.readFromStdout (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:581:7)
+[2026-04-20T11:58:45.474Z] at Socket.emit (node:events:524:28)
+[2026-04-20T11:58:45.474Z] at addChunk (node:internal/streams/readable:561:12)
+[2026-04-20T11:58:45.475Z] at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+[2026-04-20T11:58:45.475Z] at Readable.push (node:internal/streams/readable:392:5)
+[2026-04-20T11:58:45.475Z] at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[2026-04-20T11:58:45.522Z] 7:58:45 AM [vite] Internal server error: Transform failed with 1 error:
+[2026-04-20T11:58:45.523Z] /home/ubuntu/filmmaker-portfolio/client/src/pages/Home.tsx:261:7: ERROR: Multiple exports with the same name "default"
+[2026-04-20T11:58:45.524Z] Plugin: vite:esbuild
+[2026-04-20T11:58:45.524Z] File: /home/ubuntu/filmmaker-portfolio/client/src/pages/Home.tsx:261:0
+[2026-04-20T11:58:45.524Z] 
+[2026-04-20T11:58:45.525Z] Multiple exports with the same name "default"
+[2026-04-20T11:58:45.525Z] 259 |  };_s2(HomeWithScrollTrigger, "LQepehoojyzs/FEJ0cw+LUwNIUM=", false, function () {return [useLocation];});_c2 = HomeWi...
+[2026-04-20T11:58:45.525Z] 260 |
+[2026-04-20T11:58:45.526Z] 261 |  export default HomeWithScrollTrigger;var _c, _c2;$RefreshReg$(_c, "Home");$RefreshReg$(_c2, "HomeWithScrollTrigger");
+[2026-04-20T11:58:45.526Z] |         ^
+[2026-04-20T11:58:45.526Z] 262 |
+[2026-04-20T11:58:45.527Z] 263 |  import * as RefreshRuntime from "/@react-refresh";
+[2026-04-20T11:58:45.528Z] 
+[2026-04-20T11:58:45.528Z] at failureErrorWithLog (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:1467:15)
+[2026-04-20T11:58:45.529Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:736:50
+[2026-04-20T11:58:45.529Z] at responseCallbacks.<computed> (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:603:9)
+[2026-04-20T11:58:45.529Z] at handleIncomingPacket (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:658:12)
+[2026-04-20T11:58:45.530Z] at Socket.readFromStdout (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:581:7)
+[2026-04-20T11:58:45.530Z] at Socket.emit (node:events:524:28)
+[2026-04-20T11:58:45.531Z] at addChunk (node:internal/streams/readable:561:12)
+[2026-04-20T11:58:45.531Z] at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+[2026-04-20T11:58:45.532Z] at Readable.push (node:internal/streams/readable:392:5)
+[2026-04-20T11:58:45.532Z] at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[2026-04-20T11:58:49.659Z] 7:58:49 AM [vite] (client) Pre-transform error: Transform failed with 1 error:
+[2026-04-20T11:58:49.659Z] /home/ubuntu/filmmaker-portfolio/client/src/pages/Home.tsx:261:7: ERROR: Multiple exports with the same name "default"
+[2026-04-20T11:58:49.660Z] Plugin: vite:esbuild
+[2026-04-20T11:58:49.660Z] File: /home/ubuntu/filmmaker-portfolio/client/src/pages/Home.tsx:261:0
+[2026-04-20T11:58:49.660Z] 
+[2026-04-20T11:58:49.661Z] Multiple exports with the same name "default"
+[2026-04-20T11:58:49.661Z] 259 |  };_s2(HomeWithScrollTrigger, "LQepehoojyzs/FEJ0cw+LUwNIUM=", false, function () {return [useLocation];});_c2 = HomeWi...
+[2026-04-20T11:58:49.661Z] 260 |
+[2026-04-20T11:58:49.661Z] 261 |  export default HomeWithScrollTrigger;var _c, _c2;$RefreshReg$(_c, "Home");$RefreshReg$(_c2, "HomeWithScrollTrigger");
+[2026-04-20T11:58:49.661Z] |         ^
+[2026-04-20T11:58:49.662Z] 262 |
+[2026-04-20T11:58:49.662Z] 263 |  import * as RefreshRuntime from "/@react-refresh";
+[2026-04-20T11:58:49.662Z] 
+[2026-04-20T11:58:50.461Z] 7:58:50 AM [vite] Internal server error: Transform failed with 1 error:
+[2026-04-20T11:58:50.461Z] /home/ubuntu/filmmaker-portfolio/client/src/pages/Home.tsx:261:7: ERROR: Multiple exports with the same name "default"
+[2026-04-20T11:58:50.461Z] Plugin: vite:esbuild
+[2026-04-20T11:58:50.462Z] File: /home/ubuntu/filmmaker-portfolio/client/src/pages/Home.tsx:261:0
+[2026-04-20T11:58:50.462Z] 
+[2026-04-20T11:58:50.462Z] Multiple exports with the same name "default"
+[2026-04-20T11:58:50.462Z] 259 |  };_s2(HomeWithScrollTrigger, "LQepehoojyzs/FEJ0cw+LUwNIUM=", false, function () {return [useLocation];});_c2 = HomeWi...
+[2026-04-20T11:58:50.462Z] 260 |
+[2026-04-20T11:58:50.463Z] 261 |  export default HomeWithScrollTrigger;var _c, _c2;$RefreshReg$(_c, "Home");$RefreshReg$(_c2, "HomeWithScrollTrigger");
+[2026-04-20T11:58:50.463Z] |         ^
+[2026-04-20T11:58:50.463Z] 262 |
+[2026-04-20T11:58:50.463Z] 263 |  import * as RefreshRuntime from "/@react-refresh";
+[2026-04-20T11:58:50.463Z] 
+[2026-04-20T11:58:50.464Z] at failureErrorWithLog (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:1467:15)
+[2026-04-20T11:58:50.464Z] at /home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:736:50
+[2026-04-20T11:58:50.464Z] at responseCallbacks.<computed> (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:603:9)
+[2026-04-20T11:58:50.464Z] at handleIncomingPacket (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:658:12)
+[2026-04-20T11:58:50.465Z] at Socket.readFromStdout (/home/ubuntu/filmmaker-portfolio/node_modules/.pnpm/esbuild@0.25.10/node_modules/esbuild/lib/main.js:581:7)
+[2026-04-20T11:58:50.465Z] at Socket.emit (node:events:524:28)
+[2026-04-20T11:58:50.465Z] at addChunk (node:internal/streams/readable:561:12)
+[2026-04-20T11:58:50.466Z] at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+[2026-04-20T11:58:50.466Z] at Readable.push (node:internal/streams/readable:392:5)
+[2026-04-20T11:58:50.466Z] at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[2026-04-20T11:58:52.436Z] 7:58:52 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-04-20T11:59:32.491Z] 7:59:32 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-04-20T12:00:37.446Z] 8:00:37 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css

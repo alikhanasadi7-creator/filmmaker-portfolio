@@ -4,7 +4,7 @@
    Layout: Nav → Headline + Description → Hero Slideshow → Quote → Footer
    ============================================================= */
 import { useEffect, useRef } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import Navigation from "@/components/Navigation";
 import HeroSlideshow from "@/components/HeroSlideshow";
 
@@ -30,8 +30,10 @@ const heroSlides = [
   },
 ];
 
-export default function Home() {
+function Home() {
   const identityRef = useRef<HTMLDivElement>(null);
+  const endSectionRef = useRef<HTMLDivElement>(null);
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,6 +51,27 @@ export default function Home() {
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  // Scroll trigger to navigate to Showreel
+  useEffect(() => {
+    if (!endSectionRef.current) return;
+
+    const scrollObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              setLocation("/showreel");
+            }, 300);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    scrollObserver.observe(endSectionRef.current);
+    return () => scrollObserver.disconnect();
+  }, [setLocation]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -214,6 +237,18 @@ export default function Home() {
           <div className="divider mt-12" />
         </div>
       </section>
+
+      {/* Scroll Trigger Section - Detects when user scrolls to bottom */}
+      <div
+        ref={endSectionRef}
+        className="h-1 bg-transparent"
+        style={{
+          visibility: "hidden",
+          pointerEvents: "none",
+        }}
+      />
     </div>
   );
 }
+
+export default Home;
