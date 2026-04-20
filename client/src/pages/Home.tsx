@@ -1,58 +1,19 @@
 /* ============================================================= 
-   QUIET CINEMA — Home Page (Redesigned)
-   Professional Artist Website with Refined Typography
-   Layout: Nav → Headline + Description → Hero Slideshow → Quote → Footer
+   QUIET CINEMA — Home Page (Three-Section Full-Page Scroll)
+   Section 1: Centered Hero Text
+   Section 2: Showreel Video (slides up smoothly)
+   Section 3: Logos + Quote (slides up smoothly)
    ============================================================= */
 import { useEffect, useRef } from "react";
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
-import HeroSlideshow from "@/components/HeroSlideshow";
-
-const UNCERTAIN_FUTURES_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377378181/CwzaKbdNMGbLVzfz.png";
-const YOUTUBE_THUMBNAIL_2 = "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg";
-const YOUTUBE_THUMBNAIL_3 = "https://img.youtube.com/vi/Up9qPBxeyHk/maxresdefault.jpg";
-
-const heroSlides = [
-  {
-    id: 1,
-    image: UNCERTAIN_FUTURES_IMAGE,
-    alt: "Uncertain Futures — Documentary about women's lived experiences and collective dialogue",
-  },
-  {
-    id: 2,
-    image: YOUTUBE_THUMBNAIL_2,
-    alt: "TREES — Environmental installation exploring hidden communication systems of trees",
-  },
-  {
-    id: 3,
-    image: YOUTUBE_THUMBNAIL_3,
-    alt: "GRF Back to School Campaign — Animated film promoting access to education",
-  },
-];
 
 function Home() {
-  const identityRef = useRef<HTMLDivElement>(null);
-  const endSectionRef = useRef<HTMLDivElement>(null);
-  const [, setLocation] = useLocation();
+  const section1Ref = useRef<HTMLDivElement>(null);
+  const section2Ref = useRef<HTMLDivElement>(null);
+  const section3Ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll(".reveal");
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  // Track scroll progress and broadcast to Showreel component
+  // Track scroll and dispatch event for smooth transitions
   useEffect(() => {
     let ticking = false;
     
@@ -63,7 +24,7 @@ function Home() {
           const scrolled = window.scrollY;
           const scrollProgress = scrollHeight > 0 ? scrolled / scrollHeight : 0;
           
-          // Dispatch custom event with scroll progress for Showreel to listen
+          // Dispatch custom event with scroll progress
           window.dispatchEvent(
             new CustomEvent('homeScrollProgress', { detail: { progress: scrollProgress } })
           );
@@ -79,59 +40,59 @@ function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <Navigation />
 
-      {/* Hero Section - Minimal, Elegant, Editorial Layout */}
-      <section className="pt-24 md:pt-32 lg:pt-40 pb-0 px-6 md:px-12 lg:px-24">
-        <div className="max-w-2xl">
-          {/* Main Headline - Refined, Cinematic, Minimal */}
+      {/* SECTION 1: Hero Text - Full Viewport Height, Centered */}
+      <section
+        ref={section1Ref}
+        className="relative h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-24"
+      >
+        <div className="max-w-3xl text-center">
+          {/* Main Headline - Centered, Refined */}
           <h1
             className="font-display animate-fade-up"
             style={{
-              fontSize: "clamp(2.25rem, 3.2vw, 3.25rem)",
+              fontSize: "clamp(2.5rem, 4vw, 4rem)",
               fontWeight: 300,
-              lineHeight: 1.15,
+              lineHeight: 1.2,
               letterSpacing: "-0.01em",
               color: "oklch(0.12 0.005 60)",
-              marginBottom: "1.25rem",
-              maxWidth: "680px",
+              marginBottom: "2rem",
             }}
           >
             Cinematic Films for Brands, Culture and Social Impact
           </h1>
 
-          {/* Supporting Description - Elegant, Readable, Narrower */}
+          {/* Supporting Description - Centered, Readable */}
           <p
             className="font-body animate-fade-up delay-100"
             style={{
-              fontSize: "clamp(0.9375rem, 1.3vw, 1.125rem)",
+              fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
               fontWeight: 400,
-              lineHeight: 1.75,
+              lineHeight: 1.8,
               letterSpacing: "0.005em",
               color: "oklch(0.35 0.008 60)",
-              maxWidth: "600px",
-              marginBottom: "2rem",
+              maxWidth: "700px",
+              margin: "0 auto 3rem",
             }}
           >
             I create cinematic films for brands, charities, and cultural organisations, crafting visual stories that connect audiences with meaningful ideas and real-world impact.
           </p>
 
           {/* CTA - Minimal Text Link */}
-          <div
-            className="animate-fade-up delay-200"
-            style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "3rem" }}
-          >
+          <div className="animate-fade-up delay-200">
             <Link href="/projects">
               <span
-                className="font-body text-xs tracking-widest uppercase"
+                className="font-body text-xs tracking-widest uppercase inline-block"
                 style={{
                   color: "oklch(0.12 0.005 60)",
                   letterSpacing: "0.1em",
                   borderBottom: "0.5px solid oklch(0.12 0.005 60)",
-                  paddingBottom: "2px",
+                  paddingBottom: "4px",
                   transition: "opacity 0.3s",
                   fontSize: "0.875rem",
+                  cursor: "pointer",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.5")}
                 onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
@@ -143,16 +104,35 @@ function Home() {
         </div>
       </section>
 
-      {/* Hero Slideshow - Prominent Cinematic Element */}
-      <section className="w-full pt-48 md:pt-80 lg:pt-96 pb-0 px-6 md:px-12 lg:px-24">
-        <div className="w-full">
-          <HeroSlideshow slides={heroSlides} autoPlayInterval={5000} />
+      {/* SECTION 2: Showreel Video - Slides Up Smoothly */}
+      <section
+        ref={section2Ref}
+        className="relative h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-24 bg-background"
+      >
+        <div className="w-full max-w-4xl">
+          {/* YouTube Video Embed */}
+          <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/Cgdm2V3AmBY?si=faCqB2ac23rIbv4c&controls=1"
+              title="Showreel"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
         </div>
       </section>
 
-      {/* Logos / Supporters Section */}
-      <section className="mt-16 md:mt-24 lg:mt-32 px-6 md:px-12 lg:px-24 pb-16 md:pb-24 lg:pb-32">
-        <div className="max-w-5xl mx-auto">
+      {/* SECTION 3: Logos + Quote - Slides Up Smoothly */}
+      <section
+        ref={section3Ref}
+        className="relative min-h-screen w-full px-6 md:px-12 lg:px-24 py-20 md:py-32 lg:py-40 bg-background"
+      >
+        {/* Logos Section */}
+        <div className="max-w-5xl mx-auto mb-20 md:mb-32 lg:mb-40">
           <p
             className="font-body text-xs tracking-widest uppercase mb-12 text-center"
             style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
@@ -161,7 +141,6 @@ function Home() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
             {/* Row 1: 4 logos */}
-            {/* British Muslim Heritage Centre */}
             <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/download_858174bc.jpeg"
@@ -169,7 +148,6 @@ function Home() {
                 className="h-full w-auto object-contain"
               />
             </div>
-            {/* Arts Council England */}
             <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/grant_png_black_cb4d5bfe.png"
@@ -177,7 +155,6 @@ function Home() {
                 className="h-full w-auto object-contain"
               />
             </div>
-            {/* UK Government */}
             <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/FundedbyUKGov-stacked_0_8195ea34.png"
@@ -185,7 +162,6 @@ function Home() {
                 className="h-full w-auto object-contain"
               />
             </div>
-            {/* Factory International */}
             <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/factory-international_third_party_use_black_CMYK_765282e4.webp"
@@ -194,7 +170,6 @@ function Home() {
               />
             </div>
             {/* Row 2: 3 logos */}
-            {/* Raffle Aid */}
             <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/images_9fd6a056.png"
@@ -202,7 +177,6 @@ function Home() {
                 className="h-full w-auto object-contain"
               />
             </div>
-            {/* Premier Boxing Club Bolton */}
             <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/premier-logo-4_fa3c6889.jpg"
@@ -210,7 +184,6 @@ function Home() {
                 className="h-full w-auto object-contain"
               />
             </div>
-            {/* Things That Go On Things */}
             <div className="h-20 md:h-24 lg:h-28 flex items-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/R_78a035d2.png"
@@ -220,11 +193,9 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Quote / Statement Section */}
-      <section className="mt-16 md:mt-24 lg:mt-32 px-6 md:px-12 lg:px-24 pb-20 md:pb-32 lg:pb-40">
-        <div className="max-w-2xl mx-auto reveal">
+        {/* Quote Section */}
+        <div className="max-w-2xl mx-auto text-center">
           <div className="divider mb-12" />
           <blockquote
             className="font-display"
@@ -242,16 +213,6 @@ function Home() {
           <div className="divider mt-12" />
         </div>
       </section>
-
-      {/* Scroll Trigger Section - Marks end of homepage content */}
-      <div
-        ref={endSectionRef}
-        className="h-0 bg-transparent"
-        style={{
-          visibility: "hidden",
-          pointerEvents: "none",
-        }}
-      />
     </div>
   );
 }

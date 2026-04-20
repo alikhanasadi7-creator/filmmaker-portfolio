@@ -655,3 +655,19 @@
 [2026-04-20T19:52:20.214Z] ➜  Local:   http://localhost:3000/
 [2026-04-20T19:52:20.215Z] ➜  Network: http://169.254.0.21:3000/
 [2026-04-20T19:52:20.631Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-04-20T20:19:10.427Z] 4:19:10 PM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-04-20T20:19:50.011Z] 4:19:50 PM [vite] (client) hmr update /src/index.css
+[2026-04-20T20:20:03.513Z] Dev server process group stopped
+[2026-04-20T20:20:03.515Z] ELIFECYCLE  Command failed.
+[2026-04-20T20:20:03.529Z] Dev server exited with code -15
+[2026-04-20T20:20:06.539Z] Starting dev server with command: pnpm run dev
+[2026-04-20T20:20:07.166Z] 
+[2026-04-20T20:20:07.167Z] > filmmaker-portfolio@1.0.0 dev /home/ubuntu/filmmaker-portfolio
+[2026-04-20T20:20:07.167Z] > vite --host
+[2026-04-20T20:20:07.168Z] 
+[2026-04-20T20:20:07.482Z] 
+[2026-04-20T20:20:07.483Z] VITE v7.1.9  ready in 280 ms
+[2026-04-20T20:20:07.483Z] 
+[2026-04-20T20:20:07.483Z] ➜  Local:   http://localhost:3000/
+[2026-04-20T20:20:07.484Z] ➜  Network: http://169.254.0.21:3000/
+[2026-04-20T20:20:07.933Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
