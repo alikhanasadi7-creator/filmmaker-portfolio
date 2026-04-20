@@ -3,7 +3,7 @@
    Professional Artist Website with Refined Typography
    Layout: Nav → Headline + Description → Hero Slideshow → Quote → Footer
    ============================================================= */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "wouter";
 import Navigation from "@/components/Navigation";
 import HeroSlideshow from "@/components/HeroSlideshow";
@@ -52,26 +52,22 @@ function Home() {
     return () => observer.disconnect();
   }, []);
 
-  // Scroll trigger to navigate to Showreel
+  // Track scroll progress for smooth transition
   useEffect(() => {
-    if (!endSectionRef.current) return;
-
-    const scrollObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              setLocation("/showreel");
-            }, 300);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    scrollObserver.observe(endSectionRef.current);
-    return () => scrollObserver.disconnect();
-  }, [setLocation]);
+    const handleScroll = () => {
+      if (!endSectionRef.current) return;
+      
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      const scrollProgress = scrollHeight > 0 ? scrolled / scrollHeight : 0;
+      
+      // Store scroll progress in sessionStorage for other components
+      sessionStorage.setItem('homeScrollProgress', scrollProgress.toString());
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -238,10 +234,10 @@ function Home() {
         </div>
       </section>
 
-      {/* Scroll Trigger Section - Detects when user scrolls to bottom */}
+      {/* Scroll Trigger Section - Hidden marker for scroll detection */}
       <div
         ref={endSectionRef}
-        className="h-1 bg-transparent"
+        className="h-screen bg-transparent"
         style={{
           visibility: "hidden",
           pointerEvents: "none",

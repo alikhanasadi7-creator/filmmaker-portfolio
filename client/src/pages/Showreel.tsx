@@ -2,11 +2,38 @@
    SHOWREEL PAGE
    Full-screen embedded YouTube video showcase
    ============================================================= */
+import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 
 export default function Showreel() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      const progress = scrollHeight > 0 ? scrolled / scrollHeight : 0;
+      
+      setScrollProgress(Math.min(progress, 1));
+      setIsVisible(progress > 0.75);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Calculate the transform based on scroll progress
+  // When scroll progress is 0.75-1.0, the page rolls up from bottom
+  const translateY = Math.max(0, (1 - Math.max(0, (scrollProgress - 0.75) / 0.25)) * 100);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div 
+      className="min-h-screen bg-background transition-transform duration-300"
+      style={{
+        transform: `translateY(${translateY}%)`,
+      }}
+    >
       <Navigation />
 
       {/* Hero Section - Title */}
