@@ -48,7 +48,7 @@ export default function Showreel() {
       <Navigation />
 
       {/* Hero Section - Title */}
-      <section className="pt-24 md:pt-32 lg:pt-40 pb-12 md:pb-16 lg:pb-20 px-6 md:px-12 lg:px-24">
+      <section className="pt-8 md:pt-12 lg:pt-16 pb-12 md:pb-16 lg:pb-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-2xl">
           <h1
             className="font-display animate-fade-up"
