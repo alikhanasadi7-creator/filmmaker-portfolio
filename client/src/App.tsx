@@ -1,4 +1,3 @@
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -7,6 +6,7 @@ import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Showreel from "./pages/Showreel";
+import RedirectHome from "./pages/RedirectHome";
 
 function Router() {
   return (
@@ -16,8 +16,8 @@ function Router() {
       <Route path="/showreel" component={Showreel} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/404" component={NotFound} />
-      <Route component={NotFound} />
+      {/* All unknown URLs redirect to homepage */}
+      <Route component={RedirectHome} />
     </Switch>
   );
 }
