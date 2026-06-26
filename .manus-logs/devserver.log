@@ -698,3 +698,4 @@
 [2026-06-26T12:55:10.795Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
 [2026-06-26T14:22:39.334Z] 2:22:39 PM [vite] (client) hmr update /src/pages/Showreel.tsx, /src/index.css
 [2026-06-26T14:25:03.589Z] 2:25:03 PM [vite] (client) hmr update /src/pages/Showreel.tsx, /src/index.css
+[2026-06-26T14:37:06.874Z] 2:37:06 PM [vite] (client) hmr update /src/pages/NotFound.tsx, /src/index.css

@@ -21,21 +21,16 @@ export default function NotFound() {
         >
           Page not found
         </p>
-        <Link href="/">
-          <a
-            className="font-body text-sm tracking-widest uppercase"
-            style={{
-              color: "oklch(0.12 0.005 60)",
-              borderBottom: "0.5px solid oklch(0.12 0.005 60)",
-              paddingBottom: "2px",
-              display: "inline-block",
-              transition: "opacity 0.3s ease",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-          >
-            Return Home
-          </a>
+        <Link
+          href="/"
+          className="font-body text-sm tracking-widest uppercase inline-block hover:opacity-70 transition-opacity duration-300"
+          style={{
+            color: "oklch(0.12 0.005 60)",
+            borderBottom: "0.5px solid oklch(0.12 0.005 60)",
+            paddingBottom: "2px",
+          }}
+        >
+          Return Home
         </Link>
       </div>
     </div>
