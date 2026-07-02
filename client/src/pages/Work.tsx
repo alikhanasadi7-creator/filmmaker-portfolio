@@ -20,6 +20,7 @@ const UNSPLASH_6 = "https://images.unsplash.com/photo-1478720568477-152d9b164e26
 const YOUTUBE_THUMBNAIL_1 = "https://img.youtube.com/vi/lm95sT7fyhQ/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_2 = "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_3 = "https://img.youtube.com/vi/Up9qPBxeyHk/maxresdefault.jpg";
+const YOUTUBE_THUMBNAIL_4 = "https://img.youtube.com/vi/8cSnAGsYav4/maxresdefault.jpg";
 
 const projects = [
   {
@@ -56,6 +57,18 @@ const projects = [
     image: YOUTUBE_THUMBNAIL_3,
     tag: "film",
     videoId: "Up9qPBxeyHk",
+    isEmbedded: true,
+  },
+  {
+    id: 4,
+    title: "EFCL – Ecommerce Fulfilment Centre",
+    category: "Corporate Film | Logistics & Brand",
+    year: "2025",
+    duration: "Full Length",
+    description: "A corporate film created for EFCL, a fulfilment centre offering end-to-end eCommerce warehousing and logistics services. Overseeing the project from script to final result, I handled direction, cinematography, editing, and grading — capturing the scale and precision of their operation to communicate the brand's reliability and commitment to helping online retailers scale with confidence.",
+    image: YOUTUBE_THUMBNAIL_4,
+    tag: "film",
+    videoId: "8cSnAGsYav4",
     isEmbedded: true,
   },
 ];
