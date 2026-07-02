@@ -6,6 +6,7 @@ import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Showreel from "./pages/Showreel";
+import Films from "./pages/Films";
 import RedirectHome from "./pages/RedirectHome";
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/projects" component={Work} />
       <Route path="/showreel" component={Showreel} />
+      <Route path="/films" component={Films} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       {/* All unknown URLs redirect to homepage */}

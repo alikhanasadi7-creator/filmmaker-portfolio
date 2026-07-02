@@ -24,6 +24,7 @@ export default function Navigation() {
 
   const links = [
     { href: "/projects", label: "Projects" },
+    { href: "/films", label: "Films" },
     { href: "/showreel", label: "Showreel" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },

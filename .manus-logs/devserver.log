@@ -707,3 +707,5 @@
 [2026-06-30T12:12:18.433Z] ➜  Local:   http://localhost:3000/
 [2026-06-30T12:12:18.434Z] ➜  Network: http://169.254.0.21:3000/
 [2026-07-02T10:54:41.515Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-07-02T11:22:23.458Z] 11:22:23 AM [vite] (client) hmr update /src/App.tsx, /src/index.css
+[2026-07-02T11:22:35.556Z] 11:22:35 AM [vite] (client) hmr update /src/index.css, /src/components/Navigation.tsx
