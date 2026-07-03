@@ -9,6 +9,18 @@ import Footer from "@/components/Footer";
 const films = [
   {
     id: 1,
+    title: "SLOW DUSK",
+    year: "2025",
+    category: "Documentary",
+    location: "Iran",
+    duration: "Full Length",
+    description:
+      "A cinematic portrait of fishermen in the north of Iran, whose lives are bound to a sea that was never theirs to lose. For decades, decisions made far from the shore have driven the Caspian to the edge of silence — yet the fishermen remain, holding on to a way of life the sea can no longer sustain and the state has long stopped protecting.\n\nThe film's soundscape was constructed through a laboratory process — a composer immersed in the sonic world of the landscape until something shifted: the environment began to speak back. The sea, the shore, the wind — no longer ambient, but present. What emerged was not a score but a dialogue between the human and the natural world, in which nature itself becomes a voice — bearing witness, responding, remembering.",
+    videoId: "6ZAw_DxCFC0",
+    thumbnail: "https://img.youtube.com/vi/6ZAw_DxCFC0/maxresdefault.jpg",
+  },
+  {
+    id: 2,
     title: "ASHIN",
     year: "2024",
     category: "Documentary",
@@ -139,12 +151,16 @@ export default function Films() {
                 >
                   {film.category} | {film.location} | {film.duration}
                 </p>
-                <p
+                <div
                   className="font-body text-base leading-relaxed"
                   style={{ color: "oklch(0.35 0.010 60)", lineHeight: 1.8 }}
                 >
-                  {film.description}
-                </p>
+                  {film.description.split("\n\n").map((paragraph, idx) => (
+                    <p key={idx} className={idx > 0 ? "mt-4" : ""}>
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
