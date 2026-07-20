@@ -7,11 +7,15 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
+import TStopIndicator from "@/components/TStopIndicator";
+import { useFadeIn } from "@/hooks/useFadeIn";
 
 function Home() {
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
   const section3Ref = useRef<HTMLDivElement>(null);
+
+  useFadeIn();
 
   // Track scroll and dispatch event for smooth transitions
   useEffect(() => {
@@ -42,6 +46,7 @@ function Home() {
   return (
     <div className="bg-background">
       <Navigation />
+      <TStopIndicator />
 
       {/* SECTION 1: Hero Text - Full Viewport Height, Centered */}
       <section
@@ -107,7 +112,7 @@ function Home() {
       {/* SECTION 2: Showreel Video - Slides Up Smoothly */}
       <section
         ref={section2Ref}
-        className="relative h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-24 bg-background"
+        className="fade-in-text relative h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-24 bg-background"
       >
         <div className="w-full max-w-6xl">
           {/* YouTube Video Embed */}
@@ -129,7 +134,7 @@ function Home() {
       {/* SECTION 3: Logos + Quote - Slides Up Smoothly */}
       <section
         ref={section3Ref}
-        className="relative min-h-screen w-full px-6 md:px-12 lg:px-24 py-20 md:py-32 lg:py-40 bg-background"
+        className="fade-in-text relative min-h-screen w-full px-6 md:px-12 lg:px-24 py-20 md:py-32 lg:py-40 bg-background"
       >
         {/* Logos Section */}
         <div className="max-w-5xl mx-auto mb-20 md:mb-32 lg:mb-40">

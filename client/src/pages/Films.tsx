@@ -5,6 +5,7 @@
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useFadeIn } from "@/hooks/useFadeIn";
 
 const films = [
   {
@@ -36,6 +37,8 @@ const films = [
 export default function Films() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
+  useFadeIn();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -54,7 +57,7 @@ export default function Films() {
       <Navigation />
 
       {/* Page Header */}
-      <section className="pt-40 pb-12 px-6 md:px-12 lg:px-24">
+      <section className="fade-in-text pt-40 pb-12 px-6 md:px-12 lg:px-24">
         <p
           className="font-body text-xs tracking-widest uppercase mb-4 animate-fade-up"
           style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
