@@ -735,3 +735,13 @@
 [2026-07-26T22:13:39.045Z] ➜  Local:   http://localhost:3000/
 [2026-07-26T22:13:39.045Z] ➜  Network: http://169.254.0.21:3000/
 [2026-07-26T22:13:59.594Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-07-26T23:46:56.684Z] 11:46:56 PM [vite] (client) page reload index.html
+[2026-07-26T23:47:38.350Z] 11:47:38 PM [vite] (client) hmr update /src/index.css
+[2026-07-26T23:48:14.905Z] 11:48:14 PM [vite] (client) hmr update /src/index.css, /src/components/TStopIndicator.tsx
+[2026-07-26T23:49:15.023Z] 11:49:15 PM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-07-26T23:49:55.166Z] 11:49:55 PM [vite] (client) hmr update /src/pages/Work.tsx, /src/index.css
+[2026-07-26T23:50:27.770Z] 11:50:27 PM [vite] (client) hmr update /src/pages/Films.tsx, /src/index.css
+[2026-07-26T23:50:41.147Z] 11:50:41 PM [vite] (client) hmr update /src/pages/Showreel.tsx, /src/index.css
+[2026-07-26T23:51:35.266Z] 11:51:35 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
+[2026-07-26T23:51:53.655Z] 11:51:53 PM [vite] (client) hmr update /src/index.css, /src/components/Navigation.tsx
+[2026-07-26T23:52:54.139Z] 11:52:54 PM [vite] (client) hmr update /src/index.css, /src/components/Footer.tsx

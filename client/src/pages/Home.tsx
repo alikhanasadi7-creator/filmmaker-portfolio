@@ -1,225 +1,196 @@
-/* ============================================================= 
-   QUIET CINEMA — Home Page (Three-Section Full-Page Scroll)
-   Section 1: Centered Hero Text
-   Section 2: Showreel Video (slides up smoothly)
-   Section 3: Logos + Quote (slides up smoothly)
+/* =============================================================
+   EDITORIAL MINIMAL — Home Page
+   Asymmetric layout with sage green blocks, wide-spaced type,
+   large serif headings, and cinematic imagery.
+   T-stop indicator as transparent background.
    ============================================================= */
-import { useEffect, useRef } from "react";
-import { Link } from "wouter";
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import TStopIndicator from "@/components/TStopIndicator";
-import { useFadeIn } from "@/hooks/useFadeIn";
+import Footer from "@/components/Footer";
 
-function Home() {
-  const section1Ref = useRef<HTMLDivElement>(null);
-  const section2Ref = useRef<HTMLDivElement>(null);
-  const section3Ref = useRef<HTMLDivElement>(null);
+// Partner logos
+const PARTNER_1 = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-1_1771863596000_na1fn_bG9nb3M.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTFfMTc3MTg2MzU5NjAwMF9uYTFmbl9iRzluYjNNLmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=T5zzxPQMqbqJQIFxVaYKwzpqRBsqYCl8ybmXhM~ydJJLjMPmh0Ys-HqPXQCqCy3ksNlqJqVVBOEHMqPiMuWPpqkqHAEJlkTB1Dv5Wd9VVBmvMTvwHnCXnfMFCJwjJDqoEjzpXcJcbqM8Yvp7j1JLqB2F~Iqx7fTqHqVqKqNqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqH__";
 
-  useFadeIn();
+// Showreel thumbnail
+const SHOWREEL_THUMB = "https://img.youtube.com/vi/Cgdm2V3AmBY/maxresdefault.jpg";
 
-  // Track scroll and dispatch event for smooth transitions
+export default function Home() {
   useEffect(() => {
-    let ticking = false;
-    
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const scrolled = window.scrollY;
-          const scrollProgress = scrollHeight > 0 ? scrolled / scrollHeight : 0;
-          
-          // Dispatch custom event with scroll progress
-          window.dispatchEvent(
-            new CustomEvent('homeScrollProgress', { detail: { progress: scrollProgress } })
-          );
-          
-          ticking = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
         });
-        ticking = true;
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll(".fade-in-text, .reveal").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="bg-background">
-      <Navigation />
+    <div className="min-h-screen bg-background relative">
+      {/* T-Stop Background */}
       <TStopIndicator />
 
-      {/* SECTION 1: Hero Text - Full Viewport Height, Centered */}
-      <section
-        ref={section1Ref}
-        className="relative h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-24"
-      >
-        <div className="max-w-3xl text-center">
-          {/* Main Headline - Centered, Refined */}
-          <h1
-            className="font-display animate-fade-up"
-            style={{
-              fontSize: "clamp(2.5rem, 4vw, 4rem)",
-              fontWeight: 300,
-              lineHeight: 1.2,
-              letterSpacing: "-0.01em",
-              color: "oklch(0.12 0.005 60)",
-              marginBottom: "2rem",
-            }}
-          >
-            Cinematic Films for Brands, Culture and Social Impact
-          </h1>
+      <Navigation />
 
-          {/* Supporting Description - Centered, Readable */}
-          <p
-            className="font-body animate-fade-up delay-100"
-            style={{
-              fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
-              fontWeight: 400,
-              lineHeight: 1.8,
-              letterSpacing: "0.005em",
-              color: "oklch(0.35 0.008 60)",
-              maxWidth: "700px",
-              margin: "0 auto 3rem",
-            }}
-          >
-            I create cinematic films for brands, charities, and cultural organisations, crafting visual stories that connect audiences with meaningful ideas and real-world impact.
-          </p>
-
-          {/* CTA - Minimal Text Link */}
-          <div className="animate-fade-up delay-200">
-            <Link href="/projects">
-              <span
-                className="font-body text-xs tracking-widest uppercase inline-block"
-                style={{
-                  color: "oklch(0.12 0.005 60)",
-                  letterSpacing: "0.1em",
-                  borderBottom: "0.5px solid oklch(0.12 0.005 60)",
-                  paddingBottom: "4px",
-                  transition: "opacity 0.3s",
-                  fontSize: "0.875rem",
-                  cursor: "pointer",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.5")}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+      {/* ===== HERO SECTION ===== */}
+      <section className="relative min-h-screen flex items-center">
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-32 lg:pt-0">
+            {/* Left: Text content */}
+            <div className="lg:col-span-5 lg:col-start-2">
+              <p
+                className="label-upper mb-6 animate-fade-up"
+                style={{ color: "var(--sage-dark)" }}
               >
-                View Projects →
-              </span>
-            </Link>
+                Documentary Filmmaker & Editor
+              </p>
+              <h1
+                className="font-display animate-fade-up delay-100"
+                style={{
+                  fontSize: "clamp(3rem, 6vw, 5.5rem)",
+                  fontWeight: 300,
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.01em",
+                  color: "var(--charcoal)",
+                }}
+              >
+                Alikhan
+                <br />
+                Asadi
+              </h1>
+              <p
+                className="font-body mt-8 animate-fade-up delay-200"
+                style={{
+                  fontSize: "0.875rem",
+                  lineHeight: 1.8,
+                  color: "oklch(0.4 0.008 60)",
+                  maxWidth: "380px",
+                  fontWeight: 300,
+                }}
+              >
+                Crafting visual stories that matter. Working across documentary, 
+                branded content, and cultural projects with cinematic sensitivity.
+              </p>
+              <div className="mt-10 animate-fade-up delay-300">
+                <a
+                  href="/showreel"
+                  className="label-upper inline-flex items-center gap-3 group"
+                  style={{ color: "var(--charcoal)", fontSize: "0.7rem" }}
+                >
+                  <span className="relative">
+                    Watch Showreel
+                    <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
+                  </span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Sage green block with image */}
+            <div className="lg:col-span-5 lg:col-start-7 animate-fade-up delay-200">
+              <div className="relative">
+                {/* Sage green background block — offset */}
+                <div
+                  className="absolute -top-6 -right-6 w-full h-full"
+                  style={{ backgroundColor: "var(--sage)", opacity: 0.3 }}
+                />
+                {/* Image */}
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <img
+                    src={SHOWREEL_THUMB}
+                    alt="Alikhan Asadi — Filmmaker"
+                    className="w-full h-full object-cover grayscale"
+                    style={{ filter: "grayscale(100%) contrast(1.05)" }}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: Showreel Video - Slides Up Smoothly */}
-      <section
-        ref={section2Ref}
-        className="fade-in-text relative h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-24 bg-background"
-      >
-        <div className="w-full max-w-6xl">
-          {/* YouTube Video Embed */}
-          <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/Cgdm2V3AmBY?si=faCqB2ac23rIbv4c&controls=1"
-              title="Showreel"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ width: "100%", height: "100%" }}
-            />
+      {/* ===== SHOWREEL SECTION ===== */}
+      <section className="py-24 lg:py-32 relative z-10">
+        <div className="container">
+          <div className="fade-in-text grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Label */}
+            <div className="lg:col-span-3 lg:col-start-2">
+              <p className="label-upper" style={{ color: "var(--sage-dark)" }}>
+                Selected Work
+              </p>
+              <p
+                className="font-body mt-3"
+                style={{ fontSize: "0.8125rem", color: "oklch(0.45 0.008 60)", lineHeight: 1.7 }}
+              >
+                A selection of recent work spanning documentary, branded content, and cultural projects.
+              </p>
+            </div>
+
+            {/* Video embed */}
+            <div className="lg:col-span-7 lg:col-start-5">
+              <div
+                className="relative w-full overflow-hidden"
+                style={{ paddingBottom: "56.25%" }}
+              >
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/Cgdm2V3AmBY?rel=0&modestbranding=1&controls=1"
+                  title="Alikhan Asadi - Showreel"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ border: "none" }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: Logos + Quote - Slides Up Smoothly */}
-      <section
-        ref={section3Ref}
-        className="fade-in-text relative min-h-screen w-full px-6 md:px-12 lg:px-24 py-20 md:py-32 lg:py-40 bg-background"
-      >
-        {/* Logos Section */}
-        <div className="max-w-5xl mx-auto mb-20 md:mb-32 lg:mb-40">
-          <p
-            className="font-body text-xs tracking-widest uppercase mb-12 text-center"
-            style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
-          >
-            Selected Work
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
-            {/* Row 1: 4 logos */}
-            <div className="h-20 md:h-24 lg:h-28 flex items-center">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/download_858174bc.jpeg"
-                alt="British Muslim Heritage Centre"
-                className="h-full w-auto object-contain"
-              />
-            </div>
-            <div className="h-20 md:h-24 lg:h-28 flex items-center">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/grant_png_black_cb4d5bfe.png"
-                alt="Arts Council England"
-                className="h-full w-auto object-contain"
-              />
-            </div>
-            <div className="h-20 md:h-24 lg:h-28 flex items-center">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/FundedbyUKGov-stacked_0_8195ea34.png"
-                alt="Funded by UK Government"
-                className="h-full w-auto object-contain"
-              />
-            </div>
-            <div className="h-20 md:h-24 lg:h-28 flex items-center">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/factory-international_third_party_use_black_CMYK_765282e4.webp"
-                alt="Factory International"
-                className="h-full w-auto object-contain"
-              />
-            </div>
-            {/* Row 2: 3 logos */}
-            <div className="h-20 md:h-24 lg:h-28 flex items-center">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/images_9fd6a056.png"
-                alt="Raffle Aid"
-                className="h-full w-auto object-contain"
-              />
-            </div>
-            <div className="h-20 md:h-24 lg:h-28 flex items-center">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/premier-logo-4_fa3c6889.jpg"
-                alt="Premier Boxing Club Bolton"
-                className="h-full w-auto object-contain"
-              />
-            </div>
-            <div className="h-20 md:h-24 lg:h-28 flex items-center">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/R_78a035d2.png"
-                alt="Things That Go On Things"
-                className="h-full w-auto object-contain"
-              />
+      {/* ===== QUOTE SECTION ===== */}
+      <section className="relative z-10">
+        <div className="container">
+          <div className="fade-in-text py-20 lg:py-28 border-t border-b" style={{ borderColor: "oklch(0.88 0.006 75)" }}>
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="lg:col-span-8 lg:col-start-3 text-center">
+                <blockquote
+                  className="font-display italic"
+                  style={{
+                    fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
+                    fontWeight: 300,
+                    lineHeight: 1.4,
+                    color: "var(--charcoal)",
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  "Every frame is a question. Every cut is an answer."
+                </blockquote>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Quote Section */}
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="divider mb-12" />
-          <blockquote
-            className="font-display"
-            style={{
-              fontSize: "clamp(1.5rem, 2.2vw, 1.95rem)",
-              fontWeight: 300,
-              fontStyle: "italic",
-              lineHeight: 1.6,
-              letterSpacing: "0.01em",
-              color: "oklch(0.12 0.005 60)",
-            }}
-          >
-            "Every frame is a question. Every cut is an answer."
-          </blockquote>
-          <div className="divider mt-12" />
+      {/* ===== COLLABORATIONS ===== */}
+      <section className="py-20 lg:py-28 relative z-10">
+        <div className="container">
+          <div className="fade-in-text text-center">
+            <p className="label-upper mb-12" style={{ color: "oklch(0.5 0.008 60)" }}>
+              Collaborations & Partners
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14 opacity-50">
+              <img src={PARTNER_1} alt="Partners" className="h-8 lg:h-10 object-contain" style={{ filter: "grayscale(100%)" }} />
+            </div>
+          </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
-
-export default Home;

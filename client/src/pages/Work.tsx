@@ -1,23 +1,13 @@
 /* =============================================================
-   QUIET CINEMA — Work Page
-   Layout: Nav → Page Header → Filter → Portfolio Grid → Footer
+   EDITORIAL MINIMAL — Projects Page
+   Asymmetric grid, sage green accents, wide-spaced labels,
+   B&W thumbnails with hover color reveal
    ============================================================= */
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { useFadeIn } from "@/hooks/useFadeIn";
 
-
-const PROJECT_1 = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-2_1771863596000_na1fn_cHJvamVjdC0x.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTJfMTc3MTg2MzU5NjAwMF9uYTFmbl9jSEp2YW1WamRDMHguanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=Qscn~~2wqMBlxX3mDr~MfFpvf68hs-SCkXcB-7iXKB-WJi8Zty-x0nH~Lb1JGWMif5olAeE4HJrS6Sl9zubd07aWiuPxFMOEm85ovocccouFDK6I0R4-Xgcy4hSljuPl2qzxiDU1cRheefFCT3IaIpcJqm650Cz6Drppoo~zkWoMsGDPVOvLcQNMoQun7IJiZ-Hvdc7xjLla~tr2hhwJl6aG~97CblCXelWM-Y4nd8zv5-7d7tbmtEqnnRs~D94wgehGsQAyZxPlbV4Nx8N9Vo2Y5N23u4DkMlnPMYk48QbIKgu-I3L1n7O1tB4r7kviKwxqzsPXuw~AftYsc4ohHw__";
-const PROJECT_2 = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-3_1771863594000_na1fn_cHJvamVjdC0y.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTNfMTc3MTg2MzU5NDAwMF9uYTFmbl9jSEp2YW1WamRDMHkuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=hcgskKu8gtBRm6WByp~g0dne61Opo35eH8kk76rkgzgYR3-W4vaHPQRefJ-Q21f41PGQf4rFqxCWQ2f9SmfumnsQP-rvvrN2mp85IMsXWU-l6vGt-m3KTLSPKuSLy8pZmfeSs41FoVbdhoyheCTXJ2fz~Hqg6jmIWgMiLyxSkOhGb1h7-2fpX5xrAJPdA1bzTxMBXMykxLI8Cs8koD90Cd~v1R10p~8P~PF0Qs8E1MXWks87im~YSiWkHq-QvGT4Fdp9MrP1Mep5rstt1FnlcbRkzqBStuhcIIZ36BHIXW6evipkGPuFJvDHwxd0IGbpVfa1V5WbByr~~w-3eN4uIA__";
-const PROJECT_3 = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-4_1771863596000_na1fn_cHJvamVjdC0z.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTRfMTc3MTg2MzU5NjAwMF9uYTFmbl9jSEp2YW1WamRDMHouanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=fbxClxKY43hvkXQR7Xz8-~aX3fc8oD8HhTmt2vd2aAsvNMYx8YPshKvRFgK7U~zodAnrlCQ6t-dVLHKgvKMH52nXmobpHmnaW7LSCMyEzQ3gD2306vtpkCzzWG9SxaEadgx5OTJ~5PI-7yUgTpuoLHXhjn43gsUKnvhyFTYAQhf7zkAvO3jXIxzRmCJAsab3Y8L2BJtB1IKd-nttj8M6URiWDx3OymuwKGheLsE2ob92FmeneKPmGcmYQ-0lFw8sq2p6LgejXrIcw-BtgYAZcIpOvxwQsqnh0khz1OuVP6vfpiMzn7CqJZRZgILkUi6raVksreR8lDLwPYnQIARj9A__";
-
-// Use Unsplash for additional portfolio images
-const UNSPLASH_4 = "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1200&q=80";
-const UNSPLASH_5 = "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80";
-const UNSPLASH_6 = "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1200&q=80";
-
-// YouTube video thumbnails (extracted from video IDs)
+// YouTube video thumbnails
 const YOUTUBE_THUMBNAIL_1 = "https://img.youtube.com/vi/lm95sT7fyhQ/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_2 = "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_3 = "https://img.youtube.com/vi/Up9qPBxeyHk/maxresdefault.jpg";
@@ -29,58 +19,41 @@ const projects = [
     title: "Uncertain Futures",
     category: "Documentary | Social Impact & Research",
     year: "2024",
-    duration: "Full Length",
     description: "A collaborative art and research project amplifying women's lived experiences and collective dialogue. I worked as cinematographer and editor, creating a film that communicates the project's social impact and research engagement.",
     image: YOUTUBE_THUMBNAIL_1,
-    tag: "film",
     videoId: "lm95sT7fyhQ",
-    isEmbedded: true,
   },
   {
     id: 2,
     title: "TREES",
     category: "Impact Film | Immersive Installation",
     year: "2024",
-    duration: "Full Length",
-    description: "An engaging documentation of an immersive environmental installation exploring the hidden communication systems of trees. The film captures the intersection of art, science, and technology to communicate themes of connection, sustainability, and collective responsibility.",
+    description: "An engaging documentation of an immersive environmental installation exploring the hidden communication systems of trees. The film captures the intersection of art, science, and technology.",
     image: YOUTUBE_THUMBNAIL_2,
-    tag: "film",
     videoId: "JTl4IpGNyCw",
-    isEmbedded: true,
   },
   {
     id: 3,
     title: "GRF – Back to School Campaign",
     category: "Impact Animation | Global Education",
     year: "2025",
-    duration: "Full Length",
-    description: "An animated campaign film promoting access to education for displaced and vulnerable children. Through cinematic storytelling and carefully crafted sound design, the film communicates hope, resilience, and the transformative power of learning.",
+    description: "An animated campaign film promoting access to education for displaced and vulnerable children. Through cinematic storytelling and carefully crafted sound design, the film communicates hope and resilience.",
     image: YOUTUBE_THUMBNAIL_3,
-    tag: "film",
     videoId: "Up9qPBxeyHk",
-    isEmbedded: true,
   },
   {
     id: 4,
     title: "EFCL – Ecommerce Fulfilment Centre",
     category: "Corporate Film | Logistics & Brand",
     year: "2025",
-    duration: "Full Length",
-    description: "A corporate film created for EFCL, a fulfilment centre offering end-to-end eCommerce warehousing and logistics services. Overseeing the project from script to final result, I handled direction, cinematography, editing, and grading — capturing the scale and precision of their operation to communicate the brand's reliability and commitment to helping online retailers scale with confidence.",
+    description: "A corporate film created for EFCL, a fulfilment centre offering end-to-end eCommerce warehousing and logistics services. Overseeing the project from script to final result.",
     image: YOUTUBE_THUMBNAIL_4,
-    tag: "film",
     videoId: "8cSnAGsYav4",
-    isEmbedded: true,
   },
 ];
 
-const filters = ["All", "Film", "Documentary", "Animation"];
-
 export default function Work() {
-  const [activeFilter, setActiveFilter] = useState("All");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-
-  useFadeIn();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -91,107 +64,143 @@ export default function Work() {
       },
       { threshold: 0.1 }
     );
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    document.querySelectorAll(".fade-in-text, .reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  const filtered = activeFilter === "All"
-    ? projects
-    : projects.filter((p) => p.tag === activeFilter.toLowerCase());
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Page Header */}
-      <section className="fade-in-text pt-40 pb-12 px-6 md:px-12 lg:px-24">
-        <p
-          className="font-body text-xs tracking-widest uppercase mb-4 animate-fade-up"
-          style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
-        >
-          Portfolio
-        </p>
-        <h1
-          className="font-display animate-fade-up delay-100"
-          style={{
-            fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-            fontWeight: 300,
-            letterSpacing: "0.02em",
-            color: "oklch(0.12 0.005 60)",
-            lineHeight: 1.1,
-          }}
-        >
-          Selected Work
-        </h1>
+      <section className="pt-36 pb-12 px-6 md:px-12 lg:px-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-8 lg:col-start-2">
+            <p className="label-upper mb-4 animate-fade-up" style={{ color: "var(--sage-dark)" }}>
+              Projects
+            </p>
+            <h1
+              className="font-display animate-fade-up delay-100"
+              style={{
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                fontWeight: 300,
+                lineHeight: 1.1,
+                color: "var(--charcoal)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Selected Work
+            </h1>
+            <p
+              className="font-body mt-5 animate-fade-up delay-200"
+              style={{
+                fontSize: "0.875rem",
+                lineHeight: 1.7,
+                color: "oklch(0.45 0.008 60)",
+                maxWidth: "500px",
+              }}
+            >
+              A curated selection of documentary, branded, and cultural projects.
+            </p>
+          </div>
+        </div>
+        <div className="divider mt-10" />
       </section>
 
-
-
-      {/* Portfolio Grid */}
-      <section className="px-6 md:px-12 lg:px-24 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14">
-          {filtered.map((project, i) => (
+      {/* Projects Grid — Alternating layout */}
+      <section className="px-6 md:px-12 lg:px-24 pb-24">
+        <div className="space-y-20 lg:space-y-28">
+          {projects.map((project, index) => (
             <div
               key={project.id}
-              className="reveal project-card"
-              style={{ transitionDelay: `${i * 0.08}s` }}
+              className="fade-in-text grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center"
             >
-              <div className="overflow-hidden relative" style={{ aspectRatio: "4/3" }}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                  style={{ transition: "transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.04)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                />
-                {project.videoId && (
-                  <button
-                    onClick={() => setSelectedVideo(project.videoId)}
-                    className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 transition-colors"
-                    style={{ cursor: "pointer" }}
-                  >
-                    <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors" style={{boxShadow: "0 4px 16px rgba(0,0,0,0.3)"}}>
-                      <svg className="w-6 h-6 text-red-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
+              {/* Image — alternates left/right */}
+              <div
+                className={`lg:col-span-7 ${index % 2 === 0 ? "lg:col-start-1" : "lg:col-start-6 lg:order-2"}`}
+              >
+                <div
+                  className="project-card relative group"
+                  onClick={() => setSelectedVideo(project.videoId)}
+                >
+                  {/* Sage accent block behind image */}
+                  <div
+                    className="absolute -bottom-4 w-full h-full"
+                    style={{
+                      backgroundColor: "var(--sage)",
+                      opacity: 0.12,
+                      [index % 2 === 0 ? "right" : "left"]: "-16px",
+                    }}
+                  />
+                  <div className="relative aspect-video overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      style={{ filter: "grayscale(80%) contrast(1.05)" }}
+                    />
+                    {/* Play overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                      <div
+                        className="w-14 h-14 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: "rgba(255,255,255,0.9)" }}
+                      >
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                          <path d="M4 2l12 7-12 7V2z" fill="var(--charcoal)" />
+                        </svg>
+                      </div>
                     </div>
-                  </button>
-                )}
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-5">
-                <div className="flex items-start justify-between mb-1">
-                  <h2
-                    className="font-display"
-                    style={{
-                      fontSize: "1.2rem",
-                      fontWeight: 300,
-                      letterSpacing: "0.02em",
-                      color: "oklch(0.12 0.005 60)",
-                    }}
-                  >
-                    {project.title}
-                  </h2>
-                  <span
-                    className="font-body text-xs"
-                    style={{ color: "oklch(0.65 0.008 60)", marginTop: "3px", flexShrink: 0 }}
-                  >
-                    {project.year}
-                  </span>
-                </div>
-                <p
-                  className="font-body text-xs tracking-wider uppercase mb-3"
-                  style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.08em" }}
+              {/* Text */}
+              <div
+                className={`lg:col-span-4 ${index % 2 === 0 ? "lg:col-start-9" : "lg:col-start-1 lg:order-1"}`}
+              >
+                <p className="label-upper mb-3" style={{ color: "var(--sage-dark)" }}>
+                  {project.category}
+                </p>
+                <h2
+                  className="font-display"
+                  style={{
+                    fontSize: "clamp(1.5rem, 2.5vw, 2.2rem)",
+                    fontWeight: 300,
+                    color: "var(--charcoal)",
+                    lineHeight: 1.2,
+                  }}
                 >
-                  {project.category} · {project.duration}
+                  {project.title}
+                </h2>
+                <p
+                  className="font-body mt-2 mb-4"
+                  style={{ fontSize: "0.75rem", color: "oklch(0.5 0.008 60)", letterSpacing: "0.05em" }}
+                >
+                  {project.year}
                 </p>
                 <p
-                  className="font-body text-sm leading-relaxed"
-                  style={{ color: "oklch(0.45 0.010 60)" }}
+                  className="font-body"
+                  style={{
+                    fontSize: "0.8125rem",
+                    lineHeight: 1.7,
+                    color: "oklch(0.4 0.008 60)",
+                  }}
                 >
                   {project.description}
                 </p>
+                <button
+                  onClick={() => setSelectedVideo(project.videoId)}
+                  className="label-upper mt-6 inline-flex items-center gap-2 group"
+                  style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
+                >
+                  <span className="relative">
+                    Watch Film
+                    <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
+                  </span>
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
+                  </svg>
+                </button>
               </div>
             </div>
           ))}
@@ -201,36 +210,33 @@ export default function Work() {
       {/* Video Modal */}
       {selectedVideo && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-6"
+          style={{ backgroundColor: "rgba(0,0,0,0.9)" }}
           onClick={() => setSelectedVideo(null)}
         >
-          <div
-            className="relative w-full max-w-4xl"
-            onClick={(e) => e.stopPropagation()}
+          <button
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+            onClick={() => setSelectedVideo(null)}
           >
-            <button
-              onClick={() => setSelectedVideo(null)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
-              style={{ fontSize: "2rem", lineHeight: 1 }}
-            >
-              ×
-            </button>
-            <div style={{ aspectRatio: "16/9" }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
+          </button>
+          <div className="w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
               <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${selectedVideo}?si=ps3oxTRHKrwla9Zx&autoplay=1`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
+                className="absolute inset-0 w-full h-full"
+                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&rel=0`}
+                title="Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                style={{ borderRadius: "4px" }}
+                style={{ border: "none" }}
               />
             </div>
           </div>
         </div>
       )}
+
       <Footer />
     </div>
   );

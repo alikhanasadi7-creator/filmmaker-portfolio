@@ -1,11 +1,11 @@
 /* =============================================================
-   QUIET CINEMA — Films Page
-   Layout: Nav → Page Header → Film Cards → Footer
+   EDITORIAL MINIMAL — Films Page
+   Large cinematic cards with sage green accents,
+   editorial serif titles, wide-spaced labels
    ============================================================= */
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { useFadeIn } from "@/hooks/useFadeIn";
 
 const films = [
   {
@@ -37,8 +37,6 @@ const films = [
 export default function Films() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
-  useFadeIn();
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -48,7 +46,7 @@ export default function Films() {
       },
       { threshold: 0.1 }
     );
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    document.querySelectorAll(".fade-in-text, .reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -57,112 +55,131 @@ export default function Films() {
       <Navigation />
 
       {/* Page Header */}
-      <section className="fade-in-text pt-40 pb-12 px-6 md:px-12 lg:px-24">
-        <p
-          className="font-body text-xs tracking-widest uppercase mb-4 animate-fade-up"
-          style={{ color: "oklch(0.55 0.012 60)", letterSpacing: "0.12em" }}
-        >
-          Filmography
-        </p>
-        <h1
-          className="font-display animate-fade-up delay-100"
-          style={{
-            fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-            fontWeight: 300,
-            letterSpacing: "0.02em",
-            color: "oklch(0.12 0.005 60)",
-            lineHeight: 1.1,
-          }}
-        >
-          Films
-        </h1>
+      <section className="pt-36 pb-12 px-6 md:px-12 lg:px-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-8 lg:col-start-2">
+            <p className="label-upper mb-4 animate-fade-up" style={{ color: "var(--sage-dark)" }}>
+              Filmography
+            </p>
+            <h1
+              className="font-display animate-fade-up delay-100"
+              style={{
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                fontWeight: 300,
+                lineHeight: 1.1,
+                color: "var(--charcoal)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Films
+            </h1>
+            <p
+              className="font-body mt-5 animate-fade-up delay-200"
+              style={{
+                fontSize: "0.875rem",
+                lineHeight: 1.7,
+                color: "oklch(0.45 0.008 60)",
+                maxWidth: "500px",
+              }}
+            >
+              Independent documentary work exploring memory, place, and the human condition.
+            </p>
+          </div>
+        </div>
+        <div className="divider mt-10" />
       </section>
 
       {/* Film Cards */}
       <section className="px-6 md:px-12 lg:px-24 pb-24">
-        <div className="flex flex-col gap-20">
-          {films.map((film, i) => (
-            <div
-              key={film.id}
-              className="reveal"
-              style={{ transitionDelay: `${i * 0.1}s` }}
-            >
-              {/* Video Thumbnail - Full Width */}
-              <div
-                className="relative overflow-hidden w-full cursor-pointer"
-                style={{ aspectRatio: "21/9" }}
-                onClick={() => setSelectedVideo(film.videoId)}
-              >
-                <img
-                  src={film.thumbnail}
-                  alt={film.title}
-                  className="w-full h-full object-cover"
-                  style={{
-                    transition:
-                      "transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94)",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.transform = "scale(1.03)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.transform = "scale(1)")
-                  }
-                />
-                <div className="absolute inset-0 bg-black/20 hover:bg-black/40 transition-colors flex items-center justify-center">
+        <div className="space-y-24 lg:space-y-32">
+          {films.map((film, index) => (
+            <div key={film.id} className="fade-in-text">
+              {/* Film card — full width cinematic */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                {/* Large thumbnail */}
+                <div className={`lg:col-span-8 ${index % 2 === 0 ? "lg:col-start-1" : "lg:col-start-5"}`}>
                   <div
-                    className="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors"
-                    style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.3)" }}
+                    className="project-card relative group cursor-pointer"
+                    onClick={() => setSelectedVideo(film.videoId)}
                   >
-                    <svg
-                      className="w-8 h-8 text-red-600 ml-1"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+                    {/* Sage accent */}
+                    <div
+                      className="absolute -bottom-5 -right-5 w-full h-full"
+                      style={{ backgroundColor: "var(--sage)", opacity: 0.1 }}
+                    />
+                    <div className="relative aspect-[21/9] overflow-hidden">
+                      <img
+                        src={film.thumbnail}
+                        alt={film.title}
+                        className="w-full h-full object-cover"
+                        style={{ filter: "grayscale(70%) contrast(1.1)" }}
+                      />
+                      {/* Play overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                        <div
+                          className="w-16 h-16 rounded-full flex items-center justify-center"
+                          style={{ backgroundColor: "rgba(255,255,255,0.9)" }}
+                        >
+                          <svg width="20" height="20" viewBox="0 0 18 18" fill="none">
+                            <path d="M4 2l12 7-12 7V2z" fill="var(--charcoal)" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Film Info */}
-              <div className="mt-8 max-w-3xl">
-                <div className="flex items-baseline gap-4 mb-2">
+                {/* Film info */}
+                <div className={`lg:col-span-4 ${index % 2 === 0 ? "lg:col-start-9" : "lg:col-start-1 lg:row-start-1"} flex flex-col justify-center`}>
+                  <p className="label-upper mb-2" style={{ color: "var(--sage-dark)" }}>
+                    {film.category} · {film.location} · {film.duration}
+                  </p>
                   <h2
                     className="font-display"
                     style={{
-                      fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
+                      fontSize: "clamp(2rem, 3.5vw, 3rem)",
                       fontWeight: 300,
+                      color: "var(--charcoal)",
+                      lineHeight: 1.15,
                       letterSpacing: "0.02em",
-                      color: "oklch(0.12 0.005 60)",
                     }}
                   >
                     {film.title}
                   </h2>
-                  <span
-                    className="font-body text-sm"
-                    style={{ color: "oklch(0.55 0.012 60)" }}
+                  <p
+                    className="font-body mt-1"
+                    style={{ fontSize: "0.8rem", color: "oklch(0.5 0.008 60)", letterSpacing: "0.05em" }}
                   >
                     {film.year}
-                  </span>
-                </div>
-                <p
-                  className="font-body text-xs tracking-wider uppercase mb-5"
-                  style={{
-                    color: "oklch(0.55 0.012 60)",
-                    letterSpacing: "0.1em",
-                  }}
-                >
-                  {film.category} | {film.location} | {film.duration}
-                </p>
-                <div
-                  className="font-body text-base leading-relaxed"
-                  style={{ color: "oklch(0.35 0.010 60)", lineHeight: 1.8 }}
-                >
-                  {film.description.split("\n\n").map((paragraph, idx) => (
-                    <p key={idx} className={idx > 0 ? "mt-4" : ""}>
-                      {paragraph}
-                    </p>
-                  ))}
+                  </p>
+                  <div className="mt-5 space-y-3">
+                    {film.description.split("\n\n").map((para, i) => (
+                      <p
+                        key={i}
+                        className="font-body"
+                        style={{
+                          fontSize: "0.8125rem",
+                          lineHeight: 1.75,
+                          color: "oklch(0.4 0.008 60)",
+                        }}
+                      >
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => setSelectedVideo(film.videoId)}
+                    className="label-upper mt-6 inline-flex items-center gap-2 group self-start"
+                    style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
+                  >
+                    <span className="relative">
+                      Watch Film
+                      <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
+                    </span>
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -173,31 +190,27 @@ export default function Films() {
       {/* Video Modal */}
       {selectedVideo && (
         <div
-          className="fixed inset-0 bg-black/85 flex items-center justify-center z-50 p-6"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-6"
+          style={{ backgroundColor: "rgba(0,0,0,0.9)" }}
           onClick={() => setSelectedVideo(null)}
         >
-          <div
-            className="relative w-full max-w-5xl"
-            onClick={(e) => e.stopPropagation()}
+          <button
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+            onClick={() => setSelectedVideo(null)}
           >
-            <button
-              onClick={() => setSelectedVideo(null)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
-              style={{ fontSize: "2rem", lineHeight: 1 }}
-            >
-              ×
-            </button>
-            <div style={{ aspectRatio: "16/9" }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
+          </button>
+          <div className="w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
               <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
+                className="absolute inset-0 w-full h-full"
+                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&rel=0`}
+                title="Film"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                style={{ borderRadius: "4px" }}
+                style={{ border: "none" }}
               />
             </div>
           </div>
