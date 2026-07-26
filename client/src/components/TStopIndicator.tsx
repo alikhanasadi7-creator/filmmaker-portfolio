@@ -1,21 +1,25 @@
 /* =============================================================
-   T-STOP LENS INDICATOR — Full Page Height
-   Fixed vertical indicator on the left side of the homepage.
-   Spans from top (T 2.6) to bottom (T 22) with a curved arc.
-   The active value changes dynamically as the user scrolls.
+   T-STOP LENS INDICATOR — Full Page Height, Half-Circle Curve
+   Terracotta/copper colored (#A0603A) with a half-circle arc
+   spanning from T 2.6 at top to T 22 at bottom.
    ============================================================= */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // T-stop values on cinema lenses (ARRI Alura style)
 const T_STOPS = [2.6, 2.8, 4, 5.6, 8, 11, 16, 22];
 
-// Non-linear positioning to give a "curved" feel — values bunch up at the top
-// mimicking real lens barrel markings where wider apertures are closer together
+// Non-linear positioning mimicking real lens barrel markings
 const T_STOP_POSITIONS = [0, 6, 16, 28, 44, 60, 78, 100];
+
+// Terracotta/copper color from the reference
+const ACCENT_COLOR = "#A0603A";
+const ACCENT_LIGHT = "rgba(160, 96, 58, 0.4)";
+const ACCENT_FAINT = "rgba(160, 96, 58, 0.15)";
 
 export default function TStopIndicator() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [visible, setVisible] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 800);
@@ -27,14 +31,14 @@ export default function TStopIndicator() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // initial call
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
       clearTimeout(timer);
     };
   }, []);
 
-  // Calculate current T-stop index based on scroll progress mapped to positions
+  // Calculate current T-stop index based on scroll progress
   const scrollPercent = scrollProgress * 100;
   let currentIndex = 0;
   for (let i = 0; i < T_STOP_POSITIONS.length - 1; i++) {
@@ -46,54 +50,61 @@ export default function TStopIndicator() {
     currentIndex = T_STOP_POSITIONS.length - 1;
   }
 
-  // Interpolate the dot position smoothly
+  // Dot position follows scroll smoothly
   const dotPosition = scrollProgress * 100;
 
   return (
     <div
-      className="fixed left-5 lg:left-8 top-0 bottom-0 z-40 hidden md:flex flex-col items-center py-24"
+      className="fixed left-4 lg:left-8 top-0 bottom-0 z-40 hidden md:flex flex-col items-center py-20"
       style={{
         opacity: visible ? 1 : 0,
         transition: "opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        width: "60px",
       }}
     >
       {/* T Label at top */}
       <div
-        className="font-body mb-4"
+        className="font-body mb-3"
         style={{
-          fontSize: "0.6rem",
-          letterSpacing: "0.2em",
-          color: "oklch(0.45 0.012 60)",
-          fontWeight: 500,
+          fontSize: "0.65rem",
+          letterSpacing: "0.15em",
+          color: ACCENT_COLOR,
+          fontWeight: 600,
         }}
       >
         T
       </div>
 
-      {/* Full-height vertical track */}
-      <div className="relative flex-1 w-px" style={{ minHeight: "0" }}>
-        {/* Track line — subtle curved path via SVG */}
+      {/* Full-height vertical track with half-circle curve */}
+      <div ref={trackRef} className="relative flex-1 w-full" style={{ minHeight: "0" }}>
+        {/* Half-circle curved path SVG */}
         <svg
-          className="absolute inset-0 w-full h-full overflow-visible"
+          className="absolute inset-0 h-full overflow-visible"
+          style={{ width: "50px", left: "0" }}
           preserveAspectRatio="none"
-          viewBox="0 0 20 1000"
-          style={{ width: "20px", left: "-10px" }}
+          viewBox="0 0 50 100"
+          fill="none"
         >
-          {/* Curved path */}
+          {/* Half-circle arc curving to the right */}
           <path
-            d="M 10 0 C 14 200, 6 400, 12 600 C 8 800, 10 900, 10 1000"
+            d="M 10 0 C 45 15, 45 40, 30 50 C 15 60, 45 85, 10 100"
             fill="none"
-            stroke="oklch(0.85 0.006 75)"
-            strokeWidth="0.5"
+            stroke={ACCENT_FAINT}
+            strokeWidth="0.4"
             vectorEffect="non-scaling-stroke"
           />
         </svg>
 
-        {/* T-stop tick marks and values */}
+        {/* T-stop tick marks and values along the curve */}
         {T_STOPS.map((stop, i) => {
           const yPos = T_STOP_POSITIONS[i];
           const isActive = i === currentIndex;
           const isNear = Math.abs(i - currentIndex) === 1;
+
+          // Calculate horizontal offset for the curve (half-circle feel)
+          // Values in the middle bulge outward more
+          const t = yPos / 100;
+          const curveOffset = Math.sin(t * Math.PI) * 16;
 
           return (
             <div
@@ -101,8 +112,8 @@ export default function TStopIndicator() {
               className="absolute flex items-center"
               style={{
                 top: `${yPos}%`,
-                left: "50%",
-                transform: "translate(-50%, -50%)",
+                left: `${8 + curveOffset}px`,
+                transform: "translateY(-50%)",
                 transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
               }}
             >
@@ -112,28 +123,25 @@ export default function TStopIndicator() {
                   width: isActive ? "14px" : isNear ? "9px" : "5px",
                   height: isActive ? "1.5px" : "1px",
                   backgroundColor: isActive
-                    ? "oklch(0.12 0.005 60)"
+                    ? ACCENT_COLOR
                     : isNear
-                    ? "oklch(0.5 0.012 60)"
-                    : "oklch(0.78 0.006 75)",
+                    ? ACCENT_LIGHT
+                    : ACCENT_FAINT,
                   transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-                  position: "absolute",
-                  left: "12px",
                 }}
               />
 
               {/* Value label */}
               <span
-                className="font-body absolute whitespace-nowrap select-none"
+                className="font-body whitespace-nowrap select-none ml-2"
                 style={{
-                  left: "30px",
                   fontSize: isActive ? "0.7rem" : "0.55rem",
                   fontWeight: isActive ? 600 : 400,
                   color: isActive
-                    ? "oklch(0.12 0.005 60)"
+                    ? ACCENT_COLOR
                     : isNear
-                    ? "oklch(0.45 0.012 60)"
-                    : "oklch(0.75 0.006 75)",
+                    ? ACCENT_LIGHT
+                    : ACCENT_FAINT,
                   transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
                   transform: isActive ? "scale(1.1)" : "scale(1)",
                   transformOrigin: "left center",
@@ -145,30 +153,38 @@ export default function TStopIndicator() {
           );
         })}
 
-        {/* Active position indicator (dot) — moves smoothly with scroll */}
-        <div
-          className="absolute left-1/2"
-          style={{
-            top: `${dotPosition}%`,
-            transform: "translate(-50%, -50%)",
-            width: "6px",
-            height: "6px",
-            borderRadius: "50%",
-            backgroundColor: "oklch(0.12 0.005 60)",
-            transition: "top 0.15s linear",
-            boxShadow: "0 0 8px rgba(0,0,0,0.2)",
-          }}
-        />
+        {/* Active position dot — moves smoothly with scroll along the curve */}
+        {(() => {
+          const t = dotPosition / 100;
+          const curveOffset = Math.sin(t * Math.PI) * 16;
+          return (
+            <div
+              className="absolute"
+              style={{
+                top: `${dotPosition}%`,
+                left: `${6 + curveOffset}px`,
+                transform: "translateY(-50%)",
+                width: "7px",
+                height: "7px",
+                borderRadius: "50%",
+                backgroundColor: ACCENT_COLOR,
+                transition: "top 0.15s linear, left 0.15s linear",
+                boxShadow: `0 0 10px ${ACCENT_LIGHT}, 0 0 4px ${ACCENT_LIGHT}`,
+              }}
+            />
+          );
+        })()}
       </div>
 
       {/* STOP label at bottom */}
       <div
-        className="font-body mt-4"
+        className="font-body mt-3"
         style={{
           fontSize: "0.5rem",
           letterSpacing: "0.2em",
-          color: "oklch(0.55 0.012 60)",
+          color: ACCENT_COLOR,
           textTransform: "uppercase",
+          fontWeight: 500,
         }}
       >
         STOP
