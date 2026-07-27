@@ -57,7 +57,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                VISUAL
+                CINEMATIC
               </span>
               <span
                 className="font-body"
@@ -70,7 +70,7 @@ export default function Home() {
                   alignSelf: "center",
                 }}
               >
-                DOCUMENTARY &<br />BRANDED CONTENT
+                FOR BRANDS,<br />CULTURE & SOCIAL
               </span>
               <span
                 className="font-display"
@@ -82,7 +82,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                STORIES
+                FILMS
               </span>
             </div>
 
@@ -99,7 +99,7 @@ export default function Home() {
                   alignSelf: "center",
                 }}
               >
-                CRAFTED BY
+                CONNECTING AUDIENCES WITH
               </span>
               <span
                 className="font-display"
@@ -111,7 +111,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                ALIKHAN
+                MEANINGFUL
               </span>
             </div>
 
@@ -127,7 +127,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                THAT
+                IDEAS &
               </span>
               <span
                 className="font-display"
@@ -139,7 +139,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                MATTER
+                IMPACT
               </span>
             </div>
 
