@@ -50,7 +50,7 @@ export default function Home() {
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
                   fontWeight: 700,
                   lineHeight: 1,
                   color: "var(--charcoal)",
@@ -75,7 +75,7 @@ export default function Home() {
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
                   fontWeight: 300,
                   lineHeight: 1,
                   color: "oklch(0.55 0.008 60)",
@@ -104,7 +104,7 @@ export default function Home() {
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
                   fontWeight: 700,
                   lineHeight: 1,
                   color: "var(--charcoal)",
@@ -120,7 +120,7 @@ export default function Home() {
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
                   fontWeight: 300,
                   lineHeight: 1,
                   color: "oklch(0.55 0.008 60)",
@@ -132,7 +132,7 @@ export default function Home() {
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
                   fontWeight: 700,
                   lineHeight: 1,
                   color: "var(--charcoal)",

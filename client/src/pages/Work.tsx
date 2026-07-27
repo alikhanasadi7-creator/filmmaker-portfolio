@@ -1,7 +1,7 @@
 /* =============================================================
    EDITORIAL MINIMAL — Projects Page
-   Asymmetric grid, sage green accents, wide-spaced labels,
-   B&W thumbnails with hover color reveal
+   Creative asymmetric layout — staggered grid with varied sizes,
+   overlapping elements, and editorial positioning
    ============================================================= */
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
@@ -52,6 +52,14 @@ const projects = [
   },
 ];
 
+// Creative layout positions for each project card
+const layoutConfigs = [
+  { colSpan: "lg:col-span-7", colStart: "lg:col-start-1", aspect: "aspect-[16/10]", textAlign: "right", textCol: "lg:col-span-4 lg:col-start-9", mt: "lg:-mt-12" },
+  { colSpan: "lg:col-span-5", colStart: "lg:col-start-7", aspect: "aspect-[4/5]", textAlign: "left", textCol: "lg:col-span-4 lg:col-start-2", mt: "lg:mt-16" },
+  { colSpan: "lg:col-span-6", colStart: "lg:col-start-2", aspect: "aspect-[16/9]", textAlign: "right", textCol: "lg:col-span-4 lg:col-start-9", mt: "lg:-mt-8" },
+  { colSpan: "lg:col-span-5", colStart: "lg:col-start-6", aspect: "aspect-[3/4]", textAlign: "left", textCol: "lg:col-span-4 lg:col-start-1", mt: "lg:mt-20" },
+];
+
 export default function Work() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
@@ -73,9 +81,9 @@ export default function Work() {
       <Navigation />
 
       {/* Page Header */}
-      <section className="pt-36 pb-12 px-6 md:px-12 lg:px-24">
+      <section className="pt-36 pb-16 px-6 md:px-12 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div className="lg:col-span-8 lg:col-start-2">
+          <div className="lg:col-span-5 lg:col-start-1">
             <p className="label-upper mb-4 animate-fade-up" style={{ color: "var(--sage-dark)" }}>
               Projects
             </p>
@@ -91,59 +99,49 @@ export default function Work() {
             >
               Selected Work
             </h1>
+          </div>
+          <div className="lg:col-span-4 lg:col-start-8 flex items-end">
             <p
-              className="font-body mt-5 animate-fade-up delay-200"
+              className="font-body animate-fade-up delay-200"
               style={{
-                fontSize: "0.875rem",
+                fontSize: "0.8125rem",
                 lineHeight: 1.7,
                 color: "oklch(0.45 0.008 60)",
-                maxWidth: "500px",
               }}
             >
-              A curated selection of documentary, branded, and cultural projects.
+              A curated selection of documentary, branded, and cultural projects — each crafted with cinematic precision.
             </p>
           </div>
         </div>
-        <div className="divider mt-10" />
       </section>
 
-      {/* Projects Grid — Alternating layout */}
-      <section className="px-6 md:px-12 lg:px-24 pb-24">
-        <div className="space-y-20 lg:space-y-28">
-          {projects.map((project, index) => (
+      {/* Creative Staggered Grid */}
+      <section className="px-6 md:px-12 lg:px-24 pb-32">
+        {projects.map((project, index) => {
+          const layout = layoutConfigs[index % layoutConfigs.length];
+          return (
             <div
               key={project.id}
-              className="fade-in-text grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center"
+              className={`fade-in-text grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mb-16 lg:mb-8 ${layout.mt}`}
             >
-              {/* Image — alternates left/right */}
-              <div
-                className={`lg:col-span-7 ${index % 2 === 0 ? "lg:col-start-1" : "lg:col-start-6 lg:order-2"}`}
-              >
+              {/* Image */}
+              <div className={`${layout.colSpan} ${layout.colStart} ${index % 2 !== 0 ? "lg:order-2" : ""}`}>
                 <div
-                  className="project-card relative group"
+                  className="project-card relative group cursor-pointer overflow-hidden"
                   onClick={() => setSelectedVideo(project.videoId)}
                 >
-                  {/* Sage accent block behind image */}
-                  <div
-                    className="absolute -bottom-4 w-full h-full"
-                    style={{
-                      backgroundColor: "var(--sage)",
-                      opacity: 0.12,
-                      [index % 2 === 0 ? "right" : "left"]: "-16px",
-                    }}
-                  />
-                  <div className="relative aspect-video overflow-hidden">
+                  <div className={`relative ${layout.aspect} overflow-hidden`}>
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover"
-                      style={{ filter: "grayscale(80%) contrast(1.05)" }}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      style={{ filter: "grayscale(70%) contrast(1.05)" }}
                     />
                     {/* Play overlay */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
                       <div
                         className="w-14 h-14 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: "rgba(255,255,255,0.9)" }}
+                        style={{ backgroundColor: "rgba(255,255,255,0.92)" }}
                       >
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                           <path d="M4 2l12 7-12 7V2z" fill="var(--charcoal)" />
@@ -151,20 +149,29 @@ export default function Work() {
                       </div>
                     </div>
                   </div>
+                  {/* Number overlay */}
+                  <span
+                    className="absolute bottom-4 left-5 font-display"
+                    style={{
+                      fontSize: "0.7rem",
+                      letterSpacing: "0.15em",
+                      color: "oklch(0.6 0.008 60)",
+                    }}
+                  >
+                    0{project.id}
+                  </span>
                 </div>
               </div>
 
               {/* Text */}
-              <div
-                className={`lg:col-span-4 ${index % 2 === 0 ? "lg:col-start-9" : "lg:col-start-1 lg:order-1"}`}
-              >
-                <p className="label-upper mb-3" style={{ color: "var(--sage-dark)" }}>
+              <div className={`${layout.textCol} ${index % 2 !== 0 ? "lg:order-1" : ""} flex flex-col justify-end`}>
+                <p className="label-upper mb-2" style={{ color: "var(--sage-dark)", fontSize: "0.6rem" }}>
                   {project.category}
                 </p>
                 <h2
                   className="font-display"
                   style={{
-                    fontSize: "clamp(1.5rem, 2.5vw, 2.2rem)",
+                    fontSize: "clamp(1.4rem, 2.2vw, 2rem)",
                     fontWeight: 300,
                     color: "var(--charcoal)",
                     lineHeight: 1.2,
@@ -173,15 +180,15 @@ export default function Work() {
                   {project.title}
                 </h2>
                 <p
-                  className="font-body mt-2 mb-4"
-                  style={{ fontSize: "0.75rem", color: "oklch(0.5 0.008 60)", letterSpacing: "0.05em" }}
+                  className="font-body mt-1"
+                  style={{ fontSize: "0.7rem", color: "oklch(0.55 0.008 60)", letterSpacing: "0.08em" }}
                 >
                   {project.year}
                 </p>
                 <p
-                  className="font-body"
+                  className="font-body mt-4"
                   style={{
-                    fontSize: "0.8125rem",
+                    fontSize: "0.8rem",
                     lineHeight: 1.7,
                     color: "oklch(0.4 0.008 60)",
                   }}
@@ -190,8 +197,8 @@ export default function Work() {
                 </p>
                 <button
                   onClick={() => setSelectedVideo(project.videoId)}
-                  className="label-upper mt-6 inline-flex items-center gap-2 group"
-                  style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
+                  className="label-upper mt-5 inline-flex items-center gap-2 group self-start"
+                  style={{ color: "var(--charcoal)", fontSize: "0.6rem" }}
                 >
                   <span className="relative">
                     Watch Film
@@ -203,8 +210,8 @@ export default function Work() {
                 </button>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </section>
 
       {/* Video Modal */}
