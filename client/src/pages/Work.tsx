@@ -89,7 +89,7 @@ export default function Work() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Selected Work
+              Selected Works
             </h1>
             <p
               className="font-body mt-5 animate-fade-up delay-200"
