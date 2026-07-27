@@ -9,11 +9,16 @@ import Navigation from "@/components/Navigation";
 import TStopIndicator from "@/components/TStopIndicator";
 import Footer from "@/components/Footer";
 
-// Partner logos
-const PARTNER_1 = "https://private-us-east-1.manuscdn.com/sessionFile/SY7V5OoJepJFWouXljRbZx/sandbox/bN01zGEGcaAUax5YJBn29W-img-1_1771863596000_na1fn_bG9nb3M.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvU1k3VjVPb0plcEpGV291WGxqUmJaeC9zYW5kYm94L2JOMDF6R0VHY2FBVWF4NVlKQm4yOVctaW1nLTFfMTc3MTg2MzU5NjAwMF9uYTFmbl9iRzluYjNNLmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=T5zzxPQMqbqJQIFxVaYKwzpqRBsqYCl8ybmXhM~ydJJLjMPmh0Ys-HqPXQCqCy3ksNlqJqVVBOEHMqPiMuWPpqkqHAEJlkTB1Dv5Wd9VVBmvMTvwHnCXnfMFCJwjJDqoEjzpXcJcbqM8Yvp7j1JLqB2F~Iqx7fTqHqVqKqNqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqHqJqLqNqPqRqTqVqXqZq1q3q5q7q9qBqDqFqH__";
-
-// Showreel thumbnail
-const SHOWREEL_THUMB = "https://img.youtube.com/vi/Cgdm2V3AmBY/maxresdefault.jpg";
+// Brand logos - individual partners
+const partners = [
+  { name: "British Muslim Heritage Centre", initials: "BMHC" },
+  { name: "Arts Council England", initials: "ACE" },
+  { name: "UK Government", initials: "UK GOV" },
+  { name: "Factory International", initials: "FACTORY" },
+  { name: "Raffle Aid", initials: "RAFFLE AID" },
+  { name: "Premier Boxing Club Bolton", initials: "PBC" },
+  { name: "Things That Go On Things", initials: "TTGOT" },
+];
 
 export default function Home() {
   useEffect(() => {
@@ -40,8 +45,8 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-32 lg:pt-0">
-            {/* Left: Text content */}
-            <div className="lg:col-span-5 lg:col-start-2">
+            {/* Text content — centered */}
+            <div className="lg:col-span-6 lg:col-start-2">
               <p
                 className="label-upper mb-6 animate-fade-up"
                 style={{ color: "var(--sage-dark)" }}
@@ -92,25 +97,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Sage green block with image */}
-            <div className="lg:col-span-5 lg:col-start-7 animate-fade-up delay-200">
-              <div className="relative">
-                {/* Sage green background block — offset */}
-                <div
-                  className="absolute -top-6 -right-6 w-full h-full"
-                  style={{ backgroundColor: "var(--sage)", opacity: 0.3 }}
-                />
-                {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  <img
-                    src={SHOWREEL_THUMB}
-                    alt="Alikhan Asadi — Filmmaker"
-                    className="w-full h-full object-cover grayscale"
-                    style={{ filter: "grayscale(100%) contrast(1.05)" }}
-                  />
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
@@ -183,8 +170,30 @@ export default function Home() {
             <p className="label-upper mb-12" style={{ color: "oklch(0.5 0.008 60)" }}>
               Collaborations & Partners
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14 opacity-50">
-              <img src={PARTNER_1} alt="Partners" className="h-8 lg:h-10 object-contain" style={{ filter: "grayscale(100%)" }} />
+            <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-10">
+              {partners.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="flex items-center justify-center px-4 py-2 border"
+                  style={{
+                    borderColor: "oklch(0.82 0.006 75)",
+                    minWidth: "100px",
+                  }}
+                >
+                  <span
+                    className="font-body text-center"
+                    style={{
+                      fontSize: "0.6rem",
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase",
+                      color: "oklch(0.4 0.008 60)",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {partner.initials}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

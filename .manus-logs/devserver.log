@@ -745,3 +745,5 @@
 [2026-07-26T23:51:35.266Z] 11:51:35 PM [vite] (client) hmr update /src/pages/About.tsx, /src/index.css
 [2026-07-26T23:51:53.655Z] 11:51:53 PM [vite] (client) hmr update /src/index.css, /src/components/Navigation.tsx
 [2026-07-26T23:52:54.139Z] 11:52:54 PM [vite] (client) hmr update /src/index.css, /src/components/Footer.tsx
+[2026-07-27T00:41:43.116Z] 12:41:43 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
+[2026-07-27T00:41:50.493Z] 12:41:50 AM [vite] (client) hmr update /src/pages/Home.tsx, /src/index.css
