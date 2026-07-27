@@ -50,14 +50,14 @@ export default function Home() {
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
                   fontWeight: 700,
                   lineHeight: 1,
                   color: "var(--charcoal)",
                   letterSpacing: "-0.02em",
                 }}
               >
-                CINEMATIC
+                VISUAL
               </span>
               <span
                 className="font-body"
@@ -70,19 +70,19 @@ export default function Home() {
                   alignSelf: "center",
                 }}
               >
-                FOR BRANDS,<br />CULTURE & SOCIAL
+                DOCUMENTARY &<br />BRANDED CONTENT
               </span>
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
                   fontWeight: 300,
                   lineHeight: 1,
                   color: "oklch(0.55 0.008 60)",
                   letterSpacing: "-0.02em",
                 }}
               >
-                FILMS
+                STORIES
               </span>
             </div>
 
@@ -99,19 +99,19 @@ export default function Home() {
                   alignSelf: "center",
                 }}
               >
-                CONNECTING AUDIENCES WITH
+                CRAFTED BY
               </span>
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
                   fontWeight: 700,
                   lineHeight: 1,
                   color: "var(--charcoal)",
                   letterSpacing: "-0.02em",
                 }}
               >
-                MEANINGFUL
+                ALIKHAN
               </span>
             </div>
 
@@ -120,26 +120,26 @@ export default function Home() {
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
                   fontWeight: 300,
                   lineHeight: 1,
                   color: "oklch(0.55 0.008 60)",
                   letterSpacing: "-0.02em",
                 }}
               >
-                IDEAS &
+                THAT
               </span>
               <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(1.91rem, 5.35vw, 4.59rem)",
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
                   fontWeight: 700,
                   lineHeight: 1,
                   color: "var(--charcoal)",
                   letterSpacing: "-0.02em",
                 }}
               >
-                IMPACT
+                MATTER
               </span>
             </div>
 
