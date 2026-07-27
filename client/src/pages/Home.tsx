@@ -1,23 +1,22 @@
 /* =============================================================
    EDITORIAL MINIMAL — Home Page
-   Asymmetric layout with sage green blocks, wide-spaced type,
-   large serif headings, and cinematic imagery.
-   T-stop indicator as transparent background.
+   Creative typographic hero inspired by mixed-weight, mixed-size
+   layout. Actual brand logos. T-stop as background.
    ============================================================= */
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import TStopIndicator from "@/components/TStopIndicator";
 import Footer from "@/components/Footer";
 
-// Brand logos - individual partners
-const partners = [
-  { name: "British Muslim Heritage Centre", initials: "BMHC" },
-  { name: "Arts Council England", initials: "ACE" },
-  { name: "UK Government", initials: "UK GOV" },
-  { name: "Factory International", initials: "FACTORY" },
-  { name: "Raffle Aid", initials: "RAFFLE AID" },
-  { name: "Premier Boxing Club Bolton", initials: "PBC" },
-  { name: "Things That Go On Things", initials: "TTGOT" },
+// Actual brand logo URLs
+const logos = [
+  { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/download_858174bc.jpeg", alt: "British Muslim Heritage Centre" },
+  { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/grant_png_black_cb4d5bfe.png", alt: "Arts Council England" },
+  { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/FundedbyUKGov-stacked_0_8195ea34.png", alt: "Funded by UK Government" },
+  { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/factory-international_third_party_use_black_CMYK_765282e4.webp", alt: "Factory International" },
+  { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/images_9fd6a056.png", alt: "Raffle Aid" },
+  { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/premier-logo-4_fa3c6889.jpg", alt: "Premier Boxing Club Bolton" },
+  { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663377378181/cvGZpLDgUbhouszAuFobVz/R_78a035d2.png", alt: "Things That Go On Things" },
 ];
 
 export default function Home() {
@@ -41,63 +40,125 @@ export default function Home() {
 
       <Navigation />
 
-      {/* ===== HERO SECTION ===== */}
-      <section className="relative min-h-screen flex items-center">
-        <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-32 lg:pt-0">
-            {/* Text content — centered */}
-            <div className="lg:col-span-6 lg:col-start-2">
-              <p
-                className="label-upper mb-6 animate-fade-up"
-                style={{ color: "var(--sage-dark)" }}
-              >
-                Documentary Filmmaker & Editor
-              </p>
-              <h1
-                className="font-display animate-fade-up delay-100"
+      {/* ===== HERO SECTION — Creative Typographic Layout ===== */}
+      <section className="relative min-h-screen flex items-end justify-end overflow-hidden">
+        <div className="container relative z-10 pb-16 lg:pb-24">
+          {/* Creative typographic composition — bottom right, mixed weights/sizes */}
+          <div className="flex flex-col items-end text-right animate-fade-up">
+            {/* Line 1 */}
+            <div className="flex items-baseline gap-3 lg:gap-5">
+              <span
+                className="font-display"
                 style={{
-                  fontSize: "clamp(3rem, 6vw, 5.5rem)",
-                  fontWeight: 300,
-                  lineHeight: 1.05,
-                  letterSpacing: "-0.01em",
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 700,
+                  lineHeight: 1,
                   color: "var(--charcoal)",
+                  letterSpacing: "-0.02em",
                 }}
               >
-                Alikhan
-                <br />
-                Asadi
-              </h1>
-              <p
-                className="font-body mt-8 animate-fade-up delay-200"
+                VISUAL
+              </span>
+              <span
+                className="font-body"
                 style={{
-                  fontSize: "0.875rem",
-                  lineHeight: 1.8,
-                  color: "oklch(0.4 0.008 60)",
-                  maxWidth: "380px",
+                  fontSize: "clamp(0.55rem, 1vw, 0.7rem)",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "oklch(0.5 0.008 60)",
                   fontWeight: 300,
+                  alignSelf: "center",
                 }}
               >
-                Crafting visual stories that matter. Working across documentary, 
-                branded content, and cultural projects with cinematic sensitivity.
-              </p>
-              <div className="mt-10 animate-fade-up delay-300">
-                <a
-                  href="/showreel"
-                  className="label-upper inline-flex items-center gap-3 group"
-                  style={{ color: "var(--charcoal)", fontSize: "0.7rem" }}
-                >
-                  <span className="relative">
-                    Watch Showreel
-                    <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
-                  </span>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
-                  </svg>
-                </a>
-              </div>
+                DOCUMENTARY &<br />BRANDED CONTENT
+              </span>
+              <span
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 300,
+                  lineHeight: 1,
+                  color: "oklch(0.55 0.008 60)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                STORIES
+              </span>
             </div>
 
+            {/* Line 2 */}
+            <div className="flex items-baseline gap-3 lg:gap-5 mt-1">
+              <span
+                className="font-body"
+                style={{
+                  fontSize: "clamp(0.55rem, 1vw, 0.7rem)",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "oklch(0.5 0.008 60)",
+                  fontWeight: 300,
+                  alignSelf: "center",
+                }}
+              >
+                CRAFTED BY
+              </span>
+              <span
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 700,
+                  lineHeight: 1,
+                  color: "var(--charcoal)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                ALIKHAN
+              </span>
+            </div>
 
+            {/* Line 3 */}
+            <div className="flex items-baseline gap-4 lg:gap-6 mt-1">
+              <span
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 300,
+                  lineHeight: 1,
+                  color: "oklch(0.55 0.008 60)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                THAT
+              </span>
+              <span
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 700,
+                  lineHeight: 1,
+                  color: "var(--charcoal)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                MATTER
+              </span>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-8 animate-fade-up delay-200">
+              <a
+                href="/showreel"
+                className="label-upper inline-flex items-center gap-3 group"
+                style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
+              >
+                <span className="relative">
+                  Watch Showreel
+                  <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
+                </span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -163,35 +224,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== COLLABORATIONS ===== */}
+      {/* ===== COLLABORATIONS — Actual Logos ===== */}
       <section className="py-20 lg:py-28 relative z-10">
         <div className="container">
           <div className="fade-in-text text-center">
             <p className="label-upper mb-12" style={{ color: "oklch(0.5 0.008 60)" }}>
               Collaborations & Partners
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-10">
-              {partners.map((partner) => (
+            <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14">
+              {logos.map((logo) => (
                 <div
-                  key={partner.name}
-                  className="flex items-center justify-center px-4 py-2 border"
-                  style={{
-                    borderColor: "oklch(0.82 0.006 75)",
-                    minWidth: "100px",
-                  }}
+                  key={logo.alt}
+                  className="h-10 md:h-12 lg:h-14 flex items-center"
                 >
-                  <span
-                    className="font-body text-center"
-                    style={{
-                      fontSize: "0.6rem",
-                      letterSpacing: "0.15em",
-                      textTransform: "uppercase",
-                      color: "oklch(0.4 0.008 60)",
-                      fontWeight: 400,
-                    }}
-                  >
-                    {partner.initials}
-                  </span>
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-full w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                    style={{ filter: "grayscale(100%)" }}
+                  />
                 </div>
               ))}
             </div>
