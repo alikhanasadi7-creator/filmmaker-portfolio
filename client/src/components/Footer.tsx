@@ -3,6 +3,7 @@
    Clean minimal footer with contact CTA and sage accent
    ============================================================= */
 import { Link } from "wouter";
+import { Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -39,14 +40,15 @@ export default function Footer() {
             </a>
             <div className="flex gap-5 mt-4">
               <a
-                href="https://www.instagram.com/alikhanasadi"
+                href="https://www.linkedin.com/in/ali-asadi-95491615a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="label-upper group"
+                className="label-upper group inline-flex items-center gap-1.5"
                 style={{ color: "oklch(0.5 0.008 60)", fontSize: "0.6rem" }}
               >
+                <Linkedin size={13} strokeWidth={1.75} />
                 <span className="relative">
-                  Instagram
+                  LinkedIn
                   <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
                 </span>
               </a>
