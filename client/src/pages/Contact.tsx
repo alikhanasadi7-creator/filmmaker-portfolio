@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { Linkedin } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -142,20 +143,30 @@ export default function Contact() {
                 Follow
               </p>
               <div className="flex flex-col gap-2">
-                {["Vimeo", "Instagram", "LinkedIn"].map((platform) => (
+                {[
+                  { label: "Vimeo", href: "#", real: false },
+                  { label: "LinkedIn", href: "https://www.linkedin.com/in/ali-asadi-95491615a/", real: true },
+                ].map((platform) => (
                   <a
-                    key={platform}
-                    href="#"
-                    className="font-body text-sm"
+                    key={platform.label}
+                    href={platform.href}
+                    target={platform.real ? "_blank" : undefined}
+                    rel={platform.real ? "noopener noreferrer" : undefined}
+                    className="font-body text-sm inline-flex items-center gap-2"
                     style={{
                       color: "oklch(0.45 0.010 60)",
                       transition: "color 0.3s",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.12 0.005 60)")}
                     onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.45 0.010 60)")}
-                    onClick={(e) => { e.preventDefault(); toast.info(`${platform} link coming soon.`); }}
+                    onClick={
+                      platform.real
+                        ? undefined
+                        : (e) => { e.preventDefault(); toast.info(`${platform.label} link coming soon.`); }
+                    }
                   >
-                    {platform} ↗
+                    {platform.label === "LinkedIn" && <Linkedin size={15} strokeWidth={1.75} />}
+                    {platform.label} ↗
                   </a>
                 ))}
               </div>
