@@ -145,6 +145,69 @@ export default function About() {
         </div>
       </section>
 
+      {/* In the Field — candid gallery */}
+      <section className="px-6 md:px-12 lg:px-24 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-8 lg:col-start-2">
+            <p className="label-upper mb-10 fade-in-text" style={{ color: "var(--sage-dark)" }}>
+              In the Field
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          {/* Image 1 — offset up */}
+          <div className="lg:col-span-4 lg:col-start-2 fade-in-text">
+            <div className="relative">
+              <div
+                className="absolute -bottom-4 -right-4 w-full h-full"
+                style={{ backgroundColor: "var(--sage)", opacity: 0.1 }}
+              />
+              <div className="relative aspect-[3/4] overflow-hidden max-w-[280px]">
+                <img
+                  src="/images/about-field.jpg"
+                  alt="On location, shooting in the countryside"
+                  className="w-full h-full object-cover"
+                  style={{ filter: "grayscale(80%) contrast(1.05)" }}
+                  loading="lazy"
+                />
+              </div>
+              <p
+                className="font-body mt-3"
+                style={{ fontSize: "0.65rem", letterSpacing: "0.08em", color: "oklch(0.55 0.012 60)" }}
+              >
+                On location
+              </p>
+            </div>
+          </div>
+
+          {/* Image 2 — offset down, smaller */}
+          <div className="lg:col-span-4 lg:col-start-7 fade-in-text lg:mt-20">
+            <div className="relative">
+              <div
+                className="absolute -top-4 -left-4 w-full h-full"
+                style={{ backgroundColor: "var(--sage)", opacity: 0.1 }}
+              />
+              <div className="relative aspect-[3/4] overflow-hidden max-w-[240px] ml-auto">
+                <img
+                  src="/images/about-desert.jpg"
+                  alt="Filming in the desert"
+                  className="w-full h-full object-cover"
+                  style={{ filter: "grayscale(80%) contrast(1.05)" }}
+                  loading="lazy"
+                />
+              </div>
+              <p
+                className="font-body mt-3 text-right"
+                style={{ fontSize: "0.65rem", letterSpacing: "0.08em", color: "oklch(0.55 0.012 60)" }}
+              >
+                Between takes
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
