@@ -165,7 +165,7 @@ export default function About() {
               />
               <div className="relative aspect-[3/4] overflow-hidden max-w-[280px]">
                 <img
-                  src="/images/photo_5956298820222127576_y.jpg"
+                  src="/images/about-field.jpg"
                   alt="On location, shooting in the countryside"
                   className="w-full h-full object-cover"
                   style={{ filter: "grayscale(80%) contrast(1.05)" }}
@@ -190,7 +190,7 @@ export default function About() {
               />
               <div className="relative aspect-[3/4] overflow-hidden max-w-[240px] ml-auto">
                 <img
-                  src="/images/photo_6001519762082566008_x.jpg"
+                  src="/images/about-desert.jpg"
                   alt="Filming in the desert"
                   className="w-full h-full object-cover"
                   style={{ filter: "grayscale(80%) contrast(1.05)" }}
