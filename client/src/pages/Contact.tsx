@@ -144,7 +144,7 @@ export default function Contact() {
               </p>
               <div className="flex flex-col gap-2">
                 {[
-                  { label: "Vimeo", href: "#", real: false },
+                  { label: "Vimeo", href: "https://vimeo.com/user92848173", real: true },
                   { label: "LinkedIn", href: "https://www.linkedin.com/in/ali-asadi-95491615a/", real: true },
                 ].map((platform) => (
                   <a
