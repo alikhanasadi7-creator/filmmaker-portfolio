@@ -53,7 +53,7 @@ export default function Footer() {
                 </span>
               </a>
               <a
-                href="https://vimeo.com/alikhanasadi"
+                href="https://vimeo.com/user92848173"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="label-upper group"
@@ -61,18 +61,6 @@ export default function Footer() {
               >
                 <span className="relative">
                   Vimeo
-                  <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
-                </span>
-              </a>
-              <a
-                href="https://www.youtube.com/@alikhanasadi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="label-upper group"
-                style={{ color: "oklch(0.5 0.008 60)", fontSize: "0.6rem" }}
-              >
-                <span className="relative">
-                  YouTube
                   <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
                 </span>
               </a>
