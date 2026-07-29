@@ -42,7 +42,7 @@ export default function About() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Ali Khan Asadi
+              AliKhan Asadi
             </h1>
           </div>
         </div>
