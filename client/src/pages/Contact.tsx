@@ -41,11 +41,25 @@ export default function Contact() {
       return;
     }
     setSending(true);
-    // Simulate send
-    await new Promise((r) => setTimeout(r, 1200));
-    setSending(false);
-    toast.success("Message sent. I'll be in touch shortly.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      const encode = (data: Record<string, string>) =>
+        Object.keys(data)
+          .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formData }),
+      });
+
+      toast.success("Message sent. I'll be in touch shortly.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      toast.error("Something went wrong. Please try emailing me directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const contactDetails = [
@@ -175,7 +189,20 @@ export default function Contact() {
 
           {/* Right: Contact Form */}
           <div className="md:col-span-8 reveal" style={{ transitionDelay: "0.15s" }}>
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-8"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Don't fill this out if you're human: <input name="bot-field" />
+                </label>
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label
