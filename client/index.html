@@ -11,6 +11,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Hidden static form so Netlify can detect it at build time (JS-rendered forms aren't crawlable) -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
     <script type="module" src="/src/main.tsx"></script>
     <script
       defer
