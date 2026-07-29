@@ -80,6 +80,16 @@ export default function About() {
                   />
                 </div>
               </div>
+              {/* Color accent photo — on set, teaching/community project */}
+              <div className="absolute -top-6 -right-10 w-[42%] bg-background p-2 shadow-lg hidden sm:block">
+                <div className="relative aspect-square overflow-hidden">
+                  <img
+                    src="/images/about-classroom.jpg"
+                    alt="Ali Khan Asadi filming a community project"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
