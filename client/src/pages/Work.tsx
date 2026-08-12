@@ -12,7 +12,7 @@ const YOUTUBE_THUMBNAIL_1 = "https://img.youtube.com/vi/lm95sT7fyhQ/maxresdefaul
 const YOUTUBE_THUMBNAIL_2 = "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_3 = "https://img.youtube.com/vi/Up9qPBxeyHk/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_4 = "https://img.youtube.com/vi/8cSnAGsYav4/maxresdefault.jpg";
-const YOUTUBE_THUMBNAIL_5 = "https://img.youtube.com/vi/94GSuMiRi0A/maxresdefault.jpg";
+const YOUTUBE_THUMBNAIL_5 = "https://img.youtube.com/vi/94GSuMiRi0A/hqdefault.jpg";
 
 const projects = [
   {
