@@ -12,6 +12,7 @@ const YOUTUBE_THUMBNAIL_1 = "https://img.youtube.com/vi/lm95sT7fyhQ/maxresdefaul
 const YOUTUBE_THUMBNAIL_2 = "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_3 = "https://img.youtube.com/vi/Up9qPBxeyHk/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_4 = "https://img.youtube.com/vi/8cSnAGsYav4/maxresdefault.jpg";
+const YOUTUBE_THUMBNAIL_5 = "https://img.youtube.com/vi/94GSuMiRi0A/maxresdefault.jpg";
 
 const projects = [
   {
@@ -49,6 +50,15 @@ const projects = [
     description: "A corporate film created for EFCL, a fulfilment centre offering end-to-end eCommerce warehousing and logistics services. Overseeing the project from script to final result.",
     image: YOUTUBE_THUMBNAIL_4,
     videoId: "8cSnAGsYav4",
+  },
+  {
+    id: 5,
+    title: "Factory Works – Aviva Studios",
+    category: "Short Film | Public Art & Culture",
+    year: "2023",
+    description: "A short film created to accompany Factory Works, an audio artwork by Neville Gabie pressed across 1,500 vinyl sleeves featuring the workers who built Aviva Studios, Factory International's new home. Co-directed for Manchester Met's School of Digital Arts and unveiled at an exclusive showing inside Aviva Studios.",
+    image: YOUTUBE_THUMBNAIL_5,
+    videoId: "94GSuMiRi0A",
   },
 ];
 
