@@ -57,7 +57,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                ARTIST
+                CINEMATIC
               </span>
               <span
                 className="font-body"
@@ -70,7 +70,7 @@ export default function Home() {
                   alignSelf: "center",
                 }}
               >
-                DOCUMENTARY,<br />INSTALLATION & FILM
+                FOR BRANDS,<br />CULTURE & SOCIAL
               </span>
               <span
                 className="font-display"
@@ -82,7 +82,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                FILMMAKER
+                FILMS
               </span>
             </div>
 
@@ -99,7 +99,7 @@ export default function Home() {
                   alignSelf: "center",
                 }}
               >
-                STORIES OF MIGRATION AND
+                CONNECTING AUDIENCES WITH
               </span>
               <span
                 className="font-display"
@@ -111,7 +111,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                MEMORY
+                MEANINGFUL
               </span>
             </div>
 
@@ -127,7 +127,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                SEEN &
+                IDEAS &
               </span>
               <span
                 className="font-display"
@@ -139,19 +139,19 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                HEARD
+                IMPACT
               </span>
             </div>
 
             {/* CTA */}
             <div className="mt-8 animate-fade-up delay-200">
               <a
-                href="/artworks"
+                href="/showreel"
                 className="label-upper inline-flex items-center gap-3 group"
                 style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
               >
                 <span className="relative">
-                  View Work
+                  Watch Showreel
                   <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
                 </span>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
@@ -176,7 +176,7 @@ export default function Home() {
                 className="font-body mt-3"
                 style={{ fontSize: "0.8125rem", color: "oklch(0.45 0.008 60)", lineHeight: 1.7 }}
               >
-                A selection of recent work spanning documentary, moving image installation, and participatory practice.
+                A selection of recent work spanning documentary, branded content, and cultural projects.
               </p>
             </div>
 
@@ -189,7 +189,7 @@ export default function Home() {
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src="https://www.youtube.com/embed/Cgdm2V3AmBY?rel=0&modestbranding=1&controls=1"
-                  title="Ali Asadi - Showreel"
+                  title="Alikhan Asadi - Showreel"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   style={{ border: "none" }}
@@ -216,7 +216,7 @@ export default function Home() {
                     letterSpacing: "0.01em",
                   }}
                 >
-                  "Giving voice to what usually stays in the background."
+                  "Every frame is a question. Every cut is an answer."
                 </blockquote>
               </div>
             </div>
