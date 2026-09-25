@@ -42,7 +42,7 @@ export default function About() {
                 letterSpacing: "-0.01em",
               }}
             >
-              AliKhan Asadi
+              Ali Asadi
             </h1>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function About() {
                 color: "var(--charcoal)",
               }}
             >
-              I make films about the spaces between words — the pauses, the silences, and the things people mean but don't say.
+              Giving voice to what usually stays in the background.
             </div>
 
             <div
@@ -113,19 +113,13 @@ export default function About() {
               style={{ fontSize: "0.8125rem", color: "oklch(0.4 0.008 60)", lineHeight: 1.8 }}
             >
               <p>
-                Ali Khan Asadi is a UK-based documentary filmmaker and editor working across independent films, cultural projects, and commissioned work for charities, organisations, and creative collaborators.
+                Ali Asadi is a Manchester-based artist filmmaker working across documentary, moving image installation and participatory practice. Originally from Iran, he makes work about migration, memory and belonging, often created with communities and giving voice to what usually stays in the background: the sea and wind on Iran's Caspian coast, the electrical signals of trees, the imagination of diaspora children.
               </p>
               <p>
-                His practice moves between directing and editing, shaping stories with cinematic sensitivity and strong narrative structure. Ali works closely with charities, cultural institutions, artists, and organisations to create films that communicate meaningful stories and real-world impact.
+                His documentary Slow Dusk (2025) was an Official Selection at the Cinéma Vérité Iran International Documentary Film Festival and received an Honourable Mention at Ffilmic Festival (2026). His installations include The Cables, an exploration of memory and displacement developed in dialogue with AI, and In/Tangible at SEESAW Gallery, Manchester. His participatory hybrid documentary Between Two Worlds, co-created with Iranian-British children, premieres at Aviva Studios in December 2026 in collaboration with Sahba House of Arts and Culture and Factory International.
               </p>
               <p>
-                Alongside his own documentary work, he has collaborated on socially engaged productions such as Trees Project and Uncertain Futures, supported by Arts Council England and The National Lottery Fund, in partnership with cultural organisations in Manchester.
-              </p>
-              <p>
-                His work has been recognised and presented internationally through documentary and cultural film platforms.
-              </p>
-              <p>
-                Whether directing or editing, Ali focuses on crafting films that are thoughtful, visually compelling, and emotionally resonant, helping organisations and audiences connect through authentic storytelling.
+                He holds an MA in Filmmaking (Distinction) from Manchester Metropolitan University.
               </p>
             </div>
 
@@ -136,7 +130,7 @@ export default function About() {
                   Based in
                 </p>
                 <p className="font-body text-sm" style={{ color: "var(--charcoal)" }}>
-                  UK
+                  Manchester, UK
                 </p>
               </div>
               <div>
@@ -145,6 +139,14 @@ export default function About() {
                 </p>
                 <p className="font-body text-sm" style={{ color: "var(--charcoal)" }}>
                   Commissions & Collaborations
+                </p>
+              </div>
+              <div className="col-span-2">
+                <p className="label-upper mb-2" style={{ color: "var(--sage-dark)" }}>
+                  Practice
+                </p>
+                <p className="font-body text-sm" style={{ color: "var(--charcoal)" }}>
+                  Documentary Film · Moving Image Installation · Participatory Practice
                 </p>
               </div>
               <div className="col-span-2">
@@ -160,7 +162,46 @@ export default function About() {
                   <span className="absolute bottom-0 left-0 w-full h-px bg-current opacity-30 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>
+              <div className="col-span-2">
+                <p className="label-upper mb-2" style={{ color: "var(--sage-dark)" }}>
+                  CV
+                </p>
+                {/* TODO: replace mailto with real PDF links once CV files are supplied — see note below */}
+                <a
+                  href="mailto:alikhanasadi7@gmail.com?subject=CV%20request"
+                  className="font-body text-sm relative group inline-block mr-6"
+                  style={{ color: "var(--charcoal)" }}
+                >
+                  Artist's CV
+                  <span className="absolute bottom-0 left-0 w-full h-px bg-current opacity-30 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a
+                  href="mailto:alikhanasadi7@gmail.com?subject=CV%20request"
+                  className="font-body text-sm relative group inline-block"
+                  style={{ color: "var(--charcoal)" }}
+                >
+                  Film CV
+                  <span className="absolute bottom-0 left-0 w-full h-px bg-current opacity-30 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Artist Statement */}
+      <section className="px-6 md:px-12 lg:px-24 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-7 lg:col-start-2 fade-in-text">
+            <p className="label-upper mb-6" style={{ color: "var(--sage-dark)" }}>
+              Artist Statement
+            </p>
+            <p
+              className="font-body"
+              style={{ fontSize: "0.9375rem", lineHeight: 1.9, color: "oklch(0.35 0.008 60)" }}
+            >
+              I make work about what gets left out of the frame — the parts of migration, memory and belonging that don't fit neatly into a single story. Growing up between Iran and the UK, I've come to think of documentary and installation less as ways of recording a subject than as ways of listening to it: to a coastline losing its fishermen, to a tree's electrical signal, to a child's drawing of a place they've never seen. Participation runs through most of what I do, because the people whose lives are on screen usually understand their own story better than I ever could — my job is to build a form sturdy enough to hold it. I'm drawn to sound and image as evidence of things that are hard to say directly: displacement, grief, hope, the pull of two homes at once. I want the work to sit with the discomfort of that rather than resolve it too quickly.
+            </p>
           </div>
         </div>
       </section>
