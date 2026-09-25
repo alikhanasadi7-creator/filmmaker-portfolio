@@ -57,7 +57,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                CINEMATIC
+                ARTIST
               </span>
               <span
                 className="font-body"
@@ -70,7 +70,7 @@ export default function Home() {
                   alignSelf: "center",
                 }}
               >
-                FOR BRANDS,<br />CULTURE & SOCIAL
+                FILMS FOR BRANDS,<br />CULTURE & ART
               </span>
               <span
                 className="font-display"
@@ -82,7 +82,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                FILMS
+                FILMMAKER
               </span>
             </div>
 
