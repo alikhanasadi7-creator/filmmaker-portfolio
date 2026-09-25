@@ -40,85 +40,160 @@ export default function Home() {
 
       <Navigation />
 
-      {/* ===== HERO SECTION — Name, one-line bio, single image ===== */}
-      <section className="relative min-h-screen flex items-center pt-24">
-        <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            {/* Text */}
-            <div className="lg:col-span-6 lg:col-start-1 animate-fade-up order-2 lg:order-1">
-              <p className="label-upper mb-5" style={{ color: "var(--sage-dark)" }}>
-                Manchester, UK
-              </p>
-              <h1
+      {/* ===== HERO SECTION — Creative Typographic Layout ===== */}
+      <section className="relative min-h-screen flex items-end justify-end overflow-hidden">
+        <div className="container relative z-10 pb-16 lg:pb-24">
+          {/* Creative typographic composition — bottom right, mixed weights/sizes */}
+          <div className="flex flex-col items-end text-right animate-fade-up">
+            {/* Line 1 */}
+            <div className="flex items-baseline gap-3 lg:gap-5">
+              <span
                 className="font-display"
                 style={{
-                  fontSize: "clamp(2.6rem, 6vw, 5rem)",
-                  fontWeight: 300,
-                  lineHeight: 1.05,
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 700,
+                  lineHeight: 1,
                   color: "var(--charcoal)",
-                  letterSpacing: "-0.01em",
+                  letterSpacing: "-0.02em",
                 }}
               >
-                Ali Asadi
-                <br />
-                <span style={{ fontWeight: 700 }}>Artist Filmmaker</span>
-              </h1>
-              <p
-                className="label-upper mt-4"
-                style={{ color: "oklch(0.5 0.008 60)", letterSpacing: "0.15em" }}
-              >
-                Moving Image · Documentary · Installation
-              </p>
-              <p
-                className="font-body mt-6"
+                ARTIST
+              </span>
+              <span
+                className="font-body"
                 style={{
-                  fontSize: "1rem",
-                  lineHeight: 1.8,
-                  color: "oklch(0.4 0.008 60)",
-                  maxWidth: "480px",
+                  fontSize: "clamp(0.55rem, 1vw, 0.7rem)",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "oklch(0.5 0.008 60)",
+                  fontWeight: 300,
+                  alignSelf: "center",
                 }}
               >
-                Ali Asadi is a Manchester-based artist filmmaker working across documentary, moving image installation and participatory practice.
-              </p>
-              <div className="mt-8 flex gap-8">
-                <a
-                  href="/artworks"
-                  className="label-upper inline-flex items-center gap-3 group"
-                  style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
-                >
-                  <span className="relative">
-                    Artworks
-                    <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
-                  </span>
-                </a>
-                <a
-                  href="/films"
-                  className="label-upper inline-flex items-center gap-3 group"
-                  style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
-                >
-                  <span className="relative">
-                    Films
-                    <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
-                  </span>
-                </a>
-              </div>
+                DOCUMENTARY,<br />INSTALLATION & FILM
+              </span>
+              <span
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 300,
+                  lineHeight: 1,
+                  color: "oklch(0.55 0.008 60)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                FILMMAKER
+              </span>
             </div>
 
-            {/* One strong image */}
-            <div className="lg:col-span-5 lg:col-start-8 order-1 lg:order-2 fade-in-text">
-              <div className="relative">
-                <div
-                  className="absolute -bottom-5 -right-5 w-full h-full"
-                  style={{ backgroundColor: "var(--sage)", opacity: 0.12 }}
+            {/* Line 2 */}
+            <div className="flex items-baseline gap-3 lg:gap-5 mt-1">
+              <span
+                className="font-body"
+                style={{
+                  fontSize: "clamp(0.55rem, 1vw, 0.7rem)",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "oklch(0.5 0.008 60)",
+                  fontWeight: 300,
+                  alignSelf: "center",
+                }}
+              >
+                STORIES OF MIGRATION AND
+              </span>
+              <span
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 700,
+                  lineHeight: 1,
+                  color: "var(--charcoal)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                MEMORY
+              </span>
+            </div>
+
+            {/* Line 3 */}
+            <div className="flex items-baseline gap-4 lg:gap-6 mt-1">
+              <span
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 300,
+                  lineHeight: 1,
+                  color: "oklch(0.55 0.008 60)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                SEEN &
+              </span>
+              <span
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
+                  fontWeight: 700,
+                  lineHeight: 1,
+                  color: "var(--charcoal)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                HEARD
+              </span>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-8 animate-fade-up delay-200">
+              <a
+                href="/artworks"
+                className="label-upper inline-flex items-center gap-3 group"
+                style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
+              >
+                <span className="relative">
+                  View Work
+                  <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
+                </span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SHOWREEL SECTION ===== */}
+      <section className="py-24 lg:py-32 relative z-10">
+        <div className="container">
+          <div className="fade-in-text grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Label */}
+            <div className="lg:col-span-3 lg:col-start-2">
+              <p className="label-upper" style={{ color: "var(--sage-dark)" }}>
+                Selected Work
+              </p>
+              <p
+                className="font-body mt-3"
+                style={{ fontSize: "0.8125rem", color: "oklch(0.45 0.008 60)", lineHeight: 1.7 }}
+              >
+                A selection of recent work spanning documentary, moving image installation, and participatory practice.
+              </p>
+            </div>
+
+            {/* Video embed */}
+            <div className="lg:col-span-7 lg:col-start-5">
+              <div
+                className="relative w-full overflow-hidden"
+                style={{ paddingBottom: "56.25%" }}
+              >
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/Cgdm2V3AmBY?rel=0&modestbranding=1&controls=1"
+                  title="Ali Asadi - Showreel"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ border: "none" }}
                 />
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  <img
-                    src="/images/about-field.jpg"
-                    alt="Ali Asadi, artist filmmaker"
-                    className="w-full h-full object-cover"
-                    style={{ filter: "grayscale(85%) contrast(1.05)" }}
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -141,7 +216,7 @@ export default function Home() {
                     letterSpacing: "0.01em",
                   }}
                 >
-                  "Every frame is a question. Every cut is an answer."
+                  "Giving voice to what usually stays in the background."
                 </blockquote>
               </div>
             </div>
