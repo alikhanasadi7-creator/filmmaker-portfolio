@@ -9,6 +9,18 @@ import Footer from "@/components/Footer";
 
 const films = [
   {
+    id: 4,
+    title: "TREES",
+    year: "2024",
+    category: "Installation Film",
+    location: "UK",
+    duration: "TBC",
+    description:
+      "An immersive installation exploring the hidden communication systems of trees, translating the electrical signals trees use to communicate into film, animation and live electronic sound — giving voice to what usually stays in the background.\n\nSupported by Arts Council England.",
+    videoId: "JTl4IpGNyCw",
+    thumbnail: "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg",
+  },
+  {
     id: 1,
     title: "SLOW DUSK",
     year: "2025",
@@ -31,18 +43,6 @@ const films = [
       "A desert village. An old woman who is its living memory. A young woman who believes the only way to save it is to erase it. Told through two women who cannot both be right — and somewhere between their truths, we ask: who gets to decide what a place is worth saving for?",
     videoId: "W07wjL5RDa0",
     thumbnail: "https://img.youtube.com/vi/W07wjL5RDa0/maxresdefault.jpg",
-  },
-  {
-    id: 4,
-    title: "TREES",
-    year: "2024",
-    category: "Installation Film",
-    location: "UK",
-    duration: "TBC",
-    description:
-      "An immersive installation exploring the hidden communication systems of trees, translating the electrical signals trees use to communicate into film, animation and live electronic sound — giving voice to what usually stays in the background.\n\nSupported by Arts Council England.",
-    videoId: "JTl4IpGNyCw",
-    thumbnail: "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg",
   },
 ];
 
