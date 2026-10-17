@@ -78,13 +78,13 @@ export default function Footer() {
           className="font-body"
           style={{ fontSize: "0.65rem", color: "oklch(0.55 0.008 60)", letterSpacing: "0.05em" }}
         >
-          © {new Date().getFullYear()} Alikhan Asadi. All rights reserved.
+          © {new Date().getFullYear()} Ali Asadi. All rights reserved.
         </p>
         <nav className="hidden md:flex gap-6">
           {[
-            { href: "/projects", label: "Projects" },
+            { href: "/artworks", label: "Artworks" },
             { href: "/films", label: "Films" },
-            { href: "/showreel", label: "Showreel" },
+            { href: "/commissions", label: "Commissions" },
             { href: "/about", label: "About" },
           ].map((link) => (
             <Link key={link.href} href={link.href}>
