@@ -102,13 +102,23 @@ export default function Artworks() {
         <div className="space-y-16 lg:space-y-20">
           {artworks.map((art) => (
             <Link key={art.slug} href={`/artworks/${art.slug}`}>
-              <div className="fade-in-text grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10 items-baseline cursor-pointer group py-6 border-b" style={{ borderColor: "oklch(0.88 0.006 75)" }}>
-                <div className="lg:col-span-1 lg:col-start-2">
-                  <p className="font-body" style={{ fontSize: "0.75rem", color: "oklch(0.5 0.008 60)" }}>
+              <div className="fade-in-text grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10 items-center cursor-pointer group py-6 border-b" style={{ borderColor: "oklch(0.88 0.006 75)" }}>
+                {art.videoId && (
+                  <div className="lg:col-span-4 lg:col-start-2">
+                    <div className="relative aspect-video overflow-hidden" style={{ backgroundColor: "oklch(0.93 0.005 75)" }}>
+                      <img
+                        src={`https://img.youtube.com/vi/${art.videoId}/hqdefault.jpg`}
+                        alt={art.title}
+                        className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80"
+                        style={{ filter: "grayscale(70%) contrast(1.1)" }}
+                      />
+                    </div>
+                  </div>
+                )}
+                <div className={`lg:col-span-6 ${art.videoId ? "lg:col-start-6" : "lg:col-start-2"}`}>
+                  <p className="font-body mb-2" style={{ fontSize: "0.75rem", color: "oklch(0.5 0.008 60)" }}>
                     {art.year}
                   </p>
-                </div>
-                <div className="lg:col-span-6">
                   <h2
                     className="font-display transition-opacity duration-300 group-hover:opacity-60"
                     style={{
@@ -128,9 +138,7 @@ export default function Artworks() {
                       </span>
                     )}
                   </h2>
-                </div>
-                <div className="lg:col-span-4">
-                  <p className="font-body" style={{ fontSize: "0.75rem", color: "oklch(0.5 0.008 60)", lineHeight: 1.6 }}>
+                  <p className="font-body mt-3" style={{ fontSize: "0.75rem", color: "oklch(0.5 0.008 60)", lineHeight: 1.6 }}>
                     {art.medium}
                   </p>
                 </div>
