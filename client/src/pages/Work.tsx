@@ -16,25 +16,7 @@ const YOUTUBE_THUMBNAIL_5 = "https://img.youtube.com/vi/94GSuMiRi0A/hqdefault.jp
 
 const projects = [
   {
-    id: 1,
-    title: "Uncertain Futures",
-    category: "Documentary | Social Impact & Research",
-    year: "2024",
-    description: "A collaborative art and research project amplifying women's lived experiences and collective dialogue. I worked as cinematographer and editor, creating a film that communicates the project's social impact and research engagement.",
-    image: YOUTUBE_THUMBNAIL_1,
-    videoId: "lm95sT7fyhQ",
-  },
-  {
-    id: 2,
-    title: "TREES",
-    category: "Impact Film | Immersive Installation",
-    year: "2024",
-    description: "An engaging documentation of an immersive environmental installation exploring the hidden communication systems of trees. The film captures the intersection of art, science, and technology.",
-    image: YOUTUBE_THUMBNAIL_2,
-    videoId: "JTl4IpGNyCw",
-  },
-  {
-    id: 3,
+    id: 4,
     title: "GRF – Back to School Campaign",
     category: "Impact Animation | Global Education",
     year: "2025",
@@ -43,7 +25,7 @@ const projects = [
     videoId: "Up9qPBxeyHk",
   },
   {
-    id: 4,
+    id: 5,
     title: "EFCL – Ecommerce Fulfilment Centre",
     category: "Corporate Film | Logistics & Brand",
     year: "2025",
@@ -52,7 +34,7 @@ const projects = [
     videoId: "8cSnAGsYav4",
   },
   {
-    id: 5,
+    id: 6,
     title: "Factory Works – Aviva Studios",
     category: "Short Film | Public Art & Culture",
     year: "2023",
@@ -87,7 +69,7 @@ export default function Work() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="lg:col-span-8 lg:col-start-2">
             <p className="label-upper mb-4 animate-fade-up" style={{ color: "var(--sage-dark)" }}>
-              Projects
+              Commercial &amp; Charity Work
             </p>
             <h1
               className="font-display animate-fade-up delay-100"
@@ -99,7 +81,7 @@ export default function Work() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Selected Works
+              Commissions
             </h1>
             <p
               className="font-body mt-5 animate-fade-up delay-200"
@@ -110,7 +92,7 @@ export default function Work() {
                 maxWidth: "500px",
               }}
             >
-              A curated selection of documentary, branded, and cultural projects.
+              Brand, charity and editing work — commissioned projects that sit alongside my art practice.
             </p>
           </div>
         </div>
@@ -130,8 +112,8 @@ export default function Work() {
                 className={`lg:col-span-7 ${index % 2 === 0 ? "lg:col-start-1" : "lg:col-start-6 lg:order-2"}`}
               >
                 <div
-                  className="project-card relative group"
-                  onClick={() => setSelectedVideo(project.videoId)}
+                  className={`project-card relative group ${project.videoId ? "cursor-pointer" : ""}`}
+                  onClick={() => project.videoId && setSelectedVideo(project.videoId)}
                 >
                   {/* Sage accent block behind image */}
                   <div
@@ -142,24 +124,32 @@ export default function Work() {
                       [index % 2 === 0 ? "right" : "left"]: "-16px",
                     }}
                   />
-                  <div className="relative aspect-video overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                      style={{ filter: "grayscale(80%) contrast(1.05)" }}
-                    />
-                    {/* Play overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                      <div
-                        className="w-14 h-14 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: "rgba(255,255,255,0.9)" }}
-                      >
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                          <path d="M4 2l12 7-12 7V2z" fill="var(--charcoal)" />
-                        </svg>
-                      </div>
-                    </div>
+                  <div className="relative aspect-video overflow-hidden flex items-center justify-center" style={{ backgroundColor: "oklch(0.93 0.005 75)" }}>
+                    {project.image ? (
+                      <>
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                          style={{ filter: "grayscale(80%) contrast(1.05)" }}
+                        />
+                        {/* Play overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                          <div
+                            className="w-14 h-14 rounded-full flex items-center justify-center"
+                            style={{ backgroundColor: "rgba(255,255,255,0.9)" }}
+                          >
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                              <path d="M4 2l12 7-12 7V2z" fill="var(--charcoal)" />
+                            </svg>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <p className="label-upper" style={{ color: "oklch(0.6 0.008 60)" }}>
+                        Video to be added
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -198,22 +188,53 @@ export default function Work() {
                 >
                   {project.description}
                 </p>
-                <button
-                  onClick={() => setSelectedVideo(project.videoId)}
-                  className="label-upper mt-6 inline-flex items-center gap-2 group"
-                  style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
-                >
-                  <span className="relative">
-                    Watch Film
-                    <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
-                  </span>
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
-                  </svg>
-                </button>
+                {project.videoId && (
+                  <button
+                    onClick={() => setSelectedVideo(project.videoId)}
+                    className="label-upper mt-6 inline-flex items-center gap-2 group"
+                    style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
+                  >
+                    <span className="relative">
+                      Watch Film
+                      <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
+                    </span>
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
+                    </svg>
+                  </button>
+                )}
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Showreel */}
+      <section className="px-6 md:px-12 lg:px-24 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="lg:col-span-3 lg:col-start-2">
+            <p className="label-upper" style={{ color: "var(--sage-dark)" }}>
+              Showreel
+            </p>
+            <p
+              className="font-body mt-3"
+              style={{ fontSize: "0.8125rem", color: "oklch(0.45 0.008 60)", lineHeight: 1.7 }}
+            >
+              A selection of recent commissioned work spanning branded content and cultural projects.
+            </p>
+          </div>
+          <div className="lg:col-span-7 lg:col-start-5">
+            <div className="relative w-full overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/Cgdm2V3AmBY?rel=0&modestbranding=1&controls=1"
+                title="Ali Asadi - Showreel"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ border: "none" }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
