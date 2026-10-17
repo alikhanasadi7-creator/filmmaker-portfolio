@@ -16,12 +16,24 @@ const films = [
     location: "Iran",
     duration: "Full Length",
     description:
-      "A cinematic portrait of fishermen in the north of Iran, whose lives are bound to a sea that was never theirs to lose. For decades, decisions made far from the shore have driven the Caspian to the edge of silence — yet the fishermen remain, holding on to a way of life the sea can no longer sustain and the state has long stopped protecting.\n\nThe film's soundscape was constructed through a laboratory process — a composer immersed in the sonic world of the landscape until something shifted: the environment began to speak back. The sea, the shore, the wind — no longer ambient, but present. What emerged was not a score but a dialogue between the human and the natural world, in which nature itself becomes a voice — bearing witness, responding, remembering.",
+      "A cinematic portrait of fishermen in the north of Iran, whose lives are bound to a sea that was never theirs to lose. For decades, decisions made far from the shore have driven the Caspian to the edge of silence — yet the fishermen remain, holding on to a way of life the sea can no longer sustain and the state has long stopped protecting.\n\nThe film's soundscape was constructed through a laboratory process — a composer immersed in the sonic world of the landscape until something shifted: the environment began to speak back. The sea, the shore, the wind — no longer ambient, but present. What emerged was not a score but a dialogue between the human and the natural world, in which nature itself becomes a voice — bearing witness, responding, remembering.\n\nOfficial Selection, Cinéma Vérité Iran International Documentary Film Festival. Honourable Mention, Best Documentary Short, Ffilmic Festival (2026).",
     videoId: "6ZAw_DxCFC0",
     thumbnail: "https://img.youtube.com/vi/6ZAw_DxCFC0/maxresdefault.jpg",
   },
   {
     id: 2,
+    title: "UNCERTAIN FUTURE",
+    year: "2023",
+    category: "Documentary",
+    location: "Manchester, UK",
+    duration: "TBC",
+    description:
+      "A collaborative art and research project amplifying women's lived experiences and collective dialogue, shown at Manchester Art Gallery and MMU Metropolis. Ali worked as lead editor and cinematographer, shaping a film that communicates the project's social impact and research engagement.\n\nSupported by Arts Council England.",
+    videoId: "lm95sT7fyhQ",
+    thumbnail: "https://img.youtube.com/vi/lm95sT7fyhQ/maxresdefault.jpg",
+  },
+  {
+    id: 3,
     title: "ASHIN",
     year: "2024",
     category: "Documentary",
@@ -99,32 +111,40 @@ export default function Films() {
                 {/* Large thumbnail */}
                 <div className={`lg:col-span-8 ${index % 2 === 0 ? "lg:col-start-1" : "lg:col-start-5"}`}>
                   <div
-                    className="project-card relative group cursor-pointer"
-                    onClick={() => setSelectedVideo(film.videoId)}
-                  >
+                  className={`project-card relative group ${film.videoId ? "cursor-pointer" : ""}`}
+                  onClick={() => film.videoId && setSelectedVideo(film.videoId)}
+                >
                     {/* Sage accent */}
                     <div
                       className="absolute -bottom-5 -right-5 w-full h-full"
                       style={{ backgroundColor: "var(--sage)", opacity: 0.1 }}
                     />
-                    <div className="relative aspect-[21/9] overflow-hidden">
-                      <img
-                        src={film.thumbnail}
-                        alt={film.title}
-                        className="w-full h-full object-cover"
-                        style={{ filter: "grayscale(70%) contrast(1.1)" }}
-                      />
-                      {/* Play overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                        <div
-                          className="w-16 h-16 rounded-full flex items-center justify-center"
-                          style={{ backgroundColor: "rgba(255,255,255,0.9)" }}
-                        >
-                          <svg width="20" height="20" viewBox="0 0 18 18" fill="none">
-                            <path d="M4 2l12 7-12 7V2z" fill="var(--charcoal)" />
-                          </svg>
-                        </div>
-                      </div>
+                    <div className="relative aspect-[21/9] overflow-hidden flex items-center justify-center" style={{ backgroundColor: "oklch(0.93 0.005 75)" }}>
+                      {film.thumbnail ? (
+                        <>
+                          <img
+                            src={film.thumbnail}
+                            alt={film.title}
+                            className="w-full h-full object-cover"
+                            style={{ filter: "grayscale(70%) contrast(1.1)" }}
+                          />
+                          {/* Play overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                            <div
+                              className="w-16 h-16 rounded-full flex items-center justify-center"
+                              style={{ backgroundColor: "rgba(255,255,255,0.9)" }}
+                            >
+                              <svg width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                <path d="M4 2l12 7-12 7V2z" fill="var(--charcoal)" />
+                              </svg>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <p className="label-upper" style={{ color: "oklch(0.6 0.008 60)" }}>
+                          Documentation to be added
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -167,19 +187,21 @@ export default function Films() {
                       </p>
                     ))}
                   </div>
-                  <button
-                    onClick={() => setSelectedVideo(film.videoId)}
-                    className="label-upper mt-6 inline-flex items-center gap-2 group self-start"
-                    style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
-                  >
-                    <span className="relative">
-                      Watch Film
-                      <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
-                    </span>
-                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
-                    </svg>
-                  </button>
+                  {film.videoId && (
+                    <button
+                      onClick={() => setSelectedVideo(film.videoId)}
+                      className="label-upper mt-6 inline-flex items-center gap-2 group self-start"
+                      style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
+                    >
+                      <span className="relative">
+                        Watch Film
+                        <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 group-hover:w-full" />
+                      </span>
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="0.8"/>
+                      </svg>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
