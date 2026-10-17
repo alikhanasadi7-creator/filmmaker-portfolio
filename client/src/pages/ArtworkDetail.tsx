@@ -38,7 +38,7 @@ export default function ArtworkDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="lg:col-span-8 lg:col-start-2">
             <p className="label-upper mb-4 fade-in-text" style={{ color: "var(--sage-dark)" }}>
-              Artwork {art.status ? `· ${art.status}` : ""}
+              Moving Image Artwork {art.status ? `· ${art.status}` : ""}
             </p>
             <h1
               className="font-display fade-in-text"
@@ -52,9 +52,11 @@ export default function ArtworkDetail() {
             >
               {art.title}
             </h1>
-            <p className="font-body mt-3 fade-in-text" style={{ fontSize: "0.8rem", color: "oklch(0.5 0.008 60)" }}>
-              {art.year}
-            </p>
+            {art.year && (
+              <p className="font-body mt-3 fade-in-text" style={{ fontSize: "0.8rem", color: "oklch(0.5 0.008 60)" }}>
+                {art.year}
+              </p>
+            )}
           </div>
         </div>
         <div className="divider mt-10" />
@@ -78,9 +80,11 @@ export default function ArtworkDetail() {
       <section className="px-6 md:px-12 lg:px-24 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="lg:col-span-7 lg:col-start-2 fade-in-text">
-            <p className="font-body" style={{ fontSize: "0.9375rem", lineHeight: 1.85, color: "oklch(0.35 0.008 60)" }}>
-              {art.description}
-            </p>
+            {art.description.split("\n\n").map((para, i) => (
+              <p key={i} className="font-body mb-4" style={{ fontSize: "0.9375rem", lineHeight: 1.85, color: "oklch(0.35 0.008 60)" }}>
+                {para}
+              </p>
+            ))}
           </div>
         </div>
       </section>
@@ -89,14 +93,27 @@ export default function ArtworkDetail() {
       <section className="px-6 md:px-12 lg:px-24 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="lg:col-span-8 lg:col-start-2 fade-in-text">
-            <div
-              className="aspect-video flex items-center justify-center border"
-              style={{ borderColor: "oklch(0.85 0.006 75)", backgroundColor: "oklch(0.95 0.005 75)" }}
-            >
-              <p className="label-upper" style={{ color: "oklch(0.6 0.008 60)" }}>
-                Installation photos &amp; excerpt — to be added
-              </p>
-            </div>
+            {art.videoId ? (
+              <div className="relative w-full overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${art.videoId}?rel=0&modestbranding=1`}
+                  title={art.title}
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ border: "none" }}
+                />
+              </div>
+            ) : (
+              <div
+                className="aspect-video flex items-center justify-center border"
+                style={{ borderColor: "oklch(0.85 0.006 75)", backgroundColor: "oklch(0.95 0.005 75)" }}
+              >
+                <p className="label-upper" style={{ color: "oklch(0.6 0.008 60)" }}>
+                  Installation photos &amp; excerpt — to be added
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
