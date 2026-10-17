@@ -146,7 +146,7 @@ export default function Home() {
             {/* CTA */}
             <div className="mt-8 animate-fade-up delay-200">
               <a
-                href="/showreel"
+                href="#showreel"
                 className="label-upper inline-flex items-center gap-3 group"
                 style={{ color: "var(--charcoal)", fontSize: "0.65rem" }}
               >
@@ -164,7 +164,7 @@ export default function Home() {
       </section>
 
       {/* ===== SHOWREEL SECTION ===== */}
-      <section className="py-24 lg:py-32 relative z-10">
+      <section id="showreel" className="py-24 lg:py-32 relative z-10">
         <div className="container">
           <div className="fade-in-text grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Label */}
