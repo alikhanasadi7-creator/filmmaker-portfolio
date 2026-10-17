@@ -21,6 +21,17 @@ type Artwork = {
 
 export const artworks: Artwork[] = [
   {
+    slug: "global-roots-canvas",
+    title: "GLOBAL ROOTS CANVAS",
+    year: "",
+    medium: "Moving image artwork",
+    venue: "Developed in response to DIPACT's Global Roots Canvas programme; the wider programme presented an exhibition at Bridge 5 Mill",
+    description:
+      "An independent moving-image artwork developed in response to the practices of five artists participating in DIPACT's Global Roots Canvas programme. The work explores identity, memory, culture and belonging through moving image, sound and the translation of artistic traces into a new audiovisual form.\n\nThe wider programme presented an exhibition at Bridge 5 Mill.",
+    credits: "",
+    videoId: "RTUx-3h55gs",
+  },
+  {
     slug: "uncertain-future",
     title: "UNCERTAIN FUTURE",
     year: "2023",
@@ -79,7 +90,7 @@ export default function Artworks() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Artworks
+              Moving Image Artworks
             </h1>
             <p
               className="font-body mt-5 animate-fade-up delay-200"
@@ -116,9 +127,11 @@ export default function Artworks() {
                   </div>
                 )}
                 <div className={`lg:col-span-6 ${art.videoId ? "lg:col-start-6" : "lg:col-start-2"}`}>
-                  <p className="font-body mb-2" style={{ fontSize: "0.75rem", color: "oklch(0.5 0.008 60)" }}>
-                    {art.year}
-                  </p>
+                  {art.year && (
+                    <p className="font-body mb-2" style={{ fontSize: "0.75rem", color: "oklch(0.5 0.008 60)" }}>
+                      {art.year}
+                    </p>
+                  )}
                   <h2
                     className="font-display transition-opacity duration-300 group-hover:opacity-60"
                     style={{
