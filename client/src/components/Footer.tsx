@@ -82,7 +82,7 @@ export default function Footer() {
         </p>
         <nav className="hidden md:flex gap-6">
           {[
-            { href: "/artworks", label: "Artworks" },
+            { href: "/artworks", label: "Moving Image Artworks" },
             { href: "/films", label: "Films" },
             { href: "/commissions", label: "Commissions" },
             { href: "/about", label: "About" },
