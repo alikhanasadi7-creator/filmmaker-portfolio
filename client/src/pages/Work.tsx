@@ -8,11 +8,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 // YouTube video thumbnails
-const YOUTUBE_THUMBNAIL_1 = "https://img.youtube.com/vi/lm95sT7fyhQ/maxresdefault.jpg";
-const YOUTUBE_THUMBNAIL_2 = "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_3 = "https://img.youtube.com/vi/Up9qPBxeyHk/maxresdefault.jpg";
 const YOUTUBE_THUMBNAIL_4 = "https://img.youtube.com/vi/8cSnAGsYav4/maxresdefault.jpg";
-const YOUTUBE_THUMBNAIL_5 = "https://img.youtube.com/vi/94GSuMiRi0A/hqdefault.jpg";
 
 const projects = [
   {
@@ -32,15 +29,6 @@ const projects = [
     description: "A corporate film created for EFCL, a fulfilment centre offering end-to-end eCommerce warehousing and logistics services. Overseeing the project from script to final result.",
     image: YOUTUBE_THUMBNAIL_4,
     videoId: "8cSnAGsYav4",
-  },
-  {
-    id: 6,
-    title: "Factory Works – Aviva Studios",
-    category: "Short Film | Public Art & Culture",
-    year: "2023",
-    description: "A short film created to accompany Factory Works, an audio artwork by Neville Gabie pressed across 1,500 vinyl sleeves featuring the workers who built Aviva Studios, Factory International's new home. Co-directed for Manchester Met's School of Digital Arts and unveiled at an exclusive showing inside Aviva Studios.",
-    image: YOUTUBE_THUMBNAIL_5,
-    videoId: "94GSuMiRi0A",
   },
 ];
 
@@ -206,35 +194,6 @@ export default function Work() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Showreel */}
-      <section className="px-6 md:px-12 lg:px-24 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-3 lg:col-start-2">
-            <p className="label-upper" style={{ color: "var(--sage-dark)" }}>
-              Showreel
-            </p>
-            <p
-              className="font-body mt-3"
-              style={{ fontSize: "0.8125rem", color: "oklch(0.45 0.008 60)", lineHeight: 1.7 }}
-            >
-              A selection of recent commissioned work spanning branded content and cultural projects.
-            </p>
-          </div>
-          <div className="lg:col-span-7 lg:col-start-5">
-            <div className="relative w-full overflow-hidden" style={{ paddingBottom: "56.25%" }}>
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/Cgdm2V3AmBY?rel=0&modestbranding=1&controls=1"
-                title="Ali Asadi - Showreel"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{ border: "none" }}
-              />
-            </div>
-          </div>
         </div>
       </section>
 
