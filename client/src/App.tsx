@@ -22,7 +22,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       {/* Legacy URLs — redirect old links to their new home */}
       <Route path="/projects"><Redirect to="/commissions" /></Route>
-      <Route path="/showreel"><Redirect to="/commissions" /></Route>
+      <Route path="/showreel"><Redirect to="/" /></Route>
       {/* All unknown URLs redirect to homepage */}
       <Route component={RedirectHome} />
     </Switch>
