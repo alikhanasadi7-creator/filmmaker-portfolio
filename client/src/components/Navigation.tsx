@@ -21,7 +21,7 @@ export default function Navigation() {
   }, [location]);
 
   const links = [
-    { href: "/artworks", label: "Artworks" },
+    { href: "/artworks", label: "Moving Image Artworks" },
     { href: "/films", label: "Films" },
     { href: "/commissions", label: "Commissions" },
     { href: "/about", label: "About" },
