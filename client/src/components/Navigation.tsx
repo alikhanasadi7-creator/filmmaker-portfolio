@@ -21,9 +21,9 @@ export default function Navigation() {
   }, [location]);
 
   const links = [
-    { href: "/projects", label: "Projects" },
+    { href: "/artworks", label: "Artworks" },
     { href: "/films", label: "Films" },
-    { href: "/showreel", label: "Showreel" },
+    { href: "/commissions", label: "Commissions" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
@@ -51,7 +51,7 @@ export default function Navigation() {
                   color: "var(--charcoal)",
                 }}
               >
-                Alikhan Asadi
+                Ali Asadi
               </span>
             </Link>
 
