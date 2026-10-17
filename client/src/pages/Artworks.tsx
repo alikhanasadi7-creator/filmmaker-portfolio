@@ -16,18 +16,31 @@ type Artwork = {
   venue: string;
   description: string;
   credits: string;
+  videoId?: string;
 };
 
 export const artworks: Artwork[] = [
   {
-    slug: "trees",
-    title: "TREES",
-    year: "2024",
-    medium: "Illuminated installation — film, animation and live electronics",
-    venue: "Arts Council England-funded",
+    slug: "uncertain-future",
+    title: "UNCERTAIN FUTURE",
+    year: "2023",
+    medium: "Collaborative art and research project — film",
+    venue: "Shown at Manchester Art Gallery and MMU Metropolis",
     description:
-      "An immersive installation exploring the hidden communication systems of trees, translating the electrical signals trees use to communicate into film, animation and live electronic sound — giving voice to what usually stays in the background.",
+      "A collaborative art and research project amplifying women's lived experiences and collective dialogue, shown at Manchester Art Gallery and MMU Metropolis. Ali worked as lead editor and cinematographer, shaping a film that communicates the project's social impact and research engagement.",
     credits: "Supported by Arts Council England.",
+    videoId: "lm95sT7fyhQ",
+  },
+  {
+    slug: "factory-works",
+    title: "FACTORY WORKS",
+    year: "2023",
+    medium: "Short film accompanying an audio artwork by Neville Gabie",
+    venue: "Unveiled at an exclusive showing inside Aviva Studios, Factory International, Manchester",
+    description:
+      "A short film created to accompany Factory Works, an audio artwork by Neville Gabie pressed across 1,500 vinyl sleeves featuring the workers who built Aviva Studios, Factory International's new home. Co-directed for Manchester Met's School of Digital Arts and unveiled at an exclusive showing inside Aviva Studios.",
+    credits: "Co-directed for Manchester Met's School of Digital Arts.",
+    videoId: "94GSuMiRi0A",
   },
 ];
 
