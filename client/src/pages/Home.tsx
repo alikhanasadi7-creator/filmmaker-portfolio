@@ -70,7 +70,7 @@ export default function Home() {
                   alignSelf: "center",
                 }}
               >
-                FILMS FOR BRANDS,<br />CULTURE & ART
+                MOVING IMAGE & FILMS<br />FOR CULTURE, ART & BRANDS
               </span>
               <span
                 className="font-display"
