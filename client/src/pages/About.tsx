@@ -113,13 +113,16 @@ export default function About() {
               style={{ fontSize: "0.8125rem", color: "oklch(0.4 0.008 60)", lineHeight: 1.8 }}
             >
               <p>
-                Ali Asadi is a Manchester-based artist filmmaker working across documentary, moving image installation and participatory practice. Originally from Iran, he makes work about migration, memory and belonging, often created with communities and giving voice to what usually stays in the background: the sea and wind on Iran's Caspian coast, the electrical signals of trees, the imagination of diaspora children.
+                Ali Asadi is a Manchester-based moving image artist and filmmaker working across documentary, moving image installation and participatory practice. Originally from Iran, he makes work about migration, memory and belonging, often created with communities and giving voice to what usually stays in the background: the sea and wind on Iran's Caspian coast, the electrical signals of trees, the imagination of diaspora children.
               </p>
               <p>
                 His documentary Slow Dusk (2025) was an Official Selection at the Cinéma Vérité Iran International Documentary Film Festival and received an Honourable Mention at Ffilmic Festival (2026). His installations include The Cables, an exploration of memory and displacement developed in dialogue with AI, and In/Tangible at SEESAW Gallery, Manchester. His participatory hybrid documentary Between Two Worlds, co-created with Iranian-British children, premieres at Aviva Studios in December 2026 in collaboration with Sahba House of Arts and Culture and Factory International.
               </p>
               <p>
                 He holds an MA in Filmmaking (Distinction) from Manchester Metropolitan University.
+              </p>
+              <p>
+                Alongside his own work, Ali directs, shoots and edits commissioned films for cultural and charity organisations.
               </p>
             </div>
 
@@ -200,7 +203,7 @@ export default function About() {
               className="font-body"
               style={{ fontSize: "0.9375rem", lineHeight: 1.9, color: "oklch(0.35 0.008 60)" }}
             >
-              I make work about what gets left out of the frame — the parts of migration, memory and belonging that don't fit neatly into a single story. Growing up between Iran and the UK, I've come to think of documentary and installation less as ways of recording a subject than as ways of listening to it: to a coastline losing its fishermen, to a tree's electrical signal, to a child's drawing of a place they've never seen. Participation runs through most of what I do, because the people whose lives are on screen usually understand their own story better than I ever could — my job is to build a form sturdy enough to hold it. I'm drawn to sound and image as evidence of things that are hard to say directly: displacement, grief, hope, the pull of two homes at once. I want the work to sit with the discomfort of that rather than resolve it too quickly.
+              I make work about what gets left out of the frame — the parts of migration, memory and belonging that don't fit neatly into a single story. I've come to think of documentary and installation less as ways of recording a subject than as ways of listening to it: to a coastline losing its fishermen, to a tree's electrical signal, to a child's drawing of a place they've never seen. Participation runs through most of what I do, because the people whose lives are on screen usually understand their own story better than I ever could — my job is to build a form sturdy enough to hold it. I'm drawn to sound and image as evidence of things that are hard to say directly: displacement, grief, hope, the pull of two homes at once. I want the work to sit with the discomfort of that rather than resolve it too quickly.
             </p>
           </div>
         </div>
