@@ -1,4 +1,5 @@
-import { Route, Switch, Redirect } from "wouter";
+import { useEffect } from "react";
+import { Route, Switch, Redirect, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -10,7 +11,25 @@ import Contact from "./pages/Contact";
 import Films from "./pages/Films";
 import RedirectHome from "./pages/RedirectHome";
 
+const SITE = "Ali Asadi";
+const titles: Record<string, string> = {
+  "/": `${SITE} — Moving Image Artist & Filmmaker`,
+  "/artworks": `Moving Image Artworks — ${SITE}`,
+  "/films": `Films — ${SITE}`,
+  "/commissions": `Commissions — ${SITE}`,
+  "/about": `About — ${SITE}, Moving Image Artist & Filmmaker`,
+  "/contact": `Contact — ${SITE}`,
+};
+
 function Router() {
+  const [location] = useLocation();
+  useEffect(() => {
+    const path = location.replace(/\/+$/, "") || "/";
+    document.title = path.startsWith("/artworks/")
+      ? `Moving Image Artworks — ${SITE}`
+      : titles[path] ?? titles["/"];
+  }, [location]);
+
   return (
     <Switch>
       <Route path="/" component={Home} />
