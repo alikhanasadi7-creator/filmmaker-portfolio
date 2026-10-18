@@ -13,6 +13,15 @@ const YOUTUBE_THUMBNAIL_4 = "https://img.youtube.com/vi/8cSnAGsYav4/maxresdefaul
 
 const projects = [
   {
+    id: 1,
+    title: "TREES",
+    category: "Illuminated Installation | Arts Council England",
+    year: "2024",
+    description: "An immersive installation exploring the hidden communication systems of trees, translating the electrical signals trees use to communicate into film, animation and live electronic sound — giving voice to what usually stays in the background. Supported by Arts Council England.",
+    image: "https://img.youtube.com/vi/JTl4IpGNyCw/hqdefault.jpg",
+    videoId: "JTl4IpGNyCw",
+  },
+  {
     id: 4,
     title: "GRF – Back to School Campaign",
     category: "Impact Animation | Global Education",
