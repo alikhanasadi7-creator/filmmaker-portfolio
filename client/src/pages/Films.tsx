@@ -9,18 +9,6 @@ import Footer from "@/components/Footer";
 
 const films = [
   {
-    id: 4,
-    title: "TREES",
-    year: "2024",
-    category: "Installation Film",
-    location: "UK",
-    duration: "TBC",
-    description:
-      "An immersive installation exploring the hidden communication systems of trees, translating the electrical signals trees use to communicate into film, animation and live electronic sound — giving voice to what usually stays in the background.\n\nSupported by Arts Council England.",
-    videoId: "JTl4IpGNyCw",
-    thumbnail: "https://img.youtube.com/vi/JTl4IpGNyCw/maxresdefault.jpg",
-  },
-  {
     id: 1,
     title: "SLOW DUSK",
     year: "2025",
