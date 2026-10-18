@@ -21,17 +21,6 @@ type Artwork = {
 
 export const artworks: Artwork[] = [
   {
-    slug: "global-roots-canvas",
-    title: "GLOBAL ROOTS CANVAS",
-    year: "",
-    medium: "Moving image artwork",
-    venue: "Developed in response to DIPACT's Global Roots Canvas programme; the wider programme presented an exhibition at Bridge 5 Mill",
-    description:
-      "An independent moving-image artwork developed in response to the practices of five artists participating in DIPACT's Global Roots Canvas programme. The work explores identity, memory, culture and belonging through moving image, sound and the translation of artistic traces into a new audiovisual form.\n\nThe wider programme presented an exhibition at Bridge 5 Mill.",
-    credits: "",
-    videoId: "RTUx-3h55gs",
-  },
-  {
     slug: "uncertain-future",
     title: "UNCERTAIN FUTURE",
     year: "2023",
@@ -52,6 +41,17 @@ export const artworks: Artwork[] = [
       "A short film created to accompany Factory Works, an audio artwork by Neville Gabie pressed across 1,500 vinyl sleeves featuring the workers who built Aviva Studios, Factory International's new home. Co-directed for Manchester Met's School of Digital Arts and unveiled at an exclusive showing inside Aviva Studios.",
     credits: "Co-directed for Manchester Met's School of Digital Arts.",
     videoId: "94GSuMiRi0A",
+  },
+  {
+    slug: "global-roots-canvas",
+    title: "GLOBAL ROOTS CANVAS",
+    year: "",
+    medium: "Moving image artwork",
+    venue: "Developed in response to DIPACT's Global Roots Canvas programme; the wider programme presented an exhibition at Bridge 5 Mill",
+    description:
+      "An independent moving-image artwork developed in response to the practices of five artists participating in DIPACT's Global Roots Canvas programme. The work explores identity, memory, culture and belonging through moving image, sound and the translation of artistic traces into a new audiovisual form.\n\nThe wider programme presented an exhibition at Bridge 5 Mill.",
+    credits: "",
+    videoId: "RTUx-3h55gs",
   },
 ];
 
